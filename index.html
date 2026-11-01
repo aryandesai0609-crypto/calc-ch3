@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calc AB Ch 3 Group Test Lab</title>
+<title>Calc AB Ch 3 Test Lab</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -102,6 +102,7 @@ p.good{color:#15803d;margin:4px 0}p.bad{color:#b91c1c;margin:4px 0}
 .rq summary{font-size:16px}.okq{border-left:5px solid var(--ok)}.badq{border-left:5px solid var(--bad)}
 .mhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
 .done{text-align:center;font-size:18px;padding:30px}
+.frqp{border-top:1px solid var(--line);padding:10px 0}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
 #pstats{font-size:14px;color:var(--mut);margin-bottom:8px}
 ul{margin:6px 0;padding-left:22px}
 @media(max-width:720px){.lwrap{grid-template-columns:1fr}#lnav{position:static;flex-direction:row;flex-wrap:wrap}.prow{grid-template-columns:1fr 1fr}.stem{font-size:16px}}
@@ -109,31 +110,32 @@ ul{margin:6px 0;padding-left:22px}
 </head>
 <body>
 <header>
-  <h1>∫ Calc AB Ch 3 Group Test Lab</h1>
-  <div class="sub">Rubio · Period 2/4/6 · Group Test: Friday, Oct 30 · No calculator, multiple choice</div>
+  <h1>∫ Calc AB Ch 3 Test Lab</h1>
+  <div class="sub">Rubio · Period 2/4/6 · Ch 3 Test: Wednesday, Nov 4 · Multiple choice + free response</div>
   <nav>
     <button class="tab on" data-tab="home">🏠 Home</button>
     <button class="tab" data-tab="learn">🎬 Learn</button>
     <button class="tab" data-tab="practice">✏️ Practice</button>
     <button class="tab" data-tab="test">⏱ Test</button>
+    <button class="tab" data-tab="frq">📝 FRQ</button>
     <button class="tab" data-tab="mistakes">❌ Mistakes<span id="mbadge">0</span></button>
   </nav>
 </header>
 <main>
 <section class="page" id="p-home">
-  <div class="card hero"><div><h2 style="margin:0">Ch 3 Group Test</h2><div class="muted">Friday, October 30, 2026</div></div><div id="countdown"></div></div>
+  <div class="card hero"><div><h2 style="margin:0">Ch 3 Test (individual)</h2><div class="muted">Wednesday, November 4, 2026 · 55 points</div></div><div id="countdown"></div></div>
   <div class="card"><h3>What's on it</h3>
-    <p>On Canvas, <b>"Test CH3 Group Test"</b> (6 pts) has Rubio's <b>"WS – Ch 3 MC Review"</b> key attached, so expect that style: <b>no calculator, multiple choice (a–e)</b>, done with your group.</p>
+    <p>Canvas lists <b>"Test Ch3"</b> (55 pts) on <b>Wed 11/4</b>. Rubio's Ch 1 and Ch 2 tests both had <b>multiple choice + free response</b> (Ch 1 also had a calculator part), so prepare for both. Her Ch 3 review sheets (MC Review, FT5, FRQ review) cover exactly the topics below. All of them are on this site.</p>
     <ul><li><b>3.1</b> Extrema on an interval (critical numbers, Candidates Test)</li><li><b>3.2</b> Rolle's Theorem and the MVT</li><li><b>3.3</b> Increasing/decreasing and the First Derivative Test</li><li><b>3.4</b> Concavity, inflection points, and the Second Derivative Test</li><li><b>Graphs</b> of f, f′, f″ (the review has 4 graph questions out of 12!)</li><li><b>Limits at ∞</b> / horizontal asymptotes (on both reviews)</li><li><b>3.7</b> Optimization (on the FT5 review)</li></ul>
-    <p class="muted">Not included: PVA (the roadmap says "will do with Ch 4") and the calculator skills (the MC review is no calculator).</p></div>
-  <div class="card"><h3>How to use this</h3><ol class="steps"><li><b>Learn</b>: watch the short video for a topic, then read the steps and worked example.</li><li><b>Practice</b> (only after you've learned the topics): endless new questions with instant feedback and the full key. Aim for a streak of 5 before you move on.</li><li><b>Test</b>: timed tests. Do Rubio's actual review set and a few Group Test Sims.</li><li><b>Mistakes</b>: every miss is saved with why your answer was wrong. Retry until it's fixed.</li></ol>
-    <h3 style="margin-top:14px">The plan (learn first, practice later, then test)</h3>
+    <p class="muted">Not included: PVA (the roadmap says "will do with Ch 4"). Bring your graphing calculator: FRQ #2 in the FRQ tab is the calculator type.</p></div>
+  <div class="card"><h3>How to use this</h3><ol class="steps"><li><b>Learn</b>: watch the short video for a topic, then read the steps and worked example.</li><li><b>Practice</b> (only after you've learned the topics): endless new questions with instant feedback and the full key. Aim for a streak of 5 before you move on.</li><li><b>Test</b>: timed multiple-choice tests, including Rubio's actual review sets.</li><li><b>FRQ</b>: Rubio's free-response review. Do it on paper, then check each part and the justification sentence.</li><li><b>Mistakes</b>: every miss is saved with why your answer was wrong. Retry until it's fixed.</li></ol>
+    <h3 style="margin-top:14px">The plan (Sun → Wed): learn first, practice later, then test</h3>
     <table class="ct" style="width:100%"><tr><th>Day</th><th>What to do</th><th>Time</th></tr>
-    <tr><td><b>Tue 10/27</b><br>LEARN 1</td><td>Learn tab only: 3.1, 3.2, 3.3, 3.4. Watch each video all the way, then read the cards. Copy each "Steps" card into your notebook. <b>No practice yet.</b></td><td>~75 min</td></tr>
-    <tr><td><b>Wed 10/28</b><br>LEARN 2 + start practice</td><td>Learn tab: f/f′/f″ graphs, Limits, 3.7 Optimization (do this one <b>before</b> your Work 3.7 homework, due tonight 11:59 PM). Learning is done now, so start Practice: 3.1 → 3.4, 5 in a row each.</td><td>~90 min</td></tr>
-    <tr><td><b>Thu 10/29</b><br>PRACTICE + TEST</td><td>Practice: graphs (8 in a row, since they're 4 of the 12 on Rubio's review), Limits, Optimization (5 in a row). Then Test tab: <b>Rubio: WS – Ch 3 MC Review</b> (30 min). Then Mistakes → read every "why" → Retry all unfixed.</td><td>~2 hr</td></tr>
-    <tr><td><b>Fri 10/30</b><br>REVIEW</td><td>Morning: one <b>Group Test Sim</b> (30 min), then clear Mistakes. Reread the "Traps" cards for anything you missed. Group test in class.</td><td>~45 min</td></tr></table>
-    <p class="muted">Rules: if you miss the same type twice, go back to that Learn page and watch the backup video. After Friday, keep going: the individual Ch 3 test is Wed 11/4, and Work 3. Review is due Fri 10/30. The FT5 test here is Rubio's FT5 review sheet.</p></div>
+    <tr><td><b>Sun 11/1</b><br>LEARN</td><td>Learn tab only, in order: 3.1 → 3.2 → 3.3 → 3.4 → f/f′/f″ graphs. For each: watch the video all the way, read the cards, copy the <b>Steps</b> card into your notebook. <b>No practice today.</b></td><td>~1.5 hr</td></tr>
+    <tr><td><b>Mon 11/2</b><br>LEARN + PRACTICE<br>+ HW due tonight</td><td>1) Learn tab: Limits at ∞ and 3.7 Optimization.<br>2) Finish <b>Work 3.7</b> and <b>Work 3. Review</b> (both due tonight 11:59 PM). The FT5 sheet is part of the review, and the Test tab's FT5 set + FRQ tab's FT5 problem help with it.<br>3) Practice tab: 3.1 → 3.4, then graphs. Get 5 in a row on each before moving on.</td><td>~2 hr</td></tr>
+    <tr><td><b>Tue 11/3</b><br>PRACTICE + TEST</td><td>1) Practice: Limits and Optimization, 5 in a row each.<br>2) Test tab: <b>Rubio: WS – Ch 3 MC Review</b> (30 min).<br>3) FRQ tab: do all 6 on paper (~40 min), then check each part and copy the ✍️ justification sentences.<br>4) Mistakes tab: read every "why", then Retry all unfixed.<br>5) If time: one <b>Test Sim</b>.</td><td>~2.5 hr</td></tr>
+    <tr><td><b>Wed 11/4</b><br>REVIEW</td><td>Before school (20 min): clear the Mistakes tab and reread the ✍️ justification sentences and the Traps cards. Bring your graphing calculator.</td><td>~20 min</td></tr></table>
+    <p class="muted">Rules: if you miss the same type twice, go back to that Learn page and watch the backup video before practicing more. Sleep matters more than one extra hour Tuesday night.</p></div>
   <div class="card"><h3>Your progress <span class="muted">(accuracy on your last 20 per topic)</span></h3><div id="progress"></div><p id="weak" class="muted"></p></div>
   <div class="card"><h3>Test history</h3><div id="hist"></div></div>
   <div class="card"><h3>Group test tips</h3><ul><li>Split it up: everyone does every problem, then compare. If you disagree, the sign chart decides.</li><li>Always ask whether the graph is of <b>f</b>, <b>f′</b>, or <b>f″</b> before you answer anything.</li><li>Answer the question they asked: the max <b>value</b> (y) vs <b>where</b> (x), and x vs y in optimization.</li><li>Even powers don't change sign. Check endpoints on closed intervals.</li></ul></div>
@@ -142,6 +144,7 @@ ul{margin:6px 0;padding-left:22px}
 <section class="page" id="p-practice" style="display:none"><div class="card"><div id="chips" class="chips"></div><div id="pstats"></div></div><div class="card" id="pcard"></div></section>
 <section class="page" id="p-test" style="display:none"><div id="tbody"></div></section>
 <section class="page" id="p-mistakes" style="display:none"><div id="mbody"></div></section>
+<section class="page" id="p-frq" style="display:none"><div id="fbody"></div></section>
 </main>
 <script>
 
@@ -1110,6 +1113,79 @@ function LEARN_BUILD() {
   return L;
 }
 
+/* ---- frq.js ---- */
+/* ===== FRQ: Rubio's free-response review (retyped) ===== */
+function FRQ_BUILD() {
+  const ft5f = x => -2 * (x + 2) * (x - 1) ** 2;
+  const g3 = mono([-4, -3, -2.5, -2, -1, 0, 1, 2, 2.5, 3, 4], [-12, 0, 17, 27, 22, 17, 22, 27, 17, 0, -12]);
+  const g4 = mono([0, 1, 1.8, 2, 2.4, 3, 4, 4.6], [2.3, 2.1, 2.0, 0, -0.9, 0, 1, 1.15]);
+  const fq2 = x => (x ** 3 - 2 * x) * Math.cos(x);
+  const sent = s => '<div class="just">✍️ <b>Write it like this:</b> ' + s + '</div>';
+  return [
+    { id: 'ft5', title: 'FT5 Free Response (no calculator)', calc: false,
+      stem: T`The function \(f(x)=-2(x+2)(x-1)^2\) is defined on the open interval \((-3,3)\).` + '<div class="figure">' + plot({ xmin: -3.3, xmax: 3.3, ymin: -45, ymax: 40, xstep: 1, ystep: 10, fns: [{ f: ft5f, from: -3, to: 3 }], pts: [{ x: -3, y: 32, open: true, label: '(−3, 32)', dx: 30 }, { x: 3, y: -40, open: true, label: '(3, −40)', dx: -30, dy: 4 }], title: 'y = f(x)', w: 360, h: 240 }) + '</div>',
+      parts: [
+        { q: 'a. Determine the coordinates of the relative extrema of f in (−3, 3).', a: steps([T`Product rule: \(f'(x)=-2(x-1)^2+(-2x-4)\cdot2(x-1)=(x-1)\left[-2x+2-4x-8\right]=-6(x-1)(x+1)\)`, 'Sign chart:' + signChart([-1, 1], [{ label: "f'(x)", fn: x => -6 * (x - 1) * (x + 1), at: () => M('0') }, incRow(x => -6 * (x - 1) * (x + 1))]), abox(T`Rel min at \((-1,-8)\). Rel max at \((1,0)\).`)]) + sent(T`"\(f\) has a relative minimum at \(x=-1\) because \(f'\) changes from negative to positive there, and a relative maximum at \(x=1\) because \(f'\) changes from positive to negative there."`) },
+        { q: T`b. Let \(g(x)=|f(x)|\) on \((-3,3)\). Find the coordinate(s) of the relative maxima of \(g\). Explain.`, a: steps([T`\(|f|\) flips the negative parts of \(f\) up. \(f<0\) on \((-2,1)\) and \((1,3)\), so those pieces flip.`, T`Check where \(f'=0\) or \(f=0\): \(g(-1)=|-8|=8\) is a peak (the flipped valley). At \(x=-2\) and \(x=1\), \(g=0\), which are minima of \(g\).`, abox(T`\(g\) has a relative max at \((-1,8)\).`)]) },
+        { q: T`c. For what values of x is \(g'(x)\) not defined? Explain.`, a: steps([T`At \(x=-2\), \(f\) crosses zero (changes sign), so \(|f|\) makes a sharp corner.`, T`Left slope \(=f'(-2)=-18\). Right slope \(=-f'(-2)=18\). They don't match.`, T`At \(x=1\), \(f\) touches 0 without crossing (double root) and \(f'(1)=0\), so there is no corner there.`, abox(T`\(g'\) is undefined only at \(x=-2\).`)]) },
+        { q: T`d. Find all values of x for which \(g\) is concave down. Explain.`, a: steps([T`\(f''(x)=-12x\). For \(x>-2\), \(g=-f\), so \(g''=-f''=12x\).`, T`\(g''<0\) when \(-2<x<0\). (For \(x<-2\), \(g''=f''=-12x>0\), so concave up there.)`, abox(T`\(g\) is concave down on \((-2,0)\).`)]) + sent(T`"\(g\) is concave down on \((-2,0)\) because \(g''<0\) there."`) }
+      ] },
+    { id: 'r1', title: 'Review FRQ #1 (no calculator)', calc: false,
+      stem: T`Let \(f\) be the function given by \(f(x)=2x^4-4x^2+1\).`,
+      parts: [
+        { q: 'a. Find an equation of the line tangent to the graph at (2, 17).', a: steps([T`\(f'(x)=8x^3-8x\), so \(f'(2)=64-16=48\).`, abox(T`\(y-17=48(x-2)\)`)]) },
+        { q: 'b. Find the x- and y-coordinates of the relative maxima and minima. Verify your answer.', a: steps([T`\(f'(x)=8x(x^2-1)=0\Rightarrow x=0,\ \pm1\)`, T`\(f''(x)=24x^2-8\). \(f''(0)=-8<0\) → max. \(f''(\pm1)=16>0\) → min.`, abox(T`Rel max \((0,1)\). Rel min \((-1,-1)\) and \((1,-1)\).`)]) + sent(T`"\(f\) has a relative maximum at \(x=0\) because \(f'(0)=0\) and \(f''(0)<0\)."`) },
+        { q: 'c. Find the x- and y-coordinates of the points of inflection. Verify your answer.', a: steps([T`\(f''(x)=8(3x^2-1)=0\Rightarrow x=\pm\dfrac{1}{\sqrt3}\)`, 'Sign chart:' + signChart([-1 / Math.sqrt(3), 1 / Math.sqrt(3)].map(v => Math.round(v * 1000) / 1000), [{ label: "f''(x)", fn: x => 24 * x * x - 8, at: () => M('0') }, ccRow(x => 24 * x * x - 8)]), T`\(f\left(\tfrac{1}{\sqrt3}\right)=\tfrac29-\tfrac43+1=-\tfrac19\)`, abox(T`Inflection points \(\left(-\tfrac{1}{\sqrt3},-\tfrac19\right)\) and \(\left(\tfrac{1}{\sqrt3},-\tfrac19\right)\)`)]) + sent(T`"\(f\) has inflection points at \(x=\pm\frac{1}{\sqrt3}\) because \(f''\) changes sign there."`) }
+      ] },
+    { id: 'r2', title: 'Review FRQ #2 (CALCULATOR)', calc: true,
+      stem: T`The <b>derivative</b> of a function \(f\) is given by \(f'(x)=(x^3-2x)\cos x\) for \(0\le x\le 2\).` + '<div class="figure">' + plot({ xmin: -0.1, xmax: 2.1, ymin: -1.3, ymax: 0.8, xstep: 0.5, ystep: 0.5, fns: [{ f: fq2, from: 0, to: 2 }], title: "Graph of f′ (what your calculator shows)", w: 360, h: 220 }) + '</div>',
+      parts: [
+        { q: 'a. Find the x-coordinate of the relative minimum of f. Show the analysis.', a: steps([T`\(f'=0\): \(x(x^2-2)\cos x=0\Rightarrow x=0,\ \sqrt2\approx1.414,\ \frac{\pi}{2}\approx1.571\)`, T`\(f'<0\) on \((0,\sqrt2)\), \(f'>0\) on \((\sqrt2,\frac\pi2)\), \(f'<0\) on \((\frac\pi2,2)\).`, abox(T`Rel min at \(x=\sqrt2\approx1.414\)`)]) + sent(T`"\(f\) has a relative minimum at \(x=1.414\) because \(f'\) changes from negative to positive there."`) },
+        { q: 'b. Find the x-coordinate of each point of inflection on the graph of f. Justify.', a: steps(['Calculator: graph ' + M("f'") + ', then use CALC → maximum and minimum to find where ' + M("f'") + ' turns around.', T`\(f'\) has a min at \(x\approx0.642\) and a max at \(x\approx1.496\).`, abox(T`Inflection points at \(x\approx0.642\) and \(x\approx1.496\)`)]) + sent(T`"\(f\) has an inflection point at \(x=0.642\) because \(f'\) changes from decreasing to increasing there."`) },
+        { q: 'c. Find the x-coordinate at which f attains an absolute maximum. Justify.', a: steps([T`Candidates: endpoints \(0, 2\) and the rel max \(\frac\pi2\).`, T`\(f\) drops a lot on \((0,\sqrt2)\), rises only a little on \((\sqrt2,\frac\pi2)\), then drops again. (Checked: \(f(\frac\pi2)-f(0)\approx-0.69<0\).)`, abox(T`Absolute max at \(x=0\)`)]) }
+      ] },
+    { id: 'r3', title: 'Review FRQ #3 (no calculator)', calc: false,
+      stem: T`The figure shows the graph of \(f'\), the derivative of \(f\). The domain of \(f\) is \(-4\le x\le4\). \(f'\) is an <b>even</b> function and \(f'(-3)=f'(3)=0\). <i>(This is the graph of \(f'\), not \(f\).)</i>` + '<div class="figure">' + plot({ xmin: -4.4, xmax: 4.4, ymin: -15, ymax: 32, xstep: 1, ystep: 10, fns: [{ f: g3, from: -4, to: 4 }], pts: [{ x: -4, y: -12, r: 3.5 }, { x: 4, y: -12, r: 3.5 }], title: "Graph of f′ (redrawn)", w: 360, h: 230 }) + '</div>',
+      parts: [
+        { q: 'a. For what value of x in −4 ≤ x ≤ 4 does f have a relative maximum? Justify.', a: abox(T`\(x=3\)`) + sent(T`"\(f\) has a relative maximum at \(x=3\) because \(f'\) changes from positive to negative at \(x=3\)."`) },
+        { q: 'b. For what value of x does f have a relative minimum? Justify.', a: abox(T`\(x=-3\)`) + sent(T`"\(f\) has a relative minimum at \(x=-3\) because \(f'\) changes from negative to positive at \(x=-3\)."`) },
+        { q: 'c. For what values of x is the graph of f concave downward? Use f′ to justify.', a: steps([T`Concave down where \(f'\) is decreasing (going downhill): from the peak at \(-2\) down to the valley at \(0\), and from the peak at \(2\) to the end.`, abox(T`\((-2,0)\cup(2,4)\)`)]) + sent(T`"\(f\) is concave down on \((-2,0)\cup(2,4)\) because \(f'\) is decreasing there."`) }
+      ] },
+    { id: 'r4', title: 'Review FRQ #4 (no calculator)', calc: false,
+      stem: T`The figure shows the graph of the <b>derivative</b> of a continuous function \(f\) for \(0<x<5\).` + '<div class="figure">' + plot({ xmin: -0.3, xmax: 5.3, ymin: -1.5, ymax: 3, xstep: 1, ystep: 1, fns: [{ f: g4, from: 0, to: 4.6 }], pts: [{ x: 0, y: 2.3, open: true, r: 3.5 }], title: "Graph of f′ (redrawn: the scan is faded)", w: 360, h: 220 }) + '</div>',
+      parts: [
+        { q: 'a. For what values of x is f increasing? Justify.', a: abox(T`\((0,2)\cup(3,5)\)`) + sent(T`"\(f\) is increasing on \((0,2)\cup(3,5)\) because \(f'>0\) there."`) },
+        { q: 'b. For what value of x does f have its relative minimum? Justify.', a: abox(T`\(x=3\)`) + sent(T`"\(f\) has a relative minimum at \(x=3\) because \(f'\) changes from negative to positive there."`) },
+        { q: 'c. For what value of x does f have its relative maximum? Justify.', a: abox(T`\(x=2\)`) + sent(T`"\(f\) has a relative maximum at \(x=2\) because \(f'\) changes from positive to negative there."`) },
+        { q: 'd. If f(1) = 1, sketch f for 1 ≤ x ≤ 4.', a: 'Start at (1, 1). Rise to a peak at x = 2, fall to a low point at x = 3, then rise again. Rubio\'s key leaves this part blank, so any sketch with that shape is fine.' }
+      ] },
+    { id: 'r5', title: 'Review FRQ #5 (table, no calculator)', calc: false,
+      stem: T`\(f\) is continuous with domain \(-10\le x\le10\) and range \(0<f(x)<1\). The <b>derivative</b> \(f'(x)\) is given in the table. Between table values, \(f'\) stays between the neighboring values.` + tbl([M('x'), '−10', '−3', '−2', '−1', '0', '1', '2', '3', '10'], [[M("f'(x)"), '0.000045', '0.045', '0.105', '0.197', '0.25', '0.197', '0.105', '0.045', '0.000045']]),
+      parts: [
+        { q: 'a. Find the x-coordinate of all relative and absolute maximums of f. Justify.', a: steps([T`Every \(f'\) value is positive, so \(f\) is increasing on the whole interval.`, abox(T`No relative max. Absolute max at \(x=10\).`)]) + sent(T`"\(f\) has no relative maximum because \(f'>0\) on \((-10,10)\), so \(f\) is increasing, and its absolute maximum is at the right endpoint \(x=10\)."`) },
+        { q: 'b. Find the x-coordinate of all relative and absolute minimums of f. Justify.', a: abox(T`No relative min. Absolute min at \(x=-10\).`) + sent(T`"\(f\) is increasing on \([-10,10]\) because \(f'>0\), so the absolute minimum is at \(x=-10\)."`) },
+        { q: 'c. To the nearest whole number, find the x-coordinate of all points of inflection. Justify.', a: steps([T`\(f'\) increases up to \(x=0\) (0.25 is the biggest) and then decreases.`, abox(T`Inflection point at \(x=0\)`)]) + sent(T`"\(f\) has an inflection point at \(x=0\) because \(f'\) changes from increasing to decreasing there."`) },
+        { q: 'd. Given f(0) = 0.5, sketch f.', a: 'An S-shaped curve: almost flat near y = 0 on the left, steepest at (0, 0.5), almost flat near y = 1 on the right. Concave up for x < 0, concave down for x > 0.' }
+      ] }
+  ];
+}
+let FRQS = null;
+function renderFRQ() {
+  if (!FRQS) FRQS = FRQ_BUILD();
+  const done = LS.get('c3_frq', {});
+  const tot = FRQS.reduce((s, f) => s + f.parts.length, 0), got = Object.values(done).filter(Boolean).length;
+  let h = '<div class="card"><h2 style="margin:0 0 6px">Free Response (FRQ)</h2><p>These are Rubio\'s Ch 3 FRQ review problems. Your Ch 1 and Ch 2 tests both had free response, so expect some on Wednesday. <b>How to use:</b> do each part on paper first, then hit "Show answer" and compare. Write your justifications the way the ✍️ boxes show. Check "I got it" when your answer and reason match.</p><p class="muted">Got ' + got + ' of ' + tot + ' parts. 🧮 = calculator problem (bring your graphing calculator).</p></div>';
+  FRQS.forEach(F => {
+    h += '<div class="card"><h3>' + (F.calc ? '🧮 ' : '') + F.title + '</h3><div class="stem">' + F.stem + '</div>';
+    F.parts.forEach((p, i) => { const k = F.id + i; h += '<div class="frqp"><div class="frqq">' + p.q + '</div><div class="prow2"><button class="ghost" data-show="' + k + '">Show answer</button><label class="gotit"><input type="checkbox" data-got="' + k + '"' + (done[k] ? ' checked' : '') + '> I got it</label></div><div class="sol frqa" id="fa-' + k + '" style="display:none">' + p.a + '</div></div>'; });
+    h += '</div>';
+  });
+  $('#fbody').innerHTML = fixMath(h);
+  document.querySelectorAll('[data-show]').forEach(b => b.onclick = () => { const el = $('#fa-' + b.dataset.show); const on = el.style.display === 'none'; el.style.display = on ? 'block' : 'none'; b.textContent = on ? 'Hide answer' : 'Show answer'; });
+  document.querySelectorAll('[data-got]').forEach(c => c.onchange = () => { const d = LS.get('c3_frq', {}); d[c.dataset.got] = c.checked; LS.set('c3_frq', d); });
+  tex($('#fbody'));
+}
+
 /* ---- app.js ---- */
 /* ===== APP ===== */
 const $ = s => document.querySelector(s);
@@ -1147,12 +1223,12 @@ function markChoices(box, q, picked) { box.querySelectorAll('.ch').forEach((b, i
 function reshuffle(q) { if (q.fixed) return JSON.parse(JSON.stringify(q)); const ord = shuffle(q.choices.map((_, i) => i)); return Object.assign({}, q, { choices: ord.map(i => q.choices[i]), ans: ord.indexOf(q.ans) }); }
 
 /* ---------- tabs ---------- */
-function show(tab) { document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab)); document.querySelectorAll('section.page').forEach(s => s.style.display = s.id === 'p-' + tab ? 'block' : 'none'); if (tab === 'home') renderHome(); if (tab === 'mistakes') renderMistakes(); if (tab === 'test') { if (TS.active) renderTest(); else renderTestSetup(); } window.scrollTo(0, 0); }
+function show(tab) { document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab)); document.querySelectorAll('section.page').forEach(s => s.style.display = s.id === 'p-' + tab ? 'block' : 'none'); if (tab === 'home') renderHome(); if (tab === 'mistakes') renderMistakes(); if (tab === 'frq') renderFRQ(); if (tab === 'test') { if (TS.active) renderTest(); else renderTestSetup(); } window.scrollTo(0, 0); }
 document.querySelectorAll('.tab').forEach(b => b.onclick = () => show(b.dataset.tab));
 
 /* ---------- home ---------- */
 function renderHome() {
-  const test = new Date(2026, 9, 30); const now = new Date(); const days = Math.ceil((test - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
+  const test = new Date(2026, 10, 4); const now = new Date(); const days = Math.ceil((test - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
   $('#countdown').textContent = days > 1 ? days + ' days to go' : days === 1 ? 'Tomorrow!' : days === 0 ? 'Today. You got this!' : 'Test is done';
   $('#progress').innerHTML = TOPICS.map(t => { const s = stats[t.id] || { a: 0, c: 0, r: [] }; const rec = s.r.length ? Math.round(100 * s.r.reduce((a, b) => a + b, 0) / s.r.length) : null; const col = rec === null ? '#cbd5e1' : rec >= 80 ? '#16a34a' : rec >= 60 ? '#f59e0b' : '#dc2626'; return '<div class="prow"><div class="pname">' + t.short + '</div><div class="pbar"><div style="width:' + (rec ?? 0) + '%;background:' + col + '"></div></div><div class="pnum">' + (rec === null ? 'not started' : rec + '% (last ' + s.r.length + ')') + '</div><button class="mini" data-pt="' + t.id + '">Practice</button></div>'; }).join('');
   document.querySelectorAll('[data-pt]').forEach(b => b.onclick = () => startPractice([b.dataset.pt]));
@@ -1220,7 +1296,7 @@ const TS = LS.get('c3_active', { active: false });
 const SIM_MIX = ['ext', 'ext', 'mvt', 'inc', 'inc', 'conc', 'conc', 'graph', 'graph', 'graph', 'lim', 'opt'];
 function renderTestSetup() {
   $('#tbody').innerHTML = '<div class="tgrid">' +
-    '<div class="tcard"><h3>🧪 Group Test Simulation</h3><p>12 brand-new no-calculator MC questions in the same mix as Rubio\'s review (extrema, MVT, inc/dec, concavity, f′ graphs, limits, optimization).</p><p class="muted">30 min · you can go back and change answers, like on paper</p><button class="big" data-start="sim">Start</button></div>' +
+    '<div class="tcard"><h3>🧪 Ch 3 Test Sim (MC)</h3><p>12 brand-new no-calculator MC questions in the same mix as Rubio\'s review (extrema, MVT, inc/dec, concavity, f′ graphs, limits, optimization).</p><p class="muted">30 min · you can go back and change answers, like on paper</p><button class="big" data-start="sim">Start</button></div>' +
     '<div class="tcard star"><h3>⭐ Rubio: WS – Ch 3 MC Review</h3><p>The exact 12 questions from the review whose key is attached to the Group Test on Canvas (retyped, graphs redrawn).</p><p class="muted">30 min</p><button class="big" data-start="rubio">Start</button></div>' +
     '<div class="tcard"><h3>📄 Rubio: Ch 3 Review FT5 (MC)</h3><p>The 11 no-calculator, non-PVA questions from FT5 (skips #10–13: the calculator question and the PVA ones).</p><p class="muted">28 min</p><button class="big" data-start="ft5">Start</button></div>' +
     '<div class="tcard"><h3>⚙️ Custom test</h3><label>Questions <input id="cn" type="number" min="4" max="40" value="15"></label> <label>Minutes <input id="cm" type="number" min="2" max="120" value="35"></label><div class="cks">' + TOPICS.map(t => '<label><input type="checkbox" class="ck" value="' + t.id + '" checked> ' + t.short + '</label>').join('') + '</div><button class="big" data-start="custom">Start</button></div></div>';
@@ -1228,7 +1304,7 @@ function renderTestSetup() {
 }
 function startTest(mode) {
   let qs = [], name, min;
-  if (mode === 'sim') { name = 'Group Test Sim'; min = 30; qs = shuffle(SIM_MIX).map(t => { const g = pickGen([t]); return genQ(g); }); }
+  if (mode === 'sim') { name = 'Ch 3 Test Sim'; min = 30; qs = shuffle(SIM_MIX).map(t => { const g = pickGen([t]); return genQ(g); }); }
   else if (mode === 'rubio') { name = 'Rubio MC Review'; min = 30; qs = RUBIO_MC.map((f, i) => { const q = f(); q.topic = ['ext', 'inc', 'conc', 'conc', 'conc', 'inc', 'conc', 'lim', 'graph', 'graph', 'graph', 'graph'][i]; q.src = 'Rubio Review #' + (i + 1); return q; }); }
   else if (mode === 'ft5') { name = 'Rubio FT5'; min = 28; const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15], tp = ['ext', 'mvt', 'inc', 'conc', 'lim', 'graph', 'opt', 'conc', 'opt', 'graph', 'opt']; qs = FT5_MC.map((f, i) => { const q = f(); q.topic = tp[i]; q.src = 'FT5 #' + nums[i]; return q; }); }
   else { const n = Math.max(4, Math.min(40, +$('#cn').value || 15)); min = Math.max(2, +$('#cm').value || 30); const tps = [...document.querySelectorAll('.ck:checked')].map(c => c.value); name = 'Custom (' + n + ')'; qs = [...Array(n)].map((_, i) => genQ(pickGen(tps.length ? tps : ['all']))); }
