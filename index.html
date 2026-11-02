@@ -102,7 +102,15 @@ p.good{color:#15803d;margin:4px 0}p.bad{color:#b91c1c;margin:4px 0}
 .rq summary{font-size:16px}.okq{border-left:5px solid var(--ok)}.badq{border-left:5px solid var(--bad)}
 .mhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
 .done{text-align:center;font-size:18px;padding:30px}
-.frqp{border-top:1px solid var(--line);padding:10px 0}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
+.frqp{border-top:1px solid var(--line);padding:10px 0}
+.saa{width:100%;min-height:70px;border:2px solid var(--line);border-radius:10px;padding:10px;font:inherit;font-size:15px;margin-top:6px}
+.saa:focus{outline:none;border-color:var(--acc)}
+.reveal{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin-top:12px}
+.mine{background:#fff;border:1px dashed #94a3b8;border-radius:8px;padding:6px 10px;margin:6px 0;white-space:pre-wrap}
+.okb{background:#16a34a}.okb:hover{background:#15803d}.badb{background:#dc2626}.badb:hover{background:#b91c1c}
+.pickd{outline:3px solid #0f172a}.okt{color:#15803d}.badt{color:#b91c1c}.warnp{color:#b45309;font-weight:600}
+.pendq{border-left:5px solid #f59e0b}.modebar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.wrongs li{margin:6px 0}.frqblock{border-top:2px solid var(--line);margin-top:12px;padding-top:8px}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
 #pstats{font-size:14px;color:var(--mut);margin-bottom:8px}
 ul{margin:6px 0;padding-left:22px}
 @media(max-width:720px){.lwrap{grid-template-columns:1fr}#lnav{position:static;flex-direction:row;flex-wrap:wrap}.prow{grid-template-columns:1fr 1fr}.stem{font-size:16px}}
@@ -111,7 +119,7 @@ ul{margin:6px 0;padding-left:22px}
 <body>
 <header>
   <h1>∫ Calc AB Ch 3 Test Lab</h1>
-  <div class="sub">Rubio · Period 2/4/6 · Ch 3 Test: Wednesday, Nov 4 · Multiple choice + free response</div>
+  <div class="sub">Rubio · Period 2/4/6 · Ch 3 Test: Wednesday, Nov 4 · Short answer + 1–2 FRQ</div>
   <nav>
     <button class="tab on" data-tab="home">🏠 Home</button>
     <button class="tab" data-tab="learn">🎬 Learn</button>
@@ -125,17 +133,17 @@ ul{margin:6px 0;padding-left:22px}
 <section class="page" id="p-home">
   <div class="card hero"><div><h2 style="margin:0">Ch 3 Test (individual)</h2><div class="muted">Wednesday, November 4, 2026 · 55 points</div></div><div id="countdown"></div></div>
   <div class="card"><h3>What's on it</h3>
-    <p>Canvas lists <b>"Test Ch3"</b> (55 pts) on <b>Wed 11/4</b>. Rubio's Ch 1 and Ch 2 tests both had <b>multiple choice + free response</b> (Ch 1 also had a calculator part), so prepare for both. Her Ch 3 review sheets (MC Review, FT5, FRQ review) cover exactly the topics below. All of them are on this site.</p>
-    <ul><li><b>3.1</b> Extrema on an interval (critical numbers, Candidates Test)</li><li><b>3.2</b> Rolle's Theorem and the MVT</li><li><b>3.3</b> Increasing/decreasing and the First Derivative Test</li><li><b>3.4</b> Concavity, inflection points, and the Second Derivative Test</li><li><b>Graphs</b> of f, f′, f″ (the review has 4 graph questions out of 12!)</li><li><b>Limits at ∞</b> / horizontal asymptotes (on both reviews)</li><li><b>3.7</b> Optimization (on the FT5 review)</li></ul>
-    <p class="muted">Not included: PVA (the roadmap says "will do with Ch 4"). Bring your graphing calculator: FRQ #2 in the FRQ tab is the calculator type.</p></div>
-  <div class="card"><h3>How to use this</h3><ol class="steps"><li><b>Learn</b>: watch the short video for a topic, then read the steps and worked example.</li><li><b>Practice</b> (only after you've learned the topics): endless new questions with instant feedback and the full key. Aim for a streak of 5 before you move on.</li><li><b>Test</b>: timed multiple-choice tests, including Rubio's actual review sets.</li><li><b>FRQ</b>: Rubio's free-response review. Do it on paper, then check each part and the justification sentence.</li><li><b>Mistakes</b>: every miss is saved with why your answer was wrong. Retry until it's fixed.</li></ol>
-    <h3 style="margin-top:14px">The plan (Sun → Wed): learn first, practice later, then test</h3>
-    <table class="ct" style="width:100%"><tr><th>Day</th><th>What to do</th><th>Time</th></tr>
-    <tr><td><b>Sun 11/1</b><br>LEARN</td><td>Learn tab only, in order: 3.1 → 3.2 → 3.3 → 3.4 → f/f′/f″ graphs. For each: watch the video all the way, read the cards, copy the <b>Steps</b> card into your notebook. <b>No practice today.</b></td><td>~1.5 hr</td></tr>
-    <tr><td><b>Mon 11/2</b><br>LEARN + PRACTICE<br>+ HW due tonight</td><td>1) Learn tab: Limits at ∞ and 3.7 Optimization.<br>2) Finish <b>Work 3.7</b> and <b>Work 3. Review</b> (both due tonight 11:59 PM). The FT5 sheet is part of the review, and the Test tab's FT5 set + FRQ tab's FT5 problem help with it.<br>3) Practice tab: 3.1 → 3.4, then graphs. Get 5 in a row on each before moving on.</td><td>~2 hr</td></tr>
-    <tr><td><b>Tue 11/3</b><br>PRACTICE + TEST</td><td>1) Practice: Limits and Optimization, 5 in a row each.<br>2) Test tab: <b>Rubio: WS – Ch 3 MC Review</b> (30 min).<br>3) FRQ tab: do all 6 on paper (~40 min), then check each part and copy the ✍️ justification sentences.<br>4) Mistakes tab: read every "why", then Retry all unfixed.<br>5) If time: one <b>Test Sim</b>.</td><td>~2.5 hr</td></tr>
-    <tr><td><b>Wed 11/4</b><br>REVIEW</td><td>Before school (20 min): clear the Mistakes tab and reread the ✍️ justification sentences and the Traps cards. Bring your graphing calculator.</td><td>~20 min</td></tr></table>
-    <p class="muted">Rules: if you miss the same type twice, go back to that Learn page and watch the backup video before practicing more. Sleep matters more than one extra hour Tuesday night.</p></div>
+    <p><b>Test Ch3</b> (55 pts) on <b>Wed 11/4</b>. Format: <b>short answer</b> (you write the answer, no choices) + <b>1–2 FRQs</b>. Rubio writes new, harder questions than the packets, so this site makes <b>new questions every time</b> from everything in the Ch 3 roadmap, your notes, and the worksheets:</p>
+    <ul><li><b>3.1</b> Extrema: critical numbers (polynomial, rational, x<sup>4/3</sup>, trig, eˣ, ln), Candidates Test on closed intervals, reading extrema off a graph, EVT</li><li><b>3.2</b> Rolle's Theorem and the MVT: "does it apply? find ALL c", IVT + Rolle "exactly one zero", tables</li><li><b>3.3</b> Increasing/decreasing and the First Derivative Test (with justification sentences)</li><li><b>3.4</b> Concavity, inflection points (as ordered pairs), Second Derivative Test, real-world rates</li><li><b>Graphs</b> of f, f′, f″ (the most common FRQ)</li><li><b>3.7</b> Optimization (fence/pens, boxes, semicircle, cans, swimmer, numbers)</li><li><b>🧮 Calculator skills</b>: "f′ is given" questions, 3 decimals, radian mode</li><li>Limits at ∞ (review from Ch 1, smaller part)</li></ul>
+    <p class="muted">Not on it: PVA (the roadmap says "will do with Ch 4"). Bring your graphing calculator.</p></div>
+  <div class="card"><h3>How to use this</h3><ol class="steps"><li><b>Learn</b>: watch the short video for a topic, then read the steps and worked example.</li><li><b>Practice</b>: endless new questions. <b>Short answer mode</b> (default) works like your test: do it on paper, check the key, then say if you got it. Each one shows the common wrong answers and why.</li><li><b>Test</b>: a timed <b>Ch 3 Test Sim</b> (10 short answer + 1 FRQ, 50 min), just like the real format.</li><li><b>FRQ</b>: a new FRQ every click (f′ graph, function analysis, trig, optimization, table, calculator), with justification sentences.</li><li><b>Mistakes</b>: every miss is saved with why your answer was wrong. Retry until it's fixed.</li></ol>
+    <h3 style="margin-top:14px">The plan: Monday + Tuesday (+ 15 min Wednesday)</h3>
+    <p>For each topic, do the same loop: <b>① watch the video → ② read the cards (copy the ✍️ sentences) → ③ Practice that topic until you get 5 in a row.</b> If you miss the same kind twice, rewatch that part and read the "common wrong answers".</p>
+    <table class="ct" style="width:100%"><tr><th>Day</th><th>What to do (in order)</th><th>Time</th></tr>
+    <tr><td><b>Mon 11/2</b><br>LEARN + PRACTICE</td><td>1) 3.1 Extrema (loop) ~35 min<br>2) 3.2 Rolle/MVT (loop) ~30 min<br>3) 3.3 Inc/Dec (loop) ~30 min<br>— 10 min break —<br>4) 3.4 Concavity (loop) ~30 min<br>5) f / f′ / f″ graphs (loop) ~30 min<br>6) FRQ tab: one "f′ graph" FRQ on paper ~15 min<br><span class="muted">Also: Work 3.7 + Work 3. Review are due tonight 11:59 PM on Canvas.</span></td><td>~3 hr</td></tr>
+    <tr><td><b>Tue 11/3</b><br>FINISH + TEST</td><td>1) 3.7 Optimization (loop) ~35 min<br>2) 🧮 Calculator Skills (loop, calculator in hand) ~25 min<br>3) Limits at ∞ quick review: 5 in a row ~10 min<br>— break —<br>4) Test tab: <b>Ch 3 Test Sim</b>, timed, on paper ~50 min. Then check every answer against the key (be strict).<br>5) Mistakes tab → Retry all unfixed ~20 min<br>6) FRQ tab: one Function analysis + one Calculator FRQ ~20 min</td><td>~3 hr</td></tr>
+    <tr><td><b>Wed 11/4</b><br>WARM-UP</td><td>Before school (15 min): Practice "Mix everything" for 5 questions. Reread Rubio's grading rules card (Learn → 3.3). Calculator in RADIAN mode.</td><td>15 min</td></tr></table>
+    <p class="muted">Behind schedule? Never skip the graphs topic or the Test Sim. Skip Limits first. Sleep matters more than one extra hour Tuesday night.</p></div>
   <div class="card"><h3>Your progress <span class="muted">(accuracy on your last 20 per topic)</span></h3><div id="progress"></div><p id="weak" class="muted"></p></div>
   <div class="card"><h3>Test history</h3><div id="hist"></div></div>
   <div class="card"><h3>Group test tips</h3><ul><li>Split it up: everyone does every problem, then compare. If you disagree, the sign chart decides.</li><li>Always ask whether the graph is of <b>f</b>, <b>f′</b>, or <b>f″</b> before you answer anything.</li><li>Answer the question they asked: the max <b>value</b> (y) vs <b>where</b> (x), and x vs y in optimization.</li><li>Even powers don't change sign. Check endpoints on closed intervals.</li></ul></div>
@@ -1048,6 +1056,303 @@ const FT5_MC = [
 ];
 const CONC_BANK_FT5 = { stem: T`For the function \(f(x)=12x^5-5x^4\), how many of the inflection points of the function are also extrema?`, w: T`The only inflection point is \(x=\frac14\) (where \(f''\) changes sign), and \(f'(\frac14)\ne0\), so it isn't an extremum. \(x=0\) is an extremum but not an inflection point.`, sol: steps([T`\(f'(x)=60x^4-20x^3=20x^3(3x-1)\)`, T`\(f''(x)=240x^3-60x^2=60x^2(4x-1)\)`, 'f″ sign chart:' + signChart([0, 0.25], [{ label: "f''", fn: x => 60 * x * x * (4 * x - 1), at: () => M('0') }, ccRow(x => 60 * x * x * (4 * x - 1))]), T`No sign change at 0 (from \(x^2\)), so the only inflection point is \(x=\frac14\).`, T`\(f'(\frac14)=20\cdot\frac{1}{64}\cdot(-\frac14)\ne0\), so it isn't an extremum.`, abox('None')]) };
 
+/* ---- g7_class.js ---- */
+/* ===== CLASS-STYLE GENERATORS (short-answer friendly) ===== */
+const PI = Math.PI;
+const piF = (n, d) => { if (n === 0) return '0'; const g = gcd(n, d); n /= g; d /= g; const top = (n === 1 ? '' : n === -1 ? '-' : n) + '\\pi'; return d === 1 ? top : '\\dfrac{' + top + '}{' + d + '}'; };
+const r3 = v => (Math.round(v * 1000) / 1000).toFixed(3).replace(/\.?0+$/, m => m.startsWith('.') ? '' : m);
+const r3s = v => { const s = (Math.round(v * 1000) / 1000).toFixed(3); return s.replace(/0+$/, '').replace(/\.$/, ''); };
+
+/* --- 3.1 read extrema off a graph of f --- */
+function bExtGraph() {
+  let v, n, x0, st;
+  for (let t = 0; t < 500; t++) {
+    n = pick([6, 7]); x0 = pick([-3, -2, -1, 0]);
+    const pool = shuffle([-4, -3, -2, -1, 0, 1, 2, 3, 4, 5]).slice(0, n);
+    v = pool; st = 0; for (let i = 1; i < n - 1; i++) if ((v[i] - v[i - 1]) * (v[i + 1] - v[i]) < 0) st++;
+    if (st >= 2 && st <= 4) break;
+  }
+  const xs = v.map((_, i) => x0 + i), a = xs[0], b = xs[n - 1];
+  const lc = Math.random() < 0.6, rc = Math.random() < 0.6;
+  const rmx = [], rmn = [];
+  for (let i = 1; i < n - 1; i++) { if (v[i] > v[i - 1] && v[i] > v[i + 1]) rmx.push(i); if (v[i] < v[i - 1] && v[i] < v[i + 1]) rmn.push(i); }
+  const attained = i => (i > 0 && i < n - 1) || (i === 0 && lc) || (i === n - 1 && rc);
+  const iMax = v.indexOf(Math.max(...v)), iMin = v.indexOf(Math.min(...v));
+  const absMax = attained(iMax) ? iMax : -1, absMin = attained(iMin) ? iMin : -1;
+  const say = (kind, i) => kind + ' of ' + v[i] + ' at x = ' + xs[i];
+  const list = (kind, arr) => arr.length ? arr.map(i => say(kind, i)).join('; ') : 'none';
+  const svg = plot({ xmin: a - 0.6, xmax: b + 0.6, ymin: -5, ymax: 6, xstep: 1, ystep: 1, fns: [{ f: mono(xs, v), from: a, to: b }], pts: [{ x: a, y: v[0], open: !lc, r: 4.5 }, { x: b, y: v[n - 1], open: !rc, r: 4.5 }], title: 'y = f(x)', w: 380, h: 250 });
+  const ask = pick(['absmax', 'absmin', 'relmax', 'relmin', 'count']);
+  const ends = 'Open dot = that point is NOT on the graph. Closed dot = it is.';
+  const tableStep = 'Read every turning point and both endpoints:' + tbl([M('x'), M('f(x)'), 'what it is'], xs.map((x, i) => [M(x), M(v[i]), (i === 0 || i === n - 1) ? ((i === 0 ? lc : rc) ? 'closed endpoint (counts for absolute only)' : 'open endpoint (not on the graph)') : rmx.includes(i) ? 'peak → relative max' : rmn.includes(i) ? 'valley → relative min' : '—']));
+  let ans, ds = [], qtxt;
+  const fmt = s => s.charAt(0).toUpperCase() + s.slice(1);
+  if (ask === 'absmax' || ask === 'absmin') {
+    const isMax = ask === 'absmax', k = isMax ? absMax : absMin, ex = isMax ? iMax : iMin;
+    qtxt = T`Find the absolute ${isMax ? 'maximum' : 'minimum'} of \(f\) (give the value and where it happens), or say there isn't one.`;
+    ans = k >= 0 ? say(isMax ? 'absolute max' : 'absolute min', k) : 'no absolute ' + (isMax ? 'maximum' : 'minimum');
+    if (k < 0) ds.push({ t: say(isMax ? 'absolute max' : 'absolute min', ex), why: T`\(x=${xs[ex]}\) is an <b>open</b> endpoint, so \(f\) never actually reaches ${v[ex]}. No absolute ${isMax ? 'max' : 'min'} exists.` });
+    else ds.push({ t: 'no absolute ' + (isMax ? 'maximum' : 'minimum'), why: T`\(f\) does reach its ${isMax ? 'highest' : 'lowest'} value ${v[k]} at \(x=${xs[k]}\) (a point that's on the graph).` });
+    const rel = (isMax ? rmx : rmn).filter(i => i !== k);
+    if (rel.length) ds.push({ t: say(isMax ? 'absolute max' : 'absolute min', rel[0]), why: "That's a relative " + (isMax ? 'max' : 'min') + ", but it's not the " + (isMax ? 'highest' : 'lowest') + ' point overall.' });
+    ds.push({ t: 'absolute ' + (isMax ? 'max' : 'min') + ' of ' + xs[k >= 0 ? k : ex] + ' at x = ' + v[k >= 0 ? k : ex], why: 'You swapped them. The value is the y-coordinate, and "at x =" is the x-coordinate.' });
+  } else if (ask === 'relmax' || ask === 'relmin') {
+    const isMax = ask === 'relmax', arr = isMax ? rmx : rmn;
+    qtxt = T`Name every relative ${isMax ? 'maximum' : 'minimum'} of \(f\) (value and location).`;
+    ans = fmt(list(isMax ? 'rel max' : 'rel min', arr));
+    const withEnds = arr.concat([0, n - 1].filter(i => isMax ? v[i] > (i === 0 ? v[1] : v[n - 2]) : v[i] < (i === 0 ? v[1] : v[n - 2]))).sort((p, q) => p - q);
+    if (withEnds.length > arr.length) ds.push({ t: fmt(list(isMax ? 'rel max' : 'rel min', withEnds)), why: 'Endpoints can never be relative extrema (there has to be graph on both sides).' });
+    ds.push({ t: fmt(list(isMax ? 'rel max' : 'rel min', isMax ? rmn : rmx)), why: "Those are the " + (isMax ? 'valleys (relative mins)' : 'peaks (relative maxes)') + '.' });
+    if (arr.length) ds.push({ t: fmt(arr.map(i => (isMax ? 'rel max' : 'rel min') + ' of ' + xs[i] + ' at x = ' + v[i]).join('; ')), why: 'You swapped value and location.' });
+  } else {
+    const c = rmx.length + rmn.length; qtxt = T`How many relative extrema does \(f\) have?`; ans = String(c);
+    ds = [{ t: String(c + (lc ? 1 : 0) + (rc ? 1 : 0)), why: 'Endpoints are never relative extrema.' }, { t: String(rmx.length), why: 'That only counts the maxes.' }, { t: String(c + 1), why: 'Count only the peaks and valleys strictly inside.' }];
+  }
+  const sol = steps([ends, tableStep, abox(ans)]) + (ask !== 'count' ? '<div class="just">✍️ <b>Rubio\'s format:</b> "f has a relative max of 4 at x = 3." Value first, then location.</div>' : '');
+  return mc({ stem: 'The graph of ' + M('f') + ' is shown on its whole domain.<div class="figure">' + svg + '</div>' + qtxt, ans, ds, fill: [{ t: 'none', why: 'Look again at the peaks, valleys, and closed endpoints.' }, { t: say('max', 1), why: 'Recheck the graph.' }, { t: '7', why: 'Recount.' }, { t: '0', why: 'Recount.' }], sol, hint: 'Relative = peaks/valleys inside. Absolute = highest/lowest point that is actually ON the graph (closed dots count, open dots don\'t).' });
+}
+reg('ext_graph', 'ext', bExtGraph, 1.3);
+
+/* --- 3.1 critical numbers: rational / exp / log / trig --- */
+const CRIT_BANK = [
+  () => { const a = pick([1, 2, 3, -1, -2]); return { f: T`f(x)=\dfrac{x^2}{x ${a > 0 ? '-' : '+'} ${Math.abs(a)}}`, fd: T`f'(x)=\dfrac{2x${fac(a)} - x^2}{${fac(a)}^2}=\dfrac{x(x ${a > 0 ? '-' : '+'} ${Math.abs(2 * a)})}{${fac(a)}^2}`, ans: setX([0, 2 * a]), note: T`\(x=${a}\) makes \(f'\) undefined, but it's <b>not in the domain</b> of \(f\), so it is NOT a critical number.`, trap: { t: M(setX([0, a, 2 * a])), why: T`\(x=${a}\) isn't in the domain of \(f\) (you'd divide by 0), so it can't be a critical number.` } }; },
+  () => { const k = pick([1, 2, 3, 4]); return { f: T`f(x)=\dfrac{x}{x^2+${k * k}}`, fd: T`f'(x)=\dfrac{(x^2+${k * k}) - x(2x)}{(x^2+${k * k})^2}=\dfrac{${k * k}-x^2}{(x^2+${k * k})^2}`, ans: setX([-k, k]), note: 'The denominator is never 0, so the only critical numbers come from the numerator.', trap: { t: M(setX([k])), why: T`\(${k * k}-x^2=0\) has two solutions, \(\pm${k}\).` } }; },
+  () => ({ f: T`f(x)=x e^{x}`, fd: T`f'(x)=e^x + xe^x = e^x(x+1)`, ans: setX([-1]), note: T`\(e^x\) is never 0.`, trap: { t: M(setX([0, -1])), why: T`\(e^x\ne0\) ever, so \(x=0\) doesn't come from \(e^x\).` } }),
+  () => ({ f: T`f(x)=x^2 e^{x}`, fd: T`f'(x)=2xe^x + x^2e^x = xe^x(x+2)`, ans: setX([-2, 0]), note: T`\(e^x\) is never 0.`, trap: { t: M(setX([-2])), why: T`Don't divide away the factor \(x\). It gives \(x=0\).` } }),
+  () => ({ f: T`f(x)=x\ln x`, fd: T`f'(x)=\ln x + x\cdot\dfrac1x=\ln x+1`, ans: T`x=\dfrac1e`, note: T`\(\ln x=-1\Rightarrow x=e^{-1}\). Domain is \(x>0\).`, trap: { t: M('x=e'), why: T`\(\ln x=-1\) gives \(x=e^{-1}=\frac1e\), not \(e\).` } }),
+  () => ({ f: T`f(x)=\dfrac{\ln x}{x}`, fd: T`f'(x)=\dfrac{\frac1x\cdot x-\ln x}{x^2}=\dfrac{1-\ln x}{x^2}`, ans: M('x=e').slice(2, -2), note: T`\(x=0\) is not in the domain (\(x>0\)).`, trap: { t: M(setX([0, 1])), why: T`\(x=0\) isn't in the domain, and \(\ln x=1\) gives \(x=e\), not 1.` } }),
+  () => ({ f: T`f(x)=\sin x+\cos x \text{ on } (0,2\pi)`, fd: T`f'(x)=\cos x-\sin x`, ans: T`x=\dfrac{\pi}{4},\;\; x=\dfrac{5\pi}{4}`, note: T`\(\cos x=\sin x\) where \(\tan x=1\): \(\frac\pi4\) and \(\frac{5\pi}4\).`, trap: { t: M(T`x=\dfrac{\pi}{4}`), why: T`On \((0,2\pi)\) there's a second one, \(\frac{5\pi}{4}\).` } }),
+  () => ({ f: T`f(x)=x-2\sin x \text{ on } (0,2\pi)`, fd: T`f'(x)=1-2\cos x`, ans: T`x=\dfrac{\pi}{3},\;\; x=\dfrac{5\pi}{3}`, note: T`\(\cos x=\frac12\) at \(\frac\pi3\) and \(\frac{5\pi}3\).`, trap: { t: M(T`x=\dfrac{\pi}{6},\;\; x=\dfrac{11\pi}{6}`), why: T`Those are where \(\cos x=\frac{\sqrt3}{2}\). You need \(\cos x=\frac12\).` } })
+];
+function bCrit2() {
+  const c = pick(CRIT_BANK)();
+  const sol = steps([D(c.fd), 'Set the numerator = 0 (and check where the denominator = 0).', c.note, abox(T`Critical numbers: \(${c.ans}\)`)]);
+  return mc({ stem: T`Find all critical numbers of \(${c.f}\).`, ans: M(c.ans), ds: [c.trap, { t: '\\(\\text{none}\\)', why: T`\(f'=0\) does have a solution here.` }], fill: [{ t: M('x=1'), why: 'Solve f′ = 0 again.' }, { t: M('x=-1,\\;\\; x=1'), why: 'Solve f′ = 0 again.' }, { t: M('x=2'), why: 'Solve f′ = 0 again.' }], sol, hint: T`Critical numbers: \(f'=0\) or \(f'\) undefined, AND in the domain of \(f\).` });
+}
+reg('ext_crit2', 'ext', bCrit2, 1.1);
+
+/* --- 3.1 absolute extrema of trig functions --- */
+const TRIG_ABS = [
+  { f: T`f(x)=\sin x+\cos x`, I: [0, '2\\pi'], fn: x => Math.sin(x) + Math.cos(x), b: 2 * PI, fd: T`\cos x-\sin x`, crit: [[PI / 4, T`\frac\pi4`, T`\sqrt2`], [5 * PI / 4, T`\frac{5\pi}4`, T`-\sqrt2`]], ends: [[0, '0', '1'], [2 * PI, '2\\pi', '1']] },
+  { f: T`f(x)=x+2\cos x`, I: [0, '2\\pi'], fn: x => x + 2 * Math.cos(x), b: 2 * PI, fd: T`1-2\sin x`, crit: [[PI / 6, T`\frac\pi6`, T`\frac\pi6+\sqrt3`], [5 * PI / 6, T`\frac{5\pi}6`, T`\frac{5\pi}6-\sqrt3`]], ends: [[0, '0', '2'], [2 * PI, '2\\pi', '2\\pi+2']] },
+  { f: T`f(x)=x-2\sin x`, I: [0, '2\\pi'], fn: x => x - 2 * Math.sin(x), b: 2 * PI, fd: T`1-2\cos x`, crit: [[PI / 3, T`\frac\pi3`, T`\frac\pi3-\sqrt3`], [5 * PI / 3, T`\frac{5\pi}3`, T`\frac{5\pi}3+\sqrt3`]], ends: [[0, '0', '0'], [2 * PI, '2\\pi', '2\\pi']] },
+  { f: T`f(x)=2\sin x-x`, I: [0, '\\pi'], fn: x => 2 * Math.sin(x) - x, b: PI, fd: T`2\cos x-1`, crit: [[PI / 3, T`\frac\pi3`, T`\sqrt3-\frac\pi3`]], ends: [[0, '0', '0'], [PI, '\\pi', '-\\pi']] },
+  { f: T`f(x)=\cos^2 x`, I: [0, '\\pi'], fn: x => Math.cos(x) ** 2, b: PI, fd: T`-2\sin x\cos x`, crit: [[PI / 2, T`\frac\pi2`, '0']], ends: [[0, '0', '1'], [PI, '\\pi', '1']] }
+];
+function bTrigAbs() {
+  const F = pick(TRIG_ABS), ask = pick(['max', 'min']);
+  const cand = [...F.ends.slice(0, 1).map(c => [...c, 1]), ...F.crit.map(c => [...c, 0]), ...F.ends.slice(1).map(c => [...c, 1])].map(c => ({ x: c[0], xs: c[1], ys: c[2], y: F.fn(c[0]), end: c[3] }));
+  const best = cand.reduce((p, q) => (ask === 'max' ? q.y > p.y + 1e-9 : q.y < p.y - 1e-9) ? q : p);
+  const ties = cand.filter(c => Math.abs(c.y - best.y) < 1e-9);
+  const ansT = T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=${best.ys}\) at ` + ties.map(c => M('x=' + c.xs)).join(' and ');
+  const ds = cand.filter(c => Math.abs(c.y - best.y) > 1e-9).map(c => ({ t: T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=${c.ys}\) at \(x=${c.xs}\)`, why: T`\(f(${c.xs})=${c.ys}\approx${r3s(c.y)}\), but another candidate is ${ask === 'max' ? 'bigger' : 'smaller'} (\(${best.ys}\approx${r3s(best.y)}\)).` }));
+  const sol = steps([T`\(f'(x)=${F.fd}\). Set it to 0 on the interval → critical numbers ` + F.crit.map(c => M('x=' + c[1])).join(', ') + '.', 'Candidates Test (decimals so you can compare):' + tbl([M('x'), M('f(x)'), '≈'], cand.map(c => [M(c.xs) + (c.end ? ' <span class="muted">(endpoint)</span>' : ''), M(c.ys), r3s(c.y)])), abox(ansT)]);
+  return mc({ stem: T`Find the absolute ${ask === 'max' ? 'maximum' : 'minimum'} of \(${F.f}\) on \([${F.I[0]}, ${F.I[1]}]\). Give the value and the x-value(s).`, ans: ansT, ds, fill: [{ t: T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=${ask === 'max' ? '1' : '-1'}\) at \(x=\frac\pi2\)`, why: 'Use the Candidates Test with the actual critical numbers.' }, { t: 'There is none', why: 'A continuous function on a closed interval always has one (Extreme Value Theorem).' }, { t: T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=0\) at \(x=0\)`, why: 'Compare every candidate.' }], sol, hint: 'Critical numbers on the interval + both endpoints → plug all into f → compare.' });
+}
+reg('ext_trig', 'ext', bTrigAbs);
+
+/* --- 3.2 Rolle: find every c --- */
+const ROLLE_C = [
+  { f: T`x^3-9x`, I: '[-3,3]', ch: T`f(-3)=0=f(3)`, fd: T`3x^2-9`, ans: T`c=-\sqrt3,\;\; c=\sqrt3`, one: T`c=\sqrt3`, ex: [-Math.sqrt(3), Math.sqrt(3)] },
+  { f: T`x^4-2x^2`, I: '[-2,2]', ch: T`f(-2)=8=f(2)`, fd: T`4x^3-4x=4x(x-1)(x+1)`, ans: T`c=-1,\;\; c=0,\;\; c=1`, one: T`c=0`, ex: [-1, 0, 1] },
+  { f: T`x^2-6x+5`, I: '[1,5]', ch: T`f(1)=0=f(5)`, fd: T`2x-6`, ans: T`c=3`, one: T`c=\frac52`, ex: [3] },
+  { f: T`\sin 2x`, I: T`\left[0,\pi\right]`, ch: T`f(0)=0=f(\pi)`, fd: T`2\cos 2x`, ans: T`c=\dfrac{\pi}{4},\;\; c=\dfrac{3\pi}{4}`, one: T`c=\dfrac{\pi}{2}`, ex: [PI / 4, 3 * PI / 4] },
+  { f: T`x^{2/3}-1`, I: '[-1,1]', ch: T`f(-1)=0=f(1)`, fd: T`\dfrac{2}{3x^{1/3}}`, ans: T`\text{Rolle doesn't apply (not differentiable at } x=0)`, one: T`c=0`, ex: [] },
+  { f: T`\dfrac{x^2-4x}{x-2}`, I: '[0,4]', ch: T`f(0)=0=f(4)`, fd: '', ans: T`\text{Rolle doesn't apply (not continuous at } x=2)`, one: T`c=2`, ex: [] }
+];
+reg('mvt_rollec', 'mvt', () => {
+  const R0 = pick(ROLLE_C); const fails = !R0.ex.length;
+  const sol = steps([T`Check: \(${R0.ch}\).`, fails ? T`But Rolle also needs continuous on the closed interval AND differentiable inside. ${R0.ans.includes('continuous') ? 'There is a vertical asymptote/hole at x = 2 (division by 0).' : 'There is a cusp at x = 0 where f′ is undefined.'}` : T`Continuous and differentiable on the interval (polynomial/trig). So Rolle applies.`, !fails ? T`\(f'(x)=${R0.fd}=0\) → keep every solution inside the open interval.` : '', abox(M(R0.ans))]);
+  return mc({ stem: T`Determine whether Rolle's Theorem applies to \(f(x)=${R0.f}\) on \(${R0.I}\). If it does, find <b>every</b> \(c\) with \(f'(c)=0\).`, ans: M(R0.ans), ds: [{ t: M(R0.one), why: fails ? 'Rolle\'s Theorem doesn\'t apply here, so no c is guaranteed. Check continuity/differentiability first.' : 'Find ALL solutions of f′(c) = 0 in the open interval.' }, { t: M(T`\text{Rolle doesn't apply because } f(a)\ne f(b)`), why: T`\(${R0.ch}\), so the endpoint values ARE equal.` }], fill: [{ t: M('c=0'), why: 'Solve f′(c) = 0.' }, { t: M('c=1'), why: 'Solve f′(c) = 0.' }, { t: M('c=2'), why: 'Solve f′(c) = 0.' }], sol, hint: 'Three checks: continuous on [a, b], differentiable on (a, b), f(a) = f(b). Then solve f′(c) = 0.' });
+}, 1.1);
+
+/* --- 3.3 / 3.4 trig, exp, log, rational families --- */
+const FAM = [
+  { f: T`x+2\cos x`, I: [0, 2 * PI], Is: T`(0,2\pi)`, fd: T`1-2\sin x`, fdd: T`-2\cos x`, cp: [PI / 6, 5 * PI / 6], fp: x => 1 - 2 * Math.sin(x), fpp: x => -2 * Math.cos(x), ip: [PI / 2, 3 * PI / 2] },
+  { f: T`x-2\sin x`, I: [0, 2 * PI], Is: T`(0,2\pi)`, fd: T`1-2\cos x`, fdd: T`2\sin x`, cp: [PI / 3, 5 * PI / 3], fp: x => 1 - 2 * Math.cos(x), fpp: x => 2 * Math.sin(x), ip: [PI] },
+  { f: T`\sin x+\cos x`, I: [0, 2 * PI], Is: T`(0,2\pi)`, fd: T`\cos x-\sin x`, fdd: T`-\sin x-\cos x`, cp: [PI / 4, 5 * PI / 4], fp: x => Math.cos(x) - Math.sin(x), fpp: x => -Math.sin(x) - Math.cos(x), ip: [3 * PI / 4, 7 * PI / 4] },
+  { f: T`2\sin x+\sin 2x`, I: [0, 2 * PI], Is: T`(0,2\pi)`, fd: T`2\cos x+2\cos2x=2(2\cos x-1)(\cos x+1)`, fdd: null, cp: [PI / 3, PI, 5 * PI / 3], fp: x => 2 * Math.cos(x) + 2 * Math.cos(2 * x), fpp: null },
+  { f: T`xe^{x}`, I: [-Infinity, Infinity], Is: T`(-\infty,\infty)`, fd: T`e^x(x+1)`, fdd: T`e^x(x+2)`, cp: [-1], fp: x => Math.exp(x) * (x + 1), fpp: x => Math.exp(x) * (x + 2), ip: [-2] },
+  { f: T`x^2e^{x}`, I: [-Infinity, Infinity], Is: T`(-\infty,\infty)`, fd: T`xe^x(x+2)`, fdd: null, cp: [-2, 0], fp: x => x * Math.exp(x) * (x + 2), fpp: null },
+  { f: T`xe^{-x}`, I: [-Infinity, Infinity], Is: T`(-\infty,\infty)`, fd: T`e^{-x}(1-x)`, fdd: T`e^{-x}(x-2)`, cp: [1], fp: x => Math.exp(-x) * (1 - x), fpp: x => Math.exp(-x) * (x - 2), ip: [2] },
+  { f: T`x-\ln x`, I: [0, Infinity], Is: T`(0,\infty)`, fd: T`1-\dfrac1x=\dfrac{x-1}{x}`, fdd: null, cp: [1], fp: x => 1 - 1 / x, fpp: null },
+  { f: T`\dfrac{x^2}{x-1}`, I: [-Infinity, Infinity], Is: T`\text{its domain}`, fd: T`\dfrac{x(x-2)}{(x-1)^2}`, fdd: T`\dfrac{2}{(x-1)^3}`, cp: [0, 2], va: 1, fp: x => x * (x - 2) / (x - 1) ** 2, fpp: x => 2 / (x - 1) ** 3, ip: [] }
+];
+const nameX = x => { if (!isFinite(x)) return x > 0 ? '\\infty' : '-\\infty'; for (const d of [1, 2, 3, 4, 6]) { const n = x * d / PI; if (Math.abs(n - Math.round(n)) < 1e-9 && Math.abs(x) > 0.3) return piF(Math.round(n), d); } return fmtNum(x); };
+function famInts(F, fn, pts) { const b = [F.I[0], ...pts, F.I[1]]; const out = []; for (let i = 0; i < b.length - 1; i++) { const lo = b[i], hi = b[i + 1]; const t = isFinite(lo) && isFinite(hi) ? (lo + hi) / 2 : isFinite(lo) ? lo + 0.7 : hi - 0.7; out.push({ a: lo, b: hi, s: Math.sign(fn(t)) }); } return out; }
+const famStr = (ints, s) => { const m = []; for (const it of ints) { if (it.s !== s) continue; if (m.length && m[m.length - 1][1] === it.a && !it.brk) m[m.length - 1][1] = it.b; else m.push([it.a, it.b]); } return m.length ? m.map(([a, b]) => '(' + nameX(a) + ', ' + nameX(b) + ')').join(' \\cup ') : '\\text{none}'; };
+function famChart(F, fn, pts, lab, row) { const b = [F.I[0], ...pts, F.I[1]]; let h = '<div class="scwrap"><table class="sc"><tr><th>' + M('x') + '</th>'; for (let i = 0; i < b.length; i++) { h += '<th class="pt">' + M(nameX(b[i])) + '</th>'; if (i < b.length - 1) h += '<th class="iv"></th>'; } h += '</tr><tr><th>' + M(lab) + '</th>'; const ints = famInts(F, fn, pts); for (let i = 0; i < b.length; i++) { h += '<td class="pt">' + (i === 0 || i === b.length - 1 ? '' : (F.va === b[i] ? '<span class="und">und</span>' : M('0'))) + '</td>'; if (i < b.length - 1) h += '<td class="' + (ints[i].s > 0 ? 'pos' : 'neg') + '">' + row(ints[i].s) + '</td>'; } return h + '</tr></table></div>'; }
+function bFam() {
+  let F, ask;
+  for (let t = 0; t < 20; t++) { F = pick(FAM); ask = pick(['inc', 'dec', 'max', 'min', 'cu', 'cd', 'ip']); if ((['cu', 'cd', 'ip'].includes(ask)) && !F.fpp) continue; break; }
+  const isConc = ['cu', 'cd', 'ip'].includes(ask);
+  const pts = (isConc ? F.ip.concat(F.va !== undefined ? [F.va] : []) : F.cp.concat(F.va !== undefined ? [F.va] : [])).sort((a, b) => a - b);
+  const fn = isConc ? F.fpp : F.fp; const ints = famInts(F, fn, pts);
+  ints.forEach((it, i) => { if (F.va !== undefined && it.a === F.va) it.brk = true; });
+  const chart = famChart(F, fn, pts, isConc ? "f''(x)" : "f'(x)", isConc ? (s => s > 0 ? '∪ CU' : '∩ CD') : (s => s > 0 ? '↗ inc' : '↘ dec'));
+  let ans, qt, opp, just;
+  const ext = want => { const out = []; pts.forEach((x, i) => { if (F.va === x) return; const l = ints[i].s, r = ints[i + 1].s; if (want === 'max' && l > 0 && r < 0) out.push(x); if (want === 'min' && l < 0 && r > 0) out.push(x); if (want === 'ip' && l !== r) out.push(x); }); return out.length ? out.map(x => 'x = ' + nameX(x)).join(',\\;\\; ') : '\\text{none}'; };
+  if (ask === 'inc' || ask === 'dec') { qt = ask === 'inc' ? 'increasing' : 'decreasing'; ans = famStr(ints, ask === 'inc' ? 1 : -1); opp = famStr(ints, ask === 'inc' ? -1 : 1); just = T`"\(f\) is ${qt} on \(${ans}\) because \(f'${ask === 'inc' ? '>' : '<'}0\) there."`; }
+  else if (ask === 'cu' || ask === 'cd') { qt = 'concave ' + (ask === 'cu' ? 'up' : 'down'); ans = famStr(ints, ask === 'cu' ? 1 : -1); opp = famStr(ints, ask === 'cu' ? -1 : 1); just = T`"\(f\) is ${qt} on \(${ans}\) because \(f''${ask === 'cu' ? '>' : '<'}0\) there."`; }
+  else if (ask === 'ip') { ans = ext('ip'); opp = F.cp.map(x => 'x = ' + nameX(x)).join(',\\;\\; '); just = T`"\(f\) has an inflection point at \(${ans}\) because \(f''\) changes sign there."`; }
+  else { ans = ext(ask); opp = ext(ask === 'max' ? 'min' : 'max'); just = T`"\(f\) has a relative ${ask} at \(${ans}\) because \(f'\) changes from ${ask === 'max' ? 'positive to negative' : 'negative to positive'} there."`; }
+  const stemQ = ask === 'inc' || ask === 'dec' || ask === 'cu' || ask === 'cd' ? T`On what interval(s) is \(f(x)=${F.f}\) ${qt} on ${M(F.Is)}?` : ask === 'ip' ? T`Find the x-coordinate(s) of every inflection point of \(f(x)=${F.f}\) on ${M(F.Is)}.` : T`Find the x-value(s) where \(f(x)=${F.f}\) has a relative ${ask === 'max' ? 'maximum' : 'minimum'} on ${M(F.Is)}.`;
+  const sol = steps([isConc ? T`\(f'(x)=${F.fd}\), \(f''(x)=${F.fdd}\)` : T`\(f'(x)=${F.fd}\)`, (isConc ? T`\(f''=0\)` : T`\(f'=0\)`) + ' at ' + M(pts.filter(x => x !== F.va).map(x => 'x=' + nameX(x)).join(',\\;') || '\\text{nowhere}') + (F.va !== undefined ? T`. Also \(x=${F.va}\) is a vertical asymptote: include it on the chart, but it can't be an extremum or inflection point.` : '.') + (F.I[0] === 0 && F.I[1] === 2 * PI ? ' (Only keep solutions inside the interval.)' : ''), 'Sign chart:' + chart, abox(M(ans))]) + '<div class="just">✍️ <b>Write it like this:</b> ' + just + '</div>';
+  return mc({ stem: stemQ, ans: M(ans), ds: [{ t: M(opp), why: "That's the opposite (check which sign you need)." }], fill: [{ t: M('(-\\infty,\\infty)'), why: 'The sign changes, so not everywhere.' }, { t: M('\\text{none}'), why: 'Look at the sign chart again.' }, { t: M('x=\\pi'), why: 'Recheck where the derivative is 0.' }, { t: M('x=0'), why: 'Recheck where the derivative is 0.' }], sol, hint: isConc ? "Find f″, set it = 0, sign chart, look for sign changes." : "Find f′, set it = 0, sign chart." });
+}
+reg('fam', 'inc', bFam, 1.4);
+reg('fam_c', 'conc', () => { for (let i = 0; i < 30; i++) { const q = bFam(); if (/concave|inflection/.test(q.stem)) return q; } return bFam(); }, 1.1);
+
+/* --- sketch-from-conditions: graph pick from f/f'/f'' sign info --- */
+reg('graph_cond', 'graph', () => {
+  const p = R(-1, 1), q = p + 2, s = pick([1, -1]);
+  const f = x => s * (x - p) * (x - p) * (x - q) * -1 / 2 + 2;
+  const fc = x => s * (-(x ** 3) / 3 + (p + q) * x * x / 2 - p * q * x);
+  const base = x => fc(x) - fc((p + q) / 2);
+  const opts = [{ f: base, why: '' }, { f: x => -base(x), why: 'This one goes the opposite direction.' }, { f: x => base(p + q - x), why: 'Its max and min are swapped.' }, { f: x => base(x) + (x - (p + q) / 2) * 1.5 * s * -1, why: "This one doesn't have flat tangents at the right x-values." }, { f: x => s * (x - (p + q) / 2) ** 3 / 2, why: 'This one has no relative max or min at all.' }];
+  const a = p - 1.2, b = q + 1.2;
+  const mk = g => { const [lo, hi] = yRange([g], a, b, 0.12); return plot({ xmin: a, xmax: b, ymin: lo, ymax: hi, xstep: 1, ystep: (hi - lo) / 4, ylabels: false, fns: [{ f: g, color: '#111', width: 2.2 }], vlines: [{ x: p, color: '#cbd5e1' }, { x: q, color: '#cbd5e1' }], w: 200, h: 130, pl: 14 }); };
+  const mx = s > 0 ? q : p, mn = s > 0 ? p : q;
+  const cond = T`\(f'(${p})=f'(${q})=0\); \(f'>0\) on \((${s > 0 ? p : '-\\infty'}, ${s > 0 ? q : p})\)${s > 0 ? '' : T` and \((${q},\infty)\)`}, \(f'<0\) ${s > 0 ? T`on \((-\infty,${p})\) and \((${q},\infty)\)` : T`on \((${p},${q})\)`}; \(f''${s > 0 ? '>' : '<'}0\) for \(x<${p + 1}\) and \(f''${s > 0 ? '<' : '>'}0\) for \(x>${p + 1}\).`;
+  const order = shuffle([0, 1, 2, 3, 4]);
+  return { stem: 'Which graph could be ' + M('f') + ' if:<br>' + cond, choices: order.map(i => ({ t: '<div class="gchoice">' + mk(opts[i].f) + '</div>', why: opts[i].why })), ans: order.indexOf(0), graphChoices: true, sol: steps([T`Rel max where \(f'\) goes + → −: \(x=${mx}\). Rel min where − → +: \(x=${mn}\).`, T`Concavity switches at \(x=${p + 1}\) (inflection point).`, 'Only this graph matches:<div class="figure">' + mk(base) + '</div>']), hint: "Translate each condition: f′ sign → up/down; f′ = 0 → flat; f″ sign → ∪/∩." };
+}, 0.8);
+
+/* --- CALCULATOR questions (numeric, 3 decimals) --- */
+const CALC_FP = [
+  { s: T`f'(x)=x\sin x-1`, g: x => x * Math.sin(x) - 1, a: 0, b: 6, cal: 'Y1 = X·sin(X) − 1' },
+  { s: T`f'(x)=\cos(x^2)`, g: x => Math.cos(x * x), a: 0, b: 2.8, cal: 'Y1 = cos(X²)' },
+  { s: T`f'(x)=x^3-4x^2+2`, g: x => x ** 3 - 4 * x * x + 2, a: -2, b: 4, cal: 'Y1 = X³ − 4X² + 2' },
+  { s: T`f'(x)=e^{\sin x}-1.5`, g: x => Math.exp(Math.sin(x)) - 1.5, a: 0, b: 6, cal: 'Y1 = e^(sin X) − 1.5' },
+  { s: T`f'(x)=\ln(x^2+1)-x+1`, g: x => Math.log(x * x + 1) - x + 1, a: -1, b: 5, cal: 'Y1 = ln(X²+1) − X + 1' },
+  { s: T`f'(x)=2\sin x-\dfrac{x}{2}`, g: x => 2 * Math.sin(x) - x / 2, a: 0.1, b: 6, cal: 'Y1 = 2sin(X) − X/2' }
+];
+function zerosOf(g, a, b) { const out = []; const N = 4000; let px = a, pv = g(a); for (let i = 1; i <= N; i++) { const x = a + (b - a) * i / N, v = g(x); if (pv * v < 0) { let lo = px, hi = x; for (let k = 0; k < 60; k++) { const m = (lo + hi) / 2; if (g(lo) * g(m) <= 0) hi = m; else lo = m; } out.push((lo + hi) / 2); } px = x; pv = v; } return out; }
+function bCalc() {
+  const C = pick(CALC_FP); const zs = zerosOf(C.g, C.a, C.b); const dg = deriv(C.g); const ts = zerosOf(dg, C.a + 0.01, C.b - 0.01);
+  const mx = zs.filter(z => C.g(z - 1e-4) > 0 && C.g(z + 1e-4) < 0), mn = zs.filter(z => C.g(z - 1e-4) < 0 && C.g(z + 1e-4) > 0);
+  const ask = pick(['max', 'min', 'ip', 'count']);
+  const L = arr => arr.length ? arr.map(z => 'x \\approx ' + r3s(z)).join(',\\;\\; ') : '\\text{none}';
+  let ans, ds, how;
+  if (ask === 'max' || ask === 'min') { const S = ask === 'max' ? mx : mn, O = ask === 'max' ? mn : mx; ans = L(S); ds = [{ t: M(L(O)), why: T`Those are where \(f'\) goes ${ask === 'max' ? '− to + (relative min)' : '+ to − (relative max)'}.` }, { t: M(L(zs)), why: 'Those are all the zeros of f′. Only the right sign change counts.' }, { t: M(L(ts)), why: "Those are where f′ turns around (inflection points of f), not extrema." }]; how = T`Graph Y1 = f′. Use <b>2nd TRACE → zero</b> at each x-intercept. Keep the ones where the graph crosses going ${ask === 'max' ? 'DOWN (+ to −)' : 'UP (− to +)'}.`; }
+  else if (ask === 'ip') { ans = L(ts); ds = [{ t: M(L(zs)), why: "Zeros of f′ are possible extrema of f, not inflection points." }, { t: M(L(ts.slice(0, 1))), why: 'There may be more than one. Check the whole interval.' }]; how = T`Inflection points of \(f\) = where \(f'\) turns around. Graph Y1 = f′ and use <b>2nd TRACE → maximum / minimum</b> on each hill and valley.`; }
+  else { const c = mx.length + mn.length; ans = String(c); ds = [{ t: String(ts.length), why: 'That counts the turns of f′ (inflection points), not extrema.' }, { t: String(c + 1), why: 'Count only crossings of the x-axis.' }, { t: String(Math.max(0, c - 1)), why: 'Count every crossing of the x-axis.' }]; how = T`Count how many times the graph of \(f'\) <b>crosses</b> the x-axis on the interval.`; }
+  const svg = plot({ xmin: C.a, xmax: C.b, ymin: yRange([C.g], C.a, C.b, 0.1)[0], ymax: yRange([C.g], C.a, C.b, 0.1)[1], xstep: 1, ystep: 1, fns: [{ f: C.g, from: C.a, to: C.b }], title: "What your calculator shows: y = f′(x)", w: 340, h: 200, ylabels: false });
+  const sol = steps(['On the calculator, type <b>' + C.cal + '</b> with window x from ' + C.a + ' to ' + C.b + '.', how, '<div class="figure">' + svg + '</div>', abox(M(ans)), 'Round to <b>3 decimals</b> (Rubio and the AP exam both require 3).']);
+  return mc({ stem: T`🧮 <b>Calculator allowed.</b> The derivative of \(f\) is \(${C.s}\) for \(${C.a} < x < ${C.b}\). ` + (ask === 'max' ? T`At what x-value(s) does \(f\) have a relative maximum?` : ask === 'min' ? T`At what x-value(s) does \(f\) have a relative minimum?` : ask === 'ip' ? T`Find the x-coordinate(s) of the inflection points of \(f\).` : T`How many relative extrema does \(f\) have?`), ans: ask === 'count' ? ans : M(ans), ds: ask === 'count' ? ds : ds, fill: [{ t: M('x\\approx 1.000'), why: 'Use the calculator to find it.' }, { t: M('x\\approx 2.000'), why: 'Use the calculator to find it.' }, { t: '5', why: 'Recount.' }, { t: '0', why: 'Recount.' }], sol, hint: 'Graph f′ on the calculator. Zeros of f′ → possible max/min. Hills/valleys of f′ → inflection points.' });
+}
+reg('calc', 'calc', bCalc, 1);
+reg('calc2', 'calc', () => {
+  const fams = [{ s: T`f(x)=x^2\sin x`, d: x => 2 * x * Math.sin(x) + x * x * Math.cos(x), cal: 'nDeriv(X²sin(X), X, a)' }, { s: T`f(x)=\dfrac{e^x}{x^2+1}`, d: x => Math.exp(x) * (x * x + 1 - 2 * x) / (x * x + 1) ** 2, cal: 'nDeriv(e^(X)/(X²+1), X, a)' }, { s: T`f(x)=\sqrt{x^3+2}`, d: x => 3 * x * x / (2 * Math.sqrt(x ** 3 + 2)), cal: 'nDeriv(√(X³+2), X, a)' }, { s: T`f(x)=\ln(\cos x+2)`, d: x => -Math.sin(x) / (Math.cos(x) + 2), cal: 'nDeriv(ln(cos(X)+2), X, a)' }];
+  const F = pick(fams), a = pick([0.5, 1, 1.5, 2, 2.5]); const v = F.d(a);
+  return mc({ stem: T`🧮 <b>Calculator allowed.</b> For \(${F.s}\), find \(f'(${a})\). Round to 3 decimals.`, ans: M(r3s(v)), ds: [{ t: M(r3s(-v)), why: 'Sign error.' }, { t: M(r3s(v * 1.1)), why: 'Check how you typed the function.' }, { t: M(r3s(Math.round(v * 100) / 100)), why: 'Round to 3 decimal places, not 2.' }], fill: [{ t: M(r3s(v + 1)), why: 'Recheck.' }, { t: M(r3s(v / 2)), why: 'Recheck.' }], sol: steps(['Use the numeric derivative: <b>MATH → 8: nDeriv(</b> or the d/dx template.', 'Type <b>' + F.cal.replace(', a)', ', ' + a + ')') + '</b>. Make sure the calculator is in <b>RADIAN</b> mode.', abox(T`\(f'(${a})\approx${r3s(v)}\)`)]), hint: 'nDeriv(function, X, value). Radian mode!' });
+}, 0.6);
+
+/* --- more optimization scenarios --- */
+reg('opt_can', 'opt', () => {
+  const V = pick([16, 54, 128, 250]) * 1; const r = Math.cbrt(V / 2); const h = V / (r * r);
+  const sol = steps(['Diagram: cylinder with radius ' + M('r') + ', height ' + M('h') + '.', T`Constraint: \(\pi r^2h=${V}\pi\Rightarrow h=\dfrac{${V}}{r^2}\)`, T`Surface area (closed can): \(S=2\pi r^2+2\pi rh=2\pi r^2+\dfrac{${2 * V}\pi}{r}\)`, T`\(S'=4\pi r-\dfrac{${2 * V}\pi}{r^2}=0\Rightarrow r^3=${V / 2}\Rightarrow r=${fmtNum(r)}\)`, T`\(S''=4\pi+\dfrac{${4 * V}\pi}{r^3}>0\), so it's a min. \(h=\dfrac{${V}}{${fmtNum(r * r)}}=${fmtNum(h)}\)`, abox(T`\(r=${fmtNum(r)}\), \(h=${fmtNum(h)}\)`)]);
+  return mc({ stem: T`A closed cylindrical can must hold \(${V}\pi\) cubic inches. What radius and height use the least material (minimum surface area)?`, ans: T`\(r=${fmtNum(r)}\) in, \(h=${fmtNum(h)}\) in`, ds: [{ t: T`\(r=${fmtNum(h)}\) in, \(h=${fmtNum(r)}\) in`, why: 'You swapped r and h. The best can has h = 2r.' }, { t: T`\(r=${fmtNum(Math.cbrt(V))}\) in, \(h=${fmtNum(V / Math.cbrt(V) ** 2)}\) in`, why: 'You probably forgot the factor of 2 in S′ (open-can vs closed-can mix-up).' }, { t: T`\(r=${fmtNum(r / 2)}\) in, \(h=${fmtNum(4 * h)}\) in`, why: 'Recheck solving S′ = 0.' }], fill: [{ t: T`\(r=${fmtNum(r + 1)}\) in, \(h=${fmtNum(h - 1)}\) in`, why: 'Recheck.' }], sol, hint: 'Volume is the constraint → solve for h. Minimize S = 2πr² + 2πrh.' });
+});
+reg('opt_semi', 'opt', () => {
+  const Rr = pick([2, 4, 6, 8, 10]); const x = Rr / Math.SQRT2; const A = Rr * Rr;
+  const svg = plot({ xmin: -Rr * 1.2, xmax: Rr * 1.2, ymin: -Rr * 0.15, ymax: Rr * 1.15, xstep: Rr / 2, ystep: Rr / 2, fns: [{ f: t => Math.abs(t) <= Rr ? Math.sqrt(Rr * Rr - t * t) : NaN }], rects: [{ x1: -x, x2: x, y1: 0, y2: x }], pts: [{ x, y: x, label: '(x, √(' + Rr * Rr + ' − x²))', dx: 52, dy: -4 }], w: 320, h: 190 });
+  const sol = steps(['<div class="figure">' + svg + '</div>' + T`Width \(2x\), height \(\sqrt{${Rr * Rr}-x^2}\).`, T`\(A=2x\sqrt{${Rr * Rr}-x^2}\)`, T`\(A'=2\sqrt{${Rr * Rr}-x^2}-\dfrac{2x^2}{\sqrt{${Rr * Rr}-x^2}}=\dfrac{2(${Rr * Rr}-2x^2)}{\sqrt{${Rr * Rr}-x^2}}=0\Rightarrow x^2=${Rr * Rr / 2}\)`, T`\(x=${Rr % 2 === 0 ? (Rr / 2) + '\\sqrt2' : fmtNum(x)}\), height also \(${Rr / 2}\sqrt2\). \(A=2\cdot\frac{${Rr * Rr}}{2}=${A}\)`, abox(T`Max area \(=${A}\)`)]);
+  return mc({ stem: T`A rectangle is inscribed in the semicircle \(y=\sqrt{${Rr * Rr}-x^2}\) with its base on the x-axis. What is the largest possible area?` + '<div class="figure">' + svg + '</div>', ans: M(String(A)), ds: [{ t: M(String(A / 2)), why: 'You used width x instead of 2x.' }, { t: M(String(2 * A)), why: 'Recheck A at the critical number.' }, { t: M(T`${Rr / 2}\sqrt2`), why: "That's x, not the area." }], fill: [{ t: M(String(A + 4)), why: 'Recheck.' }], sol, hint: 'Area = (2x)(√(R² − x²)). Product rule, set = 0.' });
+});
+reg('opt_cost', 'opt', () => {
+  const A = pick([96, 150, 216, 294]); const c1 = pick([2, 3]), c2 = pick([4, 5, 6]);
+  // fence: two sides of length y cost c1, front x costs c2, back x costs c1. Total cost C = (c1+c2)x + 2c1*y, xy=A
+  const k = c1 + c2; const x = Math.sqrt(2 * c1 * A / k); const y = A / x;
+  const ok = Math.abs(x - Math.round(x * 100) / 100) < 1e-9;
+  return mc({ stem: T`A rectangular garden of area ${A} ft² is fenced. The front side costs $${c2} per foot and the other three sides cost $${c1} per foot. Let \(x\) be the length of the front (and back) and \(y\) the length of each side. What value of \(x\) minimizes the cost?`, ans: M(fmtNum(x) + T`\text{ ft}`), ds: [{ t: M(fmtNum(y) + T`\text{ ft}`), why: "That's y, the side length." }, { t: M(fmtNum(Math.sqrt(A)) + T`\text{ ft}`), why: "A square only minimizes cost when every side costs the same." }, { t: M(fmtNum(Math.sqrt(c1 * A / k)) + T`\text{ ft}`), why: 'There are TWO sides of length y. Count them in the cost.' }], fill: [{ t: M(fmtNum(x + 2) + T`\text{ ft}`), why: 'Recheck.' }], sol: steps([T`Constraint: \(xy=${A}\Rightarrow y=\dfrac{${A}}{x}\)`, T`Cost: front \(${c2}x\) + back \(${c1}x\) + two sides \(2\cdot${c1}y\): \(C=${k}x+\dfrac{${2 * c1 * A}}{x}\)`, T`\(C'=${k}-\dfrac{${2 * c1 * A}}{x^2}=0\Rightarrow x^2=${fmtNum(2 * c1 * A / k)}\Rightarrow x=${fmtNum(x)}\)`, T`\(C''>0\), so it's a minimum.`, abox(T`\(x=${fmtNum(x)}\) ft`)]), hint: 'Cost = (price per foot) × (length) for each side. Use xy = area to get one variable.' });
+});
+
+/* ---- g8_more.js ---- */
+/* ===== more class-style generators ===== */
+TOPICS.splice(TOPICS.findIndex(t => t.id === 'lim'), 0, { id: 'calc', name: 'Calculator Skills (3.X)', short: '🧮 Calculator' });
+TOPICS.find(t => t.id === 'lim').name = 'Limits at Infinity (review)';
+TOPICS.find(t => t.id === 'lim').short = 'Limits at ∞ (review)';
+G.lim_rat.w = 0.5; G.lim_sqrt.w = 0.5; G.lim_ha.w = 0.3;
+
+/* MVT: find ALL c (reject outside) */
+reg('mvt_allc', 'mvt', () => {
+  for (let t = 0; t < 400; t++) {
+    const k = R(-6, 6), a = R(-3, 1), b = a + R(2, 6);
+    const s = a * a + a * b + b * b - k * (a + b);
+    const disc = 4 * k * k + 12 * s; if (disc < 0) continue; const sq = Math.round(Math.sqrt(disc)); if (sq * sq !== disc) continue;
+    const r1 = (2 * k - sq) / 6, r2 = (2 * k + sq) / 6; const roots = [...new Set([r1, r2])];
+    const inside = roots.filter(c => c > a && c < b), out = roots.filter(c => !(c > a && c < b));
+    if (!inside.length || (roots.length === 2 && Math.random() < 0.3 && out.length === 0 && false)) continue;
+    if (roots.some(c => Math.abs(c * 6 - Math.round(c * 6)) > 1e-9)) continue;
+    const f = x => x ** 3 - k * x * x, fs = poly([1, -k, 0, 0]);
+    const ansT = inside.map(c => 'c=' + fmtNum(c)).join(',\\;\\; ');
+    const sol = steps([T`Polynomial, so continuous on \([${a},${b}]\) and differentiable on \((${a},${b})\). The MVT applies.`, T`Slope: \(\dfrac{f(${b})-f(${a})}{${minus(b, a)}}=\dfrac{${f(b)}-${par(f(a))}}{${b - a}}=${fmtNum(s)}\)`, T`\(f'(c)=${poly([3, -2 * k, 0], 'c')}=${fmtNum(s)}\Rightarrow ${poly([3, -2 * k, -s], 'c')}=0\Rightarrow c=${roots.map(fmtNum).join(',\\ ')}\)`, out.length ? T`Reject \(c=${out.map(fmtNum).join(', ')}\): not in the open interval \((${a},${b})\).` : 'Both are inside the interval, so keep both.', abox(M(ansT))]);
+    return mc({ stem: T`Does the Mean Value Theorem apply to \(f(x)=${fs}\) on \([${a},${b}]\)? If so, find <b>all</b> values of \(c\) that it guarantees.`, ans: M(ansT), ds: [{ t: M(roots.map(c => 'c=' + fmtNum(c)).join(',\\;\\; ')), why: out.length ? T`\(c=${out.map(fmtNum).join(', ')}\) is outside \((${a},${b})\). Throw it out.` : 'Correct values, but check this list.' }, { t: M('c=' + fmtNum((a + b) / 2)), why: "That's the midpoint. That only works for quadratics." }, { t: M('c=' + fmtNum(s)), why: "That's the slope, not c." }], fill: [{ t: M('\\text{MVT does not apply}'), why: 'Polynomials are continuous and differentiable everywhere.' }, { t: M('c=0'), why: 'Solve f′(c) = slope.' }], sol, hint: 'Slope of the secant → set f′(c) equal → solve the quadratic → keep only c inside (a, b).' });
+  }
+  return bMvtQuad();
+}, 1.2);
+
+/* IVT + Rolle: exactly one zero */
+reg('mvt_onezero', 'mvt', () => {
+  const a = R(1, 6), b = pick([-7, -5, -4, -3, -2, 2, 3, 4, 5, 7]);
+  const f = x => x ** 3 + a * x + b; const z = zerosOf(f, -10, 10)[0]; const n = Math.floor(z);
+  const ans = T`Exactly one real zero, between \(x=${n}\) and \(x=${n + 1}\).`;
+  const sol = steps([T`<b>At least one (IVT):</b> \(f\) is a polynomial, so it's continuous. \(f(${n})=${f(n)}${f(n) < 0 ? '<' : '>'}0\) and \(f(${n + 1})=${f(n + 1)}${f(n + 1) < 0 ? '<' : '>'}0\). By the IVT there is a \(c\) in \((${n},${n + 1})\) with \(f(c)=0\).`, T`<b>At most one (Rolle):</b> \(f'(x)=3x^2+${a}>0\) for every \(x\). If there were two zeros \(c\) and \(d\), then \(f(c)=f(d)=0\), and Rolle's Theorem would give some \(e\) with \(f'(e)=0\). But \(f'\) is never 0. Contradiction.`, abox(ans)]);
+  return mc({ stem: T`How many real zeros does \(f(x)=${poly([1, 0, a, b])}\) have? Between which two consecutive integers is each one? Justify with the IVT and Rolle's Theorem.`, ans, ds: [{ t: T`Three real zeros (it's a cubic).`, why: T`A cubic CAN have 3 zeros, but \(f'=3x^2+${a}>0\), so \(f\) is always increasing and crosses the x-axis only once.` }, { t: T`Exactly one real zero, between \(x=${n + 1}\) and \(x=${n + 2}\).`, why: T`Check the signs: \(f(${n + 1})\) and \(f(${n + 2})\) have the same sign.` }, { t: T`Exactly one real zero, between \(x=${n - 1}\) and \(x=${n}\).`, why: T`Check the signs: \(f(${n - 1})\) and \(f(${n})\) have the same sign.` }, { t: 'No real zeros.', why: 'A cubic always crosses the x-axis at least once (IVT).' }], sol, hint: 'IVT shows there is at least one (sign change). f′ > 0 everywhere plus Rolle shows there can\'t be two.' });
+}, 0.7);
+
+/* find a and b so f has critical point at (h,k) */
+reg('inc_ab', 'inc', () => {
+  const h = pick([-4, -2, 2, 4]), k = R(-9, 9); const a = -3 * h / 2; const b = k - h ** 3 - a * h * h;
+  const fpp = 6 * h + 2 * a; const kind = fpp > 0 ? 'relative minimum' : 'relative maximum';
+  const ans = T`\(a=${a}\), \(b=${b}\)`;
+  const sol = steps([T`Critical point at \(x=${h}\): \(f'(x)=3x^2+2ax\Rightarrow f'(${h})=${3 * h * h}+${par(2 * h)}a=0\Rightarrow a=${a}\)`, T`The point is on the graph: \(f(${h})=${par(h)}^3+(${a})${par(h)}^2+b=${k}\Rightarrow ${h ** 3 + a * h * h}+b=${k}\Rightarrow b=${b}\)`, T`(Bonus: \(f''(${h})=${fpp}\), so it's a ${kind}.)`, abox(ans)]);
+  return mc({ stem: T`Find \(a\) and \(b\) so that \(f(x)=x^3+ax^2+b\) has a critical point at \((${h}, ${k})\).`, ans, ds: [{ t: T`\(a=${-a}\), \(b=${k - h ** 3 + a * h * h}\)`, why: 'Sign error solving for a.' }, { t: T`\(a=${a}\), \(b=${k}\)`, why: T`\(b\) isn't just the y-value. Plug the whole point into \(f\).` }, { t: T`\(a=${-3 * h}\), \(b=${k - h ** 3 + 3 * h ** 3}\)`, why: T`You forgot the 2 in \(2ax\).` }], fill: [{ t: T`\(a=0\), \(b=${k}\)`, why: 'Use f′(h) = 0.' }], sol, hint: 'Two equations: f′(h) = 0 and f(h) = k.' });
+}, 0.7);
+
+/* real-world rates: what f' and f'' mean */
+const RATE_BANK = [
+  { s: T`\(R(t)\) is the total amount of rain that has fallen by time \(t\). It's raining harder and harder.`, a: T`\(R'>0\) and \(R''>0\)`, w: { 'R′>0 and R″<0': 'That would be raining but easing up.', 'R′<0 and R″>0': 'R′ can\'t be negative: total rain can\'t go down.' } },
+  { s: T`\(R(t)\) is the total amount of rain that has fallen by time \(t\). It's still raining, but the rain is letting up.`, a: T`\(R'>0\) and \(R''<0\)`, w: { 'R′>0 and R″>0': 'That means the rain is getting heavier.' } },
+  { s: T`\(P(t)\) is the price of a gallon of gas. The price is going up, but more slowly than before.`, a: T`\(P'>0\) and \(P''<0\)`, w: { 'R′>0 and R″>0': '' } },
+  { s: T`\(P(t)\) is the price of a gallon of gas. The price is falling, and falling faster and faster.`, a: T`\(P'<0\) and \(P''<0\)`, w: {} },
+  { s: T`\(T(t)\) is the temperature of a cup of coffee cooling on the table. It cools fast at first, then more slowly.`, a: T`\(T'<0\) and \(T''>0\)`, w: {} }
+];
+reg('conc_rate', 'conc', () => {
+  const it = pick(RATE_BANK); const v = it.a.includes('P') ? 'P' : it.a.includes('T') ? 'T' : 'R';
+  const all = [['>', '>'], ['>', '<'], ['<', '>'], ['<', '<']].map(([p, q]) => T`\(${v}'${p}0\) and \(${v}''${q}0\)`);
+  const ds = all.filter(x => x !== it.a).map(x => ({ t: x, why: (x.includes("'>0") || x.includes("'\\gt 0") ? 'First derivative: is the quantity going up (+) or down (−)? ' : 'First derivative: is the quantity going up (+) or down (−)? ') + 'Second derivative: is that rate speeding up (+) or slowing down (−)?' }));
+  return mc({ stem: it.s + ' Which is true?', ans: it.a, ds: ds.concat([{ t: T`\(${v}'=0\) and \(${v}''=0\)`, why: "The quantity is changing, so the first derivative isn't 0." }]), sol: steps([T`\(${v}'\) = how fast the quantity changes: + if it's going up, − if it's going down.`, T`\(${v}''\) = whether that rate is getting bigger (+) or smaller (−). "Faster and faster" in the same direction as \(${v}'\) means same sign; "slowing down" means opposite sign.`, abox(it.a)]), hint: 'Up/down → sign of the first derivative. Speeding up/slowing down → compare the signs.' });
+}, 0.5);
+
+/* optimization: box from rectangular sheet, two numbers, swimmer/runner */
+reg('opt_rectbox', 'opt', () => {
+  const S = pick([[16, 30, 10 / 3], [8, 15, 5 / 3], [10, 16, 2], [24, 45, 5], [12, 12, 2]]); const [Lx, Wy, x] = S; const V = x * (Lx - 2 * x) * (Wy - 2 * x);
+  const other = ((Lx + Wy) * 4 / 12 * 2 - x) ;
+  const sol = steps([T`Cut squares of side \(x\) from each corner: base \((${Wy}-2x)\) by \((${Lx}-2x)\), height \(x\). Domain \(0\le x\le ${Math.min(Lx, Wy) / 2}\).`, T`\(V=x(${Wy}-2x)(${Lx}-2x)=${poly([4, -2 * (Lx + Wy), Lx * Wy, 0])}\)`, T`\(V'=${poly([12, -4 * (Lx + Wy), Lx * Wy])}=0\Rightarrow x=${fmtNum(x)}\) or \(x=${fmtNum((Lx + Wy) / 3 - x)}\) (too big: outside the domain).`, T`\(V(0)=0\), \(V(${Math.min(Lx, Wy) / 2})=0\), so \(x=${fmtNum(x)}\) gives the max.`, abox(T`\(x=${fmtNum(x)}\) in, \(V=${fmtNum(V)}\) in³`)]);
+  return mc({ stem: T`An open box is made from a ${Lx} in by ${Wy} in sheet by cutting equal squares of side \(x\) from the corners and folding up the sides. Find the \(x\) that gives the largest volume, and that volume.`, ans: T`\(x=${fmtNum(x)}\) in, \(V=${fmtNum(V)}\) in³`, ds: [{ t: T`\(x=${fmtNum((Lx + Wy) / 3 - x)}\) in`, why: 'That root is too big: you can\'t cut squares that big from the sheet. Check the domain.' }, { t: T`\(x=${fmtNum(Math.min(Lx, Wy) / 6)}\) in, \(V=${fmtNum((Math.min(Lx, Wy) / 6) * (Lx - Math.min(Lx, Wy) / 3) * (Wy - Math.min(Lx, Wy) / 3))}\) in³`, why: "The s/6 shortcut only works for a square sheet." }, { t: T`\(x=${fmtNum(x)}\) in, \(V=${fmtNum(V / 2)}\) in³`, why: 'Recheck V(x) at the critical number.' }], fill: [{ t: T`\(x=1\) in, \(V=${(Lx - 2) * (Wy - 2)}\) in³`, why: 'Use V′ = 0.' }], sol, hint: 'V = x(W − 2x)(L − 2x). Expand, differentiate, factor. Throw out any x outside the domain.' });
+}, 0.9);
+reg('opt_twoa', 'opt', () => {
+  const m = R(2, 12), P = 2 * m * m;
+  return mc({ stem: T`Two positive numbers \(a\) and \(b\) have product ${P}. Find the numbers that make \(b+2a\) as small as possible.`, ans: T`\(a=${m}\), \(b=${2 * m}\)`, ds: [{ t: T`\(a=${2 * m}\), \(b=${m}\)`, why: 'Swapped. Solve for a in S(a) = 2a + P/a.' }, { t: T`\(a=b=${fmtNum(Math.sqrt(P))}\)`, why: 'Equal numbers minimize a + b, not b + 2a.' }, { t: T`\(a=${m}\), \(b=${m}\)`, why: T`Then \(ab=${m * m}\ne${P}\).` }], fill: [{ t: T`\(a=1\), \(b=${P}\)`, why: 'That works, but it isn\'t the smallest.' }], sol: steps([T`Constraint: \(ab=${P}\Rightarrow b=\dfrac{${P}}{a}\)`, T`Minimize \(S(a)=2a+\dfrac{${P}}{a}\), \(a>0\)`, T`\(S'(a)=2-\dfrac{${P}}{a^2}=0\Rightarrow a^2=${m * m}\Rightarrow a=${m}\)`, T`\(S''=\dfrac{${2 * P}}{a^3}>0\), so it's a min. \(b=\dfrac{${P}}{${m}}=${2 * m}\)`, abox(T`\(a=${m}\), \(b=${2 * m}\)`)]), hint: 'Solve the product for b, plug into b + 2a, then set the derivative = 0.' });
+}, 0.6);
+reg('opt_swim', 'opt', () => {
+  const sp = pick([[3, 5, 3 / 4], [4, 5, 4 / 3], [6, 10, 3 / 4]]); const [vs, vr, ratio] = sp; const d = R(1, 3), Lr = d * ratio + R(2, 5); const x = d * ratio;
+  const Tm = Math.sqrt(d * d + x * x) / vs + (Lr - x) / vr;
+  const svg = '<svg class="diag" viewBox="0 0 320 150" width="310" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="320" height="70" fill="#dbeafe"/><line x1="0" y1="70" x2="320" y2="70" stroke="#a16207" stroke-width="3"/><circle cx="30" cy="20" r="5" fill="#111"/><text x="40" y="18" font-size="12">swimmer</text><line x1="30" y1="20" x2="160" y2="70" stroke="#2563eb" stroke-width="2" stroke-dasharray="5 4"/><line x1="160" y1="70" x2="290" y2="70" stroke="#dc2626" stroke-width="3"/><circle cx="290" cy="70" r="5" fill="#dc2626"/><text x="270" y="95" font-size="12">town</text><line x1="30" y1="20" x2="30" y2="70" stroke="#64748b" stroke-dasharray="3 3"/><text x="14" y="50" font-size="13" font-style="italic">' + d + '</text><text x="90" y="92" font-size="14" font-style="italic">x</text><text x="140" y="130" font-size="12">shore: ' + fmtNum(Lr) + ' mi total from the point straight in to the town</text></svg>';
+  return mc({ stem: T`A swimmer is ${d} mi from the closest point on a straight shore. A town is ${fmtNum(Lr)} mi down the shore from that point. She swims at ${vs} mph and runs at ${vr} mph. She swims to a point \(x\) miles down the shore, then runs the rest. What \(x\) minimizes her total time?` + '<div class="figure">' + svg + '</div>', ans: M(T`x=${fmtNum(x)}\text{ mi}`), ds: [{ t: M('x=0\\text{ mi}'), why: 'Swimming straight in and running everything is slower. Check T′.' }, { t: M(T`x=${fmtNum(Lr)}\text{ mi}`), why: 'Swimming all the way is slower (swimming is slower than running).' }, { t: M(T`x=${fmtNum(d * vr / vs)}\text{ mi}`), why: 'You flipped the speeds.' }], fill: [{ t: M(T`x=${fmtNum(Lr / 2)}\text{ mi}`), why: 'Not the midpoint. Use T′ = 0.' }], sol: steps([T`Time = distance ÷ speed. Swim: \(\dfrac{\sqrt{${d * d}+x^2}}{${vs}}\). Run: \(\dfrac{${fmtNum(Lr)}-x}{${vr}}\).`, T`\(T'(x)=\dfrac{x}{${vs}\sqrt{${d * d}+x^2}}-\dfrac1{${vr}}=0\Rightarrow ${vr}x=${vs}\sqrt{${d * d}+x^2}\)`, T`Square: \(${vr * vr}x^2=${vs * vs}(${d * d}+x^2)\Rightarrow ${vr * vr - vs * vs}x^2=${vs * vs * d * d}\Rightarrow x=${fmtNum(x)}\)`, T`Check endpoints: \(T(0)\approx${r3s(d / vs + Lr / vr)}\), \(T(${fmtNum(x)})\approx${r3s(Tm)}\), \(T(${fmtNum(Lr)})\approx${r3s(Math.sqrt(d * d + Lr * Lr) / vs)}\). Smallest in the middle.`, abox(T`\(x=${fmtNum(x)}\) mi`)]), hint: 'Total time = swim distance/swim speed + run distance/run speed. The swim distance is a hypotenuse.' });
+}, 0.7);
+
+/* fix: tag endpoints in trig/closed-interval abs table and add non-trig closed-interval items */
+TRIG_ABS.push(
+  { f: T`f(x)=x^{4/3}-4x^{1/3}`, I: ['-1', '8'], fn: x => Math.cbrt(x) ** 4 - 4 * Math.cbrt(x), b: 8, fd: T`\frac43x^{1/3}-\frac43x^{-2/3}=\dfrac{4(x-1)}{3x^{2/3}}`, crit: [[0, '0', '0'], [1, '1', '-3']], ends: [[-1, '-1', '5'], [8, '8', '8']] },
+  { f: T`f(x)=x^3-12x`, I: ['0', '4'], fn: x => x ** 3 - 12 * x, b: 4, fd: T`3x^2-12=3(x-2)(x+2)`, crit: [[2, '2', '-16']], ends: [[0, '0', '0'], [4, '4', '16']] },
+  { f: T`f(x)=\dfrac{\ln x}{x}`, I: ['1', '5'], fn: x => Math.log(x) / x, b: 5, fd: T`\dfrac{1-\ln x}{x^2}`, crit: [[Math.E, 'e', '\\frac1e']], ends: [[1, '1', '0'], [5, '5', '\\frac{\\ln5}{5}']] },
+  { f: T`f(x)=\cos2x-2\sin x`, I: ['0', '2\\pi'], fn: x => Math.cos(2 * x) - 2 * Math.sin(x), b: 2 * PI, fd: T`-2\sin2x-2\cos x=-2\cos x(2\sin x+1)`, crit: [[PI / 2, '\\frac\\pi2', '-3'], [7 * PI / 6, '\\frac{7\\pi}6', '\\frac32'], [3 * PI / 2, '\\frac{3\\pi}2', '1'], [11 * PI / 6, '\\frac{11\\pi}6', '\\frac32']], ends: [[0, '0', '1'], [2 * PI, '2\\pi', '1']] },
+  { f: T`f(x)=2x^3-15x^2+36x`, I: ['1', '5'], fn: x => 2 * x ** 3 - 15 * x * x + 36 * x, b: 5, fd: T`6x^2-30x+36=6(x-2)(x-3)`, crit: [[2, '2', '28'], [3, '3', '27']], ends: [[1, '1', '23'], [5, '5', '55']] }
+);
+
 /* ---- learn.js ---- */
 /* ===== LEARN CONTENT (video + explanation, no practice problems here) ===== */
 function card(title, body, cls) { return '<div class="lcard ' + (cls || '') + '"><h4>' + title + '</h4>' + body + '</div>'; }
@@ -1112,6 +1417,28 @@ function LEARN_BUILD() {
     card('Traps', T`<ul><li>Answering \(x\) when they asked for \(y\) (or the area).</li><li>Miscounting fence pieces in multi-pen problems.</li><li>Minimizing distance? Minimize \(d^2\) instead (same answer, easier derivative).</li></ul>`, 'warn') });
   return L;
 }
+
+/* ---- learn2.js ---- */
+/* ===== Learn additions: class rules, extra cards, calculator page ===== */
+const _LB = LEARN_BUILD;
+LEARN_BUILD = function () {
+  const L = _LB();
+  const RULES = card("Rubio's grading rules (from your notes)", T`<ul><li><b>A sign chart by itself is NOT a justification.</b> She and College Board only accept a sentence: "\(f'\) changes from positive to negative at \(x=3\), so \(f\) has a relative max at \(x=3\)."</li><li>Name the function every time (\(f\), \(f'\), \(f''\)). Never "it" or "the function".</li><li>Intervals: open intervals with \(\cup\), e.g. \((-\infty,-1)\cup(3,\infty)\). Around a vertical asymptote, write two separate intervals.</li><li>Points (extrema, inflection points) as ordered pairs when asked: \((-1,-2)\). Extrema in words: "rel max of 4 at \(x=3\)."</li><li>"Always argue based on what is given." If you're given \(f'\), justify with \(f'\). If given \(f''\), use \(f''\).</li></ul>`, 'warn');
+  const add = (id, html, rules) => { const p = L.find(l => l.id === id); if (p) p.html += html + (rules ? RULES : ''); };
+  const gsvg = plot({ xmin: -0.6, xmax: 7.6, ymin: -1, ymax: 7, fns: [{ f: mono([0, 1, 3, 5, 7], [2, 2.6, 4, 3, 6]), from: 0, to: 7 }], pts: [{ x: 0, y: 2, open: true }, { x: 3, y: 4, label: 'rel max', color: '#16a34a' }, { x: 5, y: 3, label: 'rel min', dy: 18, color: '#dc2626' }, { x: 7, y: 6, label: 'abs max', color: '#16a34a', dx: -24 }], title: 'y = f(x)', w: 340, h: 220 });
+  add('ext', card('Reading extrema off a graph (class example)', '<div class="figure">' + gsvg + '</div>' + T`<p>Rubio's answer: "\(f\) has a rel max of 4 at \(x=3\). \(f\) has a rel min of 3 at \(x=5\). \(f\) has an absolute max of 6 at \(x=7\). \(f\) has <b>no</b> absolute min."</p><p>Why no absolute min? The lowest point would be at \(x=0\), but that dot is <b>open</b>, so \(f\) never actually reaches 2.</p>`) + card('More function types from class', T`<ul><li><b>Rational:</b> \(f(x)=2x+\frac{8}{x^2}\): \(f'=2-\frac{16}{x^3}\). Critical number \(x=2\). \(x=0\) is NOT one (not in the domain).</li><li><b>Fraction powers:</b> \(x^{4/3}-4x^{1/3}\): \(f'=\frac{4(x-1)}{3x^{2/3}}\). Critical numbers \(x=1\) (f′=0) and \(x=0\) (f′ undefined).</li><li><b>Trig on \([0,2\pi]\):</b> \(\cos2x-2\sin x\): abs max \(\frac32\), abs min \(-3\).</li><li><b>\(e^x\), \(\ln x\):</b> \(e^x\) is never 0; \(\ln x\) needs \(x>0\).</li></ul>`), true);
+  add('mvt', card('Two class question types to know', T`<p><b>"Find ALL c":</b> \(f(x)=x^3-8x^2\) on \([-2,5]\): slope \(=-5\), so \(3c^2-16c+5=0\Rightarrow c=\frac13\) or \(c=5\). Reject 5 (not in the <b>open</b> interval). Answer: \(c=\frac13\).</p><p><b>"Show f has exactly one zero":</b> IVT gives at least one (sign change). If \(f'>0\) everywhere, two zeros would force \(f'(c)=0\) somewhere by Rolle, which can't happen. So exactly one.</p><p><b>Always say WHY the theorem applies:</b> "f is a polynomial, so it's continuous on [a, b] and differentiable on (a, b)."</p>`));
+  add('inc', card('More from class', T`<ul><li><b>Vertical asymptote:</b> \(f(x)=\frac{x-2}{x+2}\) is increasing on \((-\infty,-2)\) and \((-2,\infty)\). Write them as two intervals (Rubio: "must be written as two different intervals!!").</li><li><b>Trig:</b> \(f(x)=x-2\cos x\) on \([0,2\pi]\): \(f'=1+2\sin x=0\) at \(\frac{7\pi}6, \frac{11\pi}6\).</li><li><b>Find a and b:</b> "critical point at \((2,3)\)" means \(f'(2)=0\) AND \(f(2)=3\). Two equations.</li></ul>`), true);
+  add('conc', card('More from class', T`<ul><li>\(f(x)=\frac{x^5}{20}-\frac{x^4}{4}+2x^2+x+1\): \(f''=(x+1)(x-2)^2\). Inflection point only at \(x=-1\) (the double root at 2 doesn't change sign).</li><li>Give inflection points as ordered pairs: \(f(x)=x^3+3x^2-2x-6\) → IP at \((-1,-2)\).</li><li><b>Real-world:</b> "Rain is falling harder and harder" → \(R'>0\), \(R''>0\). "Price rising but more slowly" → \(P'>0\), \(P''<0\).</li></ul>`), true);
+  add('graph', RULES);
+  add('opt', card('Class scenarios to recognize', '<ul><li>420 yd of fence, pen with a divider (3x + 4y = 420).</li><li>Open box from a 16 × 30 sheet (V = x(16 − 2x)(30 − 2x), throw out the root that\'s too big).</li><li>Rectangle in a semicircle (area = 2x·√(r² − x²)).</li><li>Swimmer/runner: time = distance ÷ speed; swim distance is a hypotenuse.</li><li>Two numbers with a fixed product: minimize b + 2a.</li></ul><p>Rubio\'s full layout: diagram → primary equation → constraint → one variable + <b>domain</b> → derivative = 0 → justify max/min (A″ or endpoints) → <b>sentence with units</b>.</p>'));
+  const calcSvg = plot({ xmin: 0, xmax: 6, ymin: -6.5, ymax: 3, xstep: 1, ystep: 1, fns: [{ f: x => x * Math.sin(x) - 1 }], pts: [{ x: 1.114, y: 0, label: 'zero', color: '#dc2626' }, { x: 2.773, y: 0, label: 'zero', color: '#dc2626' }, { x: 2.029, y: 2.029 * Math.sin(2.029) - 1, label: 'max of f′', color: '#16a34a' }, { x: 4.913, y: 4.913 * Math.sin(4.913) - 1, label: 'min of f′', dy: 18, color: '#16a34a' }], title: "y = f′(x) = x·sin x − 1", w: 360, h: 220 });
+  L.push({ id: 'calc', video: '5zH9bPKrqO4', vtitle: "TI-84: finding relative max & min with 2nd CALC (Mario's Math Tutoring, 2 min)", alt: [['BvgZHvBzLqs', 'TI-84: derivative at a point (CalcPlex, 2 min)'], ['7uSBZdi-jTY', "TI-84: graphing f and f′ together (Chen Math, 7 min)"]], html:
+    card('The 4 things you may do on the calculator', '<ol class="steps"><li><b>Graph</b> a function (pick a good window).</li><li><b>Solve an equation</b>: 2nd TRACE → zero, or graph both sides → intersect.</li><li><b>Derivative at a point</b>: MATH → 8 nDeriv( or 2nd TRACE → dy/dx.</li><li><b>Definite integral</b> (later chapter).</li></ol><p>Everything else needs written work. Write the setup in math notation (like "f′(x) = 0" or "f′(2)"), not calculator language.</p>') +
+    card('The most common Ch 3 calculator question: "f′ is given"', T`<p>You get \(f'(x)\) and must find things about \(f\). Graph \(Y_1=f'(x)\):</p><ul><li><b>Rel max/min of f</b> → zeros of \(f'\) (2nd TRACE → zero). Max if the graph crosses going DOWN, min if going UP.</li><li><b>f increasing</b> → where the graph of \(f'\) is above the x-axis.</li><li><b>Inflection points of f</b> → hills and valleys of \(f'\) (2nd TRACE → maximum/minimum).</li></ul><div class="figure">` + calcSvg + T`</div><p>Example: \(f'(x)=x\sin x-1\) on \((0,6)\). Zeros at \(x=1.114\) (− to +, rel min) and \(x=2.773\) (+ to −, rel max). Inflection points at \(x=2.029\) and \(x=4.913\) (where \(f'\) turns around).</p>` + '<div class="just">✍️ "f′ changes from positive to negative at x = 2.773, so f has a relative max at x = 2.773."</div>') +
+    card('How to lose points (Rubio\'s list)', '<ul><li>DEGREE mode. Always RADIAN.</li><li>Not 3 decimals. Round to 3 decimals at the end only.</li><li>Moving the cursor to "about" the zero instead of using 2nd CALC.</li><li>Typing cos²x as cos(x²). Type (cos(X))².</li><li>Using t instead of X, or old Plots left on.</li><li>Bad window (can\'t see the zeros).</li></ul>', 'warn') });
+  return L;
+};
 
 /* ---- frq.js ---- */
 /* ===== FRQ: Rubio's free-response review (retyped) ===== */
@@ -1186,12 +1513,108 @@ function renderFRQ() {
   tex($('#fbody'));
 }
 
+/* ---- frqgen.js ---- */
+/* ===== RANDOM FRQ GENERATOR ===== */
+const JW = s => '<div class="just">✍️ <b>Write it like this:</b> ' + s + '</div>';
+const NOCHART = '<p class="muted">Remember: a sign chart by itself is NOT a justification (Rubio and College Board). Write the sentence.</p>';
+function frqFprime() {
+  const n = 8; const xs = [...Array(n)].map((_, i) => i - 3); let v = walk(n, { minTurns: 2, maxTurns: 4, minCross: 2 }); if (!v) v = [2, 0, -2, -1, 0, 1, 2, 1];
+  const I = fpInfo(xs, v); const a = xs[0], b = xs[n - 1];
+  const sx = arr => arr.length ? setX(arr) : '\\text{none}';
+  const fv = R(-3, 4);
+  return { title: 'FRQ: reading the graph of f′ (no calculator)', calc: false,
+    stem: T`The graph of \(f'\), the <b>derivative</b> of \(f\), is shown for \(${a}\le x\le ${b}\). <i>(This is the graph of \(f'\), not \(f\).)</i> \(f(0)=${fv}\).` + '<div class="figure">' + fpSvg(xs, v, 'Graph of f′', { w: 400, h: 260 }) + '</div>',
+    parts: [
+      { q: T`a. Find the x-coordinate of each relative maximum of \(f\). Justify.`, a: abox(M(sx(I.relMax))) + JW(I.relMax.length ? T`"\(f\) has a relative maximum at \(${sx(I.relMax)}\) because \(f'\) changes from positive to negative there."` : T`"\(f\) has no relative maximum because \(f'\) never changes from positive to negative."`) },
+      { q: T`b. Find the x-coordinate of each relative minimum of \(f\). Justify.`, a: abox(M(sx(I.relMin))) + JW(I.relMin.length ? T`"\(f\) has a relative minimum at \(${sx(I.relMin)}\) because \(f'\) changes from negative to positive there."` : T`"\(f\) has no relative minimum because \(f'\) never changes from negative to positive."`) },
+      { q: T`c. On what open interval(s) is \(f\) decreasing? Justify.`, a: abox(M(fmtInts(I.sets.neg))) + JW(T`"\(f\) is decreasing on \(${fmtInts(I.sets.neg)}\) because \(f'<0\) there."`) },
+      { q: T`d. On what open interval(s) is the graph of \(f\) concave up? Justify.`, a: abox(M(fmtInts(I.sets.up))) + JW(T`"\(f\) is concave up on \(${fmtInts(I.sets.up)}\) because \(f'\) is increasing there."`) },
+      { q: T`e. Find the x-coordinate of each point of inflection of \(f\). Justify.`, a: abox(M(sx(I.ip))) + JW(T`"\(f\) has an inflection point at \(${sx(I.ip)}\) because \(f'\) changes from increasing to decreasing (or decreasing to increasing) there."`) + NOCHART },
+      { q: T`f. Find the equation of the line tangent to \(f\) at \(x=0\).`, a: steps([T`Point: \((0, ${fv})\). Slope: read \(f'(0)=${v[3]}\) from the graph.`, abox(T`\(y-${par(fv)}=${v[3]}(x-0)\), so \(y=${poly([v[3], fv])}\)`)]) }
+    ] };
+}
+function frqPoly() {
+  const p = R(-3, 1), q = p + R(1, 3), d = R(-6, 6); const f = x => 2 * x ** 3 - 3 * (p + q) * x * x + 6 * p * q * x + d;
+  const L = p - R(1, 2), U = q + R(0, 2); const m = (p + q) / 2;
+  const cand = [...new Set([L, p, q, U])].sort((x, y) => x - y).map(x => ({ x, y: f(x) }));
+  const mx = cand.reduce((A, B) => B.y > A.y ? B : A), mn = cand.reduce((A, B) => B.y < A.y ? B : A);
+  const fp = x => 6 * (x - p) * (x - q);
+  return { title: 'FRQ: analyzing a function (no calculator)', calc: false,
+    stem: T`Let \(f(x)=${poly([2, -3 * (p + q), 6 * p * q, d])}\).`,
+    parts: [
+      { q: T`a. Find \(f'(x)\) and all critical numbers of \(f\).`, a: steps([T`\(f'(x)=${poly([6, -6 * (p + q), 6 * p * q])}=6${fac(p)}${fac(q)}\)`, abox(T`Critical numbers: \(x=${p}\) and \(x=${q}\)`)]) },
+      { q: T`b. Find the coordinates of each relative extremum of \(f\). Justify your answer.`, a: steps(['Sign chart (for you, not the justification):' + signChart([p, q], [{ label: "f'(x)", fn: fp, at: () => M('0') }, incRow(fp)]), abox(T`Relative max at \((${p}, ${f(p)})\). Relative min at \((${q}, ${f(q)})\).`)]) + JW(T`"\(f\) has a relative maximum at \(x=${p}\) because \(f'\) changes from positive to negative there, and a relative minimum at \(x=${q}\) because \(f'\) changes from negative to positive there."`) },
+      { q: T`c. On what interval(s) is the graph of \(f\) concave down? Justify.`, a: steps([T`\(f''(x)=${poly([12, -6 * (p + q)])}` + (m === 0 ? '' : T`=12\left(x ${m < 0 ? '+' : '-'} ${fmtNum(Math.abs(m))}\right)`) + '\\)', T`\(f''<0\) when \(x<${fmtNum(m)}\).`, abox(T`\((-\infty, ${fmtNum(m)})\)`)]) + JW(T`"\(f\) is concave down on \((-\infty, ${fmtNum(m)})\) because \(f''<0\) there."`) },
+      { q: T`d. Find the point of inflection of \(f\) (as an ordered pair). Justify.`, a: abox(T`\(\left(${fmtNum(m)}, ${fmtNum(f(m))}\right)\)`) + JW(T`"\(f\) has an inflection point at \(x=${fmtNum(m)}\) because \(f''\) changes sign there."`) },
+      { q: T`e. Find the absolute maximum and absolute minimum values of \(f\) on \([${L}, ${U}]\). Justify.`, a: steps(['Candidates Test:' + tbl([M('x'), M('f(x)')], cand.map(c => [M(c.x) + ((c.x === L || c.x === U) ? ' <span class="muted">(endpoint)</span>' : ''), M(c.y)])), abox(T`Absolute max \(=${mx.y}\) at \(x=${mx.x}\). Absolute min \(=${mn.y}\) at \(x=${mn.x}\).`)]) + JW('"Comparing f at the critical numbers and the endpoints, the absolute max is ' + mx.y + ' at x = ' + mx.x + ' and the absolute min is ' + mn.y + ' at x = ' + mn.x + '."') }
+    ] };
+}
+function frqTrig() {
+  const k = R(0, 2); const F = FAM[k]; const TA = TRIG_ABS[[1, 2, 0][k]];
+  const ipY = [[[PI / 2, '\\frac\\pi2'], [3 * PI / 2, '\\frac{3\\pi}2']], [[PI, '\\pi']], [[3 * PI / 4, '0'], [7 * PI / 4, '0']]][k];
+  const intsP = famInts(F, F.fp, F.cp); const intsC = famInts(F, F.fpp, F.ip);
+  const cand = [...TA.ends.slice(0, 1).map(c => [...c, 1]), ...TA.crit.map(c => [...c, 0]), ...TA.ends.slice(1).map(c => [...c, 1])].map(c => ({ x: c[0], xs: c[1], ys: c[2], y: TA.fn(c[0]) }));
+  const mx = cand.reduce((A, B) => B.y > A.y + 1e-9 ? B : A), mn = cand.reduce((A, B) => B.y < A.y - 1e-9 ? B : A);
+  const ext = TA.crit.map((c, i) => { const l = intsP[i].s, r = intsP[i + 1].s; return (l > 0 && r < 0 ? 'Relative max' : 'Relative min') + T` at \(\left(${c[1]}, ${c[2]}\right)\)`; });
+  return { title: 'FRQ: trig function on [0, 2π] (no calculator)', calc: false,
+    stem: T`Let \(f(x)=${F.f}\) for \(0\le x\le 2\pi\).`,
+    parts: [
+      { q: T`a. Find the critical numbers of \(f\) on \((0, 2\pi)\).`, a: steps([T`\(f'(x)=${F.fd}=0\)`, abox(F.cp.map(x => M('x=' + nameX(x))).join(', '))]) },
+      { q: T`b. On what interval(s) is \(f\) increasing? Justify.`, a: abox(M(famStr(intsP, 1))) + JW(T`"\(f\) is increasing on \(${famStr(intsP, 1)}\) because \(f'>0\) there."`) },
+      { q: T`c. Find the coordinates of each relative extremum of \(f\). Justify.`, a: abox(ext.join('<br>')) + JW(T`"... because \(f'\) changes from positive to negative (max) / negative to positive (min) there."`) },
+      { q: T`d. Find the inflection point(s) of \(f\) on \((0,2\pi)\) as ordered pairs. Justify.`, a: steps([T`\(f''(x)=${F.fdd}\)`, abox(ipY.map(([x, y]) => M(T`\left(${nameX(x)}, ${y}\right)`)).join(', '))]) + JW(T`"\(f\) has an inflection point there because \(f''\) changes sign."`) },
+      { q: T`e. Find the absolute maximum and minimum values of \(f\) on \([0, 2\pi]\).`, a: steps(['Candidates Test:' + tbl([M('x'), M('f(x)'), '≈'], cand.map(c => [M(c.xs), M(c.ys), r3s(c.y)])), abox(T`Absolute max \(=${mx.ys}\) at \(x=${mx.xs}\). Absolute min \(=${mn.ys}\) at \(x=${mn.xs}\).`)]) }
+    ] };
+}
+function frqOpt() {
+  const n = pick([1, 2, 3]), L = pick([240, 360, 480, 600]); const k = n + 1; const x = L / (2 * k), y = L / 4, A = x * y;
+  return { title: 'FRQ: optimization (no calculator)', calc: false,
+    stem: T`A farmer has ${L} ft of fencing. She builds a rectangular pen of width \(x\) and length \(y\)` + (n > 1 ? T`, divided into ${n} smaller pens by ${n - 1} fence${n > 2 ? 's' : ''} parallel to the width.` : '.') + '<div class="figure">' + pensSVG(n) + '</div>',
+    parts: [
+      { q: T`a. Write an equation relating \(x\) and \(y\) (the constraint), and write the area \(A\) as a function of \(x\) only.`, a: abox(T`\(${k}x+2y=${L}\Rightarrow y=\dfrac{${L}-${k}x}{2}\), so \(A(x)=x\cdot\dfrac{${L}-${k}x}{2}=\dfrac{${L}x-${k}x^2}{2}\)`) },
+      { q: 'b. What values of x make sense (the domain)?', a: abox(T`\(0\le x\le ${fmtNum(L / k)}\)`) + '<p class="muted">x can\'t be negative, and y can\'t be negative.</p>' },
+      { q: T`c. Find \(A'(x)\) and the critical number.`, a: abox(T`\(A'(x)=\dfrac{${L}-${2 * k}x}{2}=0\Rightarrow x=${fmtNum(x)}\)`) },
+      { q: 'd. How do you know this gives the maximum area? Justify.', a: abox(T`\(A''(x)=-${k}<0\) (concave down), so it's a max. Also \(A(0)=0\) and \(A(${fmtNum(L / k)})=0\).`) },
+      { q: 'e. Give the dimensions and the maximum area in a sentence with units.', a: abox(T`"The maximum area is ${fmtNum(A)} ft² when \(x=${fmtNum(x)}\) ft and \(y=${fmtNum(y)}\) ft."`) }
+    ] };
+}
+function frqTable() {
+  const xs = [0, 2, 3, 5, 8]; let fv;
+  for (let t = 0; t < 200; t++) { fv = xs.map(() => R(-4, 6)); if (fv[1] === fv[3] && fv[2] !== fv[1] && fv[0] !== fv[4] && Math.abs(fv[1] - fv[2]) >= 2) break; }
+  const k = fv[1] < fv[2] ? R(fv[1] + 1, fv[2] - 1) : R(fv[2] + 1, fv[1] - 1);
+  const sl = fr(fv[4] - fv[0], 8);
+  return { title: 'FRQ: table of values: IVT, Rolle, MVT (no calculator)', calc: false,
+    stem: T`The function \(f\) is <b>differentiable</b> for all \(x\). Selected values are shown.` + tbl([M('x'), ...xs.map(M)], [[M('f(x)'), ...fv.map(M)]]),
+    parts: [
+      { q: T`a. Must there be a value \(c\) in \((2,5)\) with \(f'(c)=0\)? Justify.`, a: abox(T`Yes.`) + JW(T`"\(f\) is differentiable, so it's continuous on \([2,5]\) and differentiable on \((2,5)\). Since \(f(2)=f(5)=${fv[1]}\), by Rolle's Theorem there is a \(c\) in \((2,5)\) with \(f'(c)=0\)."`) },
+      { q: T`b. Must there be a value \(c\) in \((0,8)\) with \(f'(c)=${sl}\)? Justify.`, a: steps([T`\(\dfrac{f(8)-f(0)}{8-0}=\dfrac{${fv[4]}-${par(fv[0])}}{8}=${sl}\)`, abox('Yes.')]) + JW(T`"\(f\) is continuous on \([0,8]\) and differentiable on \((0,8)\), so by the Mean Value Theorem there is a \(c\) in \((0,8)\) with \(f'(c)=${sl}\)."`) },
+      { q: T`c. Must there be a value \(c\) in \((2,3)\) with \(f(c)=${k}\)? Justify.`, a: abox('Yes.') + JW(T`"\(f\) is continuous on \([2,3]\) and \(${k}\) is between \(f(2)=${fv[1]}\) and \(f(3)=${fv[2]}\), so by the Intermediate Value Theorem there is a \(c\) in \((2,3)\) with \(f(c)=${k}\)."`) },
+      { q: T`d. What is the average rate of change of \(f\) on \([3,8]\)? Include what it means.`, a: abox(T`\(\dfrac{f(8)-f(3)}{8-3}=${fr(fv[4] - fv[2], 5)}\)`) + '<p class="muted">On average, f changes by that much per 1 unit of x between x = 3 and x = 8.</p>' }
+    ] };
+}
+function frqCalc() {
+  const C = pick(CALC_FP); const zs = zerosOf(C.g, C.a, C.b); const ts = zerosOf(deriv(C.g), C.a + 0.01, C.b - 0.01);
+  const mx = zs.filter(z => C.g(z - 1e-4) > 0 && C.g(z + 1e-4) < 0), mn = zs.filter(z => C.g(z - 1e-4) < 0 && C.g(z + 1e-4) > 0);
+  const b = [C.a, ...zs, C.b]; const inc = []; for (let i = 0; i < b.length - 1; i++) if (C.g((b[i] + b[i + 1]) / 2) > 0) inc.push('(' + r3s(b[i]) + ', ' + r3s(b[i + 1]) + ')');
+  const L = arr => arr.length ? arr.map(z => 'x=' + r3s(z)).join(',\\;\\; ') : '\\text{none}';
+  return { title: '🧮 FRQ: calculator allowed', calc: true,
+    stem: T`The <b>derivative</b> of \(f\) is \(${C.s}\) for \(${C.a}<x<${C.b}\). Use your graphing calculator (radian mode, 3 decimals).` + '<div class="figure">' + plot({ xmin: C.a, xmax: C.b, ymin: yRange([C.g], C.a, C.b, 0.1)[0], ymax: yRange([C.g], C.a, C.b, 0.1)[1], xstep: 1, ylabels: false, fns: [{ f: C.g, from: C.a, to: C.b }], title: 'Calculator graph of y = f′(x)', w: 360, h: 210 }) + '</div>',
+    parts: [
+      { q: T`a. On what interval(s) is \(f\) increasing? Justify.`, a: steps(['Calculator: <b>2nd TRACE → zero</b> at each x-intercept of f′.', abox(M(inc.join(' \\cup ') || '\\text{none}'))]) + JW(T`"\(f\) is increasing on those intervals because \(f'>0\) there."`) },
+      { q: T`b. Find the x-coordinate of each relative maximum of \(f\). Justify.`, a: abox(M(L(mx))) + JW(T`"\(f\) has a relative maximum at \(${L(mx)}\) because \(f'\) changes from positive to negative there."`) },
+      { q: T`c. Find the x-coordinate of each relative minimum of \(f\). Justify.`, a: abox(M(L(mn))) + JW(T`"\(f\) has a relative minimum at \(${L(mn)}\) because \(f'\) changes from negative to positive there."`) },
+      { q: T`d. Find the x-coordinate(s) of the inflection points of \(f\). Justify.`, a: steps(['Calculator: <b>2nd TRACE → maximum / minimum</b> on each hill and valley of f′.', abox(M(L(ts)))]) + JW(T`"\(f\) has an inflection point there because \(f'\) changes from increasing to decreasing (or the reverse)."`) }
+    ] };
+}
+const FRQ_TYPES = { fprime: ['f′ graph', frqFprime], poly: ['Function analysis', frqPoly], trig: ['Trig on [0, 2π]', frqTrig], opt: ['Optimization', frqOpt], table: ['Table: IVT / Rolle / MVT', frqTable], calc: ['🧮 Calculator', frqCalc] };
+function genFRQ(type) { const t = type && FRQ_TYPES[type] ? type : pick(['fprime', 'fprime', 'poly', 'trig', 'opt', 'table', 'calc']); const F = FRQ_TYPES[t][1](); F.type = t; F.stem = fixMath(F.stem); F.parts.forEach(p => { p.q = fixMath(p.q); p.a = fixMath(p.a); }); return F; }
+
 /* ---- app.js ---- */
 /* ===== APP ===== */
 const $ = s => document.querySelector(s);
 const LS = { get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } } };
 let stats = LS.get('c3_stats', {}), missed = LS.get('c3_missed', []), testHist = LS.get('c3_tests', []);
-const TN = id => (TOPICS.find(t => t.id === id) || { short: 'Rubio review' }).short;
+const TN = id => id === 'frq' ? 'FRQ' : (TOPICS.find(t => t.id === id) || { short: 'Review' }).short;
 function tex(el) { if (window.renderMathInElement) renderMathInElement(el, { delimiters: [{ left: '\\[', right: '\\]', display: true }, { left: '\\(', right: '\\)', display: false }], throwOnError: false }); else setTimeout(() => tex(el), 150); }
 function record(topic, ok) { const s = stats[topic] || { a: 0, c: 0, r: [] }; s.a++; if (ok) s.c++; s.r.push(ok ? 1 : 0); if (s.r.length > 20) s.r.shift(); stats[topic] = s; LS.set('c3_stats', stats); }
 function addMissed(q, picked, src) {
@@ -1251,74 +1674,94 @@ function renderLearn(id) {
 }
 
 /* ---------- practice ---------- */
+let MODE = LS.get('c3_mode', 'sa');
+const MCONLY = /which of the following|which function|which statement|which could be|which graph|at which labeled point|which is true|best justification|then f has|what can you conclude|what happens at|must be true/i;
+const plainStem = q => q.stem.replace(/<[^>]+>/g, ' ').replace(/\\\(|\\\)/g, '');
+function isMCq(q) { return !!q.graphChoices || MCONLY.test(plainStem(q)); }
+function isMC(q) { return MODE === 'mc' || isMCq(q); }
+const isCalcQ = q => /Calculator allowed|🧮/.test(q.stem);
 const PS = { topics: ['all'], q: null, done: false, streak: 0, best: 0, n: 0, c: 0, retry: null, last: null };
 function startPractice(topics, retry) { PS.topics = topics; PS.retry = retry || null; PS.streak = 0; PS.n = 0; PS.c = 0; show('practice'); renderChips(); nextPractice(); }
 function renderChips() {
   const all = PS.topics.includes('all');
-  $('#chips').innerHTML = '<button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '');
+  $('#chips').innerHTML = '<div class="modebar"><b>Answer style:</b> <button class="chip' + (MODE === 'sa' ? ' on' : '') + '" data-mode="sa">✍️ Short answer (like your test)</button><button class="chip' + (MODE === 'mc' ? ' on' : '') + '" data-mode="mc">🔘 Multiple choice (faster)</button></div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
+  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { MODE = b.dataset.mode; LS.set('c3_mode', MODE); renderChips(); if (PS.q && !PS.done) renderQ(PS.q); });
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { const c = b.dataset.c; PS.retry = null; if (c === 'all') PS.topics = ['all']; else { let t = PS.topics.filter(x => x !== 'all'); t = t.includes(c) ? t.filter(x => x !== c) : [...t, c]; PS.topics = t.length ? t : ['all']; } renderChips(); nextPractice(); });
 }
+function pstats() { $('#pstats').innerHTML = 'Streak: <b>' + PS.streak + '</b> · Best: <b>' + PS.best + '</b> · This session: <b>' + PS.c + '/' + PS.n + '</b>'; }
 function nextPractice() {
   let q;
   if (PS.retry) { if (!PS.retry.length) { PS.retry = null; renderChips(); $('#pcard').innerHTML = '<div class="done">🎉 You went through all your saved mistakes. Check the Mistakes tab to see what\'s fixed.</div>'; return; } const m = missed.find(x => x.id === PS.retry[0]); if (!m) { PS.retry.shift(); return nextPractice(); } q = reshuffle(m.q); q.retryId = m.id; }
   else { const g = pickGen(PS.topics, PS.last); PS.last = g; q = genQ(g); }
-  PS.q = q; PS.done = false;
-  $('#pstats').innerHTML = 'Streak: <b>' + PS.streak + '</b> · Best: <b>' + PS.best + '</b> · This session: <b>' + PS.c + '/' + PS.n + '</b>';
-  const c = $('#pcard');
-  c.innerHTML = '<div class="qtop"><span class="tag">' + TN(q.topic) + '</span>' + (q.retryId ? '<span class="tag red">from your mistakes</span>' : '') + '<span class="muted">No calculator</span></div><div class="stem">' + q.stem + '</div>' + choicesHTML(q) + '<div class="hintbox" id="hintbox"></div><div class="prow2"><button class="ghost" id="hintb">💡 Hint</button><button class="ghost" id="skipb">Skip →</button></div><div id="pfb"></div>';
-  c.querySelectorAll('.ch').forEach(b => b.onclick = () => answerPractice(+b.dataset.i));
+  renderQ(q);
+}
+function nextPracticeWith(q) { renderQ(q); }
+function saRevealHTML(q, mine) {
+  const wrong = q.choices.map((c, i) => (i === q.ans || !c.why) ? '' : '<li><b>If you got</b> ' + c.t + ': ' + c.why + '</li>').join('');
+  return '<div class="reveal">' + (mine ? '<div class="mine"><b>Your answer:</b> ' + esc(mine) + '</div>' : '') + '<div class="fbh">Answer:</div>' + abox(q.choices[q.ans].t) + '<details open><summary>Key: full worked solution</summary><div class="sol">' + q.sol + '</div></details>' + (wrong ? '<details><summary>Common wrong answers and why they\'re wrong</summary><ul class="wrongs">' + wrong + '</ul></details>' : '') + '</div>';
+}
+function renderQ(q) {
+  PS.q = q; PS.done = false; pstats(); const c = $('#pcard'); const mcq = isMC(q);
+  c.innerHTML = '<div class="qtop"><span class="tag">' + TN(q.topic) + '</span>' + (q.retryId ? '<span class="tag red">from your mistakes</span>' : '') + '<span class="muted">' + (isCalcQ(q) ? '🧮 Calculator allowed' : 'No calculator') + '</span></div><div class="stem">' + q.stem + '</div>' + (mcq ? choicesHTML(q) : '<textarea id="saa" class="saa" placeholder="Work it out on paper. Type your final answer here (optional), then hit Check."></textarea><div class="prow2"><button class="big" id="revb">Check answer</button></div>') + '<div class="hintbox" id="hintbox"></div><div class="prow2"><button class="ghost" id="hintb">💡 Hint</button><button class="ghost" id="skipb">Skip →</button></div><div id="pfb"></div>';
+  if (mcq) c.querySelectorAll('.ch').forEach(b => b.onclick = () => answerPractice(+b.dataset.i)); else $('#revb').onclick = revealSA;
   $('#hintb').onclick = () => { $('#hintbox').innerHTML = '💡 ' + (q.hint || 'Start with the derivative.'); $('#hintbox').style.display = 'block'; tex($('#hintbox')); };
   $('#skipb').onclick = () => { if (PS.retry) PS.retry.push(PS.retry.shift()); nextPractice(); };
   tex(c);
 }
-function answerPractice(i) {
-  if (PS.done) return; PS.done = true; const q = PS.q, ok = i === q.ans;
-  PS.n++; if (ok) { PS.c++; PS.streak++; PS.best = Math.max(PS.best, PS.streak); } else PS.streak = 0;
-  record(q.topic, ok);
-  if (q.retryId) { const m = missed.find(x => x.id === q.retryId); if (ok && m) { m.fixed = true; LS.set('c3_missed', missed); badge(); } PS.retry.shift(); if (!ok) { if (m) { m.count++; m.picked = i; LS.set('c3_missed', missed); } PS.retry.push(q.retryId); } }
-  else if (!ok) addMissed(q, i, 'Practice');
-  markChoices($('#pcard'), q, i);
-  $('#pfb').innerHTML = feedbackHTML(q, i) + '<div class="prow2"><button class="big" id="nextb">Next question →</button>' + (q.gen && !q.retryId ? '<button class="ghost" id="sameb">Same type, new numbers</button>' : '') + '</div>';
-  $('#nextb').onclick = nextPractice; if ($('#sameb')) $('#sameb').onclick = () => { const nq = genQ(q.gen); if (nq) { PS.last = q.gen; nextPracticeWith(nq); } };
-  $('#pstats').innerHTML = 'Streak: <b>' + PS.streak + '</b> · Best: <b>' + PS.best + '</b> · This session: <b>' + PS.c + '/' + PS.n + '</b>';
+function revealSA() {
+  const q = PS.q; $('#revb').disabled = true; const mine = ($('#saa').value || '').trim();
+  $('#pfb').innerHTML = saRevealHTML(q, mine) + '<div class="prow2 gradebar" id="gradebar"><b>Did you get it (answer AND reasoning)?</b><button class="big okb" id="gotb">✔ I got it</button><button class="big badb" id="missb">✘ I missed it</button></div><div id="pnext"></div>';
+  $('#gotb').onclick = () => finishPractice(true, -2); $('#missb').onclick = () => finishPractice(false, -2);
   tex($('#pfb'));
 }
-function nextPracticeWith(q) {
-  PS.q = q; PS.done = false; const c = $('#pcard');
-  c.innerHTML = '<div class="qtop"><span class="tag">' + TN(q.topic) + '</span><span class="muted">No calculator</span></div><div class="stem">' + q.stem + '</div>' + choicesHTML(q) + '<div class="hintbox" id="hintbox"></div><div class="prow2"><button class="ghost" id="hintb">💡 Hint</button><button class="ghost" id="skipb">Skip →</button></div><div id="pfb"></div>';
-  c.querySelectorAll('.ch').forEach(b => b.onclick = () => answerPractice(+b.dataset.i));
-  $('#hintb').onclick = () => { $('#hintbox').innerHTML = '💡 ' + (q.hint || ''); $('#hintbox').style.display = 'block'; tex($('#hintbox')); };
-  $('#skipb').onclick = nextPractice; tex(c);
+function answerPractice(i) { if (PS.done) return; const q = PS.q; markChoices($('#pcard'), q, i); $('#pfb').innerHTML = feedbackHTML(q, i) + '<div id="pnext"></div>'; tex($('#pfb')); finishPractice(i === q.ans, i); }
+function finishPractice(ok, picked) {
+  if (PS.done) return; PS.done = true; const q = PS.q;
+  PS.n++; if (ok) { PS.c++; PS.streak++; PS.best = Math.max(PS.best, PS.streak); } else PS.streak = 0;
+  record(q.topic, ok);
+  if (q.retryId) { const m = missed.find(x => x.id === q.retryId); if (ok && m) { m.fixed = true; LS.set('c3_missed', missed); badge(); } PS.retry.shift(); if (!ok) { if (m) { m.count++; m.picked = picked; LS.set('c3_missed', missed); } PS.retry.push(q.retryId); } }
+  else if (!ok) addMissed(q, picked, 'Practice');
+  if ($('#gradebar')) $('#gradebar').innerHTML = ok ? '<b class="okt">✔ Nice. Counted as correct.</b>' : '<b class="badt">✘ Saved to your Mistakes tab. Read the key and the wrong-answer notes above.</b>';
+  $('#pnext').innerHTML = '<div class="prow2"><button class="big" id="nextb">Next question →</button>' + (q.gen && !q.retryId ? '<button class="ghost" id="sameb">Same type, new numbers</button>' : '') + '</div>';
+  $('#nextb').onclick = nextPractice; if ($('#sameb')) $('#sameb').onclick = () => { const nq = genQ(q.gen); if (nq) { PS.last = q.gen; renderQ(nq); } };
+  pstats();
 }
 
 /* ---------- test ---------- */
 const TS = LS.get('c3_active', { active: false });
-const SIM_MIX = ['ext', 'ext', 'mvt', 'inc', 'inc', 'conc', 'conc', 'graph', 'graph', 'graph', 'lim', 'opt'];
+const SIM_MIX = ['ext', 'ext', 'mvt', 'inc', 'inc', 'conc', 'conc', 'graph', 'opt', 'calc'];
+const QUICK_MIX = ['ext', 'ext', 'mvt', 'inc', 'inc', 'conc', 'conc', 'graph', 'graph', 'graph', 'opt', 'calc'];
 function renderTestSetup() {
   $('#tbody').innerHTML = '<div class="tgrid">' +
-    '<div class="tcard"><h3>🧪 Ch 3 Test Sim (MC)</h3><p>12 brand-new no-calculator MC questions in the same mix as Rubio\'s review (extrema, MVT, inc/dec, concavity, f′ graphs, limits, optimization).</p><p class="muted">30 min · you can go back and change answers, like on paper</p><button class="big" data-start="sim">Start</button></div>' +
-    '<div class="tcard star"><h3>⭐ Rubio: WS – Ch 3 MC Review</h3><p>The exact 12 questions from the review whose key is attached to the Group Test on Canvas (retyped, graphs redrawn).</p><p class="muted">30 min</p><button class="big" data-start="rubio">Start</button></div>' +
-    '<div class="tcard"><h3>📄 Rubio: Ch 3 Review FT5 (MC)</h3><p>The 11 no-calculator, non-PVA questions from FT5 (skips #10–13: the calculator question and the PVA ones).</p><p class="muted">28 min</p><button class="big" data-start="ft5">Start</button></div>' +
-    '<div class="tcard"><h3>⚙️ Custom test</h3><label>Questions <input id="cn" type="number" min="4" max="40" value="15"></label> <label>Minutes <input id="cm" type="number" min="2" max="120" value="35"></label><div class="cks">' + TOPICS.map(t => '<label><input type="checkbox" class="ck" value="' + t.id + '" checked> ' + t.short + '</label>').join('') + '</div><button class="big" data-start="custom">Start</button></div></div>';
+    '<div class="tcard star"><h3>📝 Ch 3 Test Sim (like the real test)</h3><p>10 short-answer questions (one calculator) + 1 FRQ. All new questions, in Rubio\'s style. Write answers like you would on paper. After you submit, you check each one against the key.</p><p class="muted">50 min</p><button class="big" data-start="sim">Start</button></div>' +
+    '<div class="tcard"><h3>⚡ Quick multiple-choice check</h3><p>12 auto-graded MC questions across every topic. Good for a fast "where am I weak?" check.</p><p class="muted">25 min</p><button class="big" data-start="quick">Start</button></div>' +
+    '<div class="tcard"><h3>⚙️ Custom test</h3><label>Questions <input id="cn" type="number" min="3" max="40" value="10"></label> <label>Minutes <input id="cm" type="number" min="2" max="120" value="35"></label><div class="cks">' + TOPICS.map(t => '<label><input type="checkbox" class="ck" value="' + t.id + '" checked> ' + t.short + '</label>').join('') + '</div><div class="cks"><label><input type="radio" name="cfmt" value="sa" checked> Short answer</label><label><input type="radio" name="cfmt" value="mc"> Multiple choice</label><label><input type="checkbox" id="cfrq" checked> + 1 FRQ</label></div><button class="big" data-start="custom">Start</button></div></div>';
   document.querySelectorAll('[data-start]').forEach(b => b.onclick = () => startTest(b.dataset.start));
 }
 function startTest(mode) {
-  let qs = [], name, min;
-  if (mode === 'sim') { name = 'Ch 3 Test Sim'; min = 30; qs = shuffle(SIM_MIX).map(t => { const g = pickGen([t]); return genQ(g); }); }
-  else if (mode === 'rubio') { name = 'Rubio MC Review'; min = 30; qs = RUBIO_MC.map((f, i) => { const q = f(); q.topic = ['ext', 'inc', 'conc', 'conc', 'conc', 'inc', 'conc', 'lim', 'graph', 'graph', 'graph', 'graph'][i]; q.src = 'Rubio Review #' + (i + 1); return q; }); }
-  else if (mode === 'ft5') { name = 'Rubio FT5'; min = 28; const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15], tp = ['ext', 'mvt', 'inc', 'conc', 'lim', 'graph', 'opt', 'conc', 'opt', 'graph', 'opt']; qs = FT5_MC.map((f, i) => { const q = f(); q.topic = tp[i]; q.src = 'FT5 #' + nums[i]; return q; }); }
-  else { const n = Math.max(4, Math.min(40, +$('#cn').value || 15)); min = Math.max(2, +$('#cm').value || 30); const tps = [...document.querySelectorAll('.ck:checked')].map(c => c.value); name = 'Custom (' + n + ')'; qs = [...Array(n)].map((_, i) => genQ(pickGen(tps.length ? tps : ['all']))); }
-  qs = qs.filter(Boolean).map(fixQ);
-  Object.assign(TS, { active: true, submitted: false, name, qs, ans: qs.map(() => null), flag: qs.map(() => false), idx: 0, end: Date.now() + min * 60000, start: Date.now(), min });
+  let qs = [], name, min, fmt = 'sa', frq = false;
+  if (mode === 'sim') { name = 'Ch 3 Test Sim'; min = 50; qs = shuffle(SIM_MIX).map(t => genQ(pickGen([t]))); frq = true; }
+  else if (mode === 'quick') { name = 'Quick MC check'; min = 25; fmt = 'mc'; qs = shuffle(QUICK_MIX).map(t => genQ(pickGen([t]))); }
+  else { const n = Math.max(3, Math.min(40, +$('#cn').value || 10)); min = Math.max(2, +$('#cm').value || 30); const tps = [...document.querySelectorAll('.ck:checked')].map(c => c.value); fmt = (document.querySelector('[name=cfmt]:checked') || {}).value || 'sa'; frq = $('#cfrq').checked; name = 'Custom (' + n + (frq ? ' + FRQ' : '') + ')'; qs = [...Array(n)].map(() => genQ(pickGen(tps.length ? tps : ['all']))); }
+  qs = qs.filter(Boolean).map(fixQ).map(q => Object.assign(q, { kind: (fmt === 'mc' || isMCq(q)) ? 'mc' : 'sa' }));
+  if (frq) { const F = genFRQ(); qs.push({ kind: 'frq', topic: 'frq', frq: F, stem: F.stem }); }
+  Object.assign(TS, { active: true, submitted: false, name, qs, ans: qs.map(() => null), txt: qs.map(q => q.kind === 'frq' ? q.frq.parts.map(() => '') : ''), grade: qs.map(q => q.kind === 'frq' ? q.frq.parts.map(() => null) : null), flag: qs.map(() => false), idx: 0, end: Date.now() + min * 60000, start: Date.now(), min });
   LS.set('c3_active', TS); show('test'); renderTest();
 }
 let timer = null;
 function fmtT(ms) { ms = Math.max(0, ms); const s = Math.ceil(ms / 1000); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+const answered = i => { const q = TS.qs[i]; return q.kind === 'mc' ? TS.ans[i] !== null : q.kind === 'sa' ? !!(TS.txt[i] || '').trim() : TS.txt[i].some(t => t.trim()); };
 function renderTest() {
   if (TS.submitted) return renderResults();
   const q = TS.qs[TS.idx];
-  $('#tbody').innerHTML = '<div class="tbar"><b>' + TS.name + '</b><span id="clock" class="clock"></span><button class="ghost" id="tsub">Submit test</button></div><div class="tnav">' + TS.qs.map((_, i) => '<button class="tn' + (i === TS.idx ? ' cur' : '') + (TS.ans[i] !== null ? ' ans' : '') + (TS.flag[i] ? ' flag' : '') + '" data-n="' + i + '">' + (i + 1) + '</button>').join('') + '</div><div class="card"><div class="qtop"><span class="tag">Question ' + (TS.idx + 1) + ' of ' + TS.qs.length + '</span>' + (q.src ? '<span class="tag gray">' + q.src + '</span>' : '') + '<span class="muted">No calculator</span></div><div class="stem">' + q.stem + '</div>' + choicesHTML(q, TS.ans[TS.idx]) + '<div class="prow2"><button class="ghost" id="tprev">← Prev</button><button class="ghost" id="tflag">' + (TS.flag[TS.idx] ? '🚩 Unflag' : '🏳 Flag for review') + '</button><button class="big" id="tnext">' + (TS.idx === TS.qs.length - 1 ? 'Review & submit' : 'Next →') + '</button></div></div>';
+  let body;
+  if (q.kind === 'mc') body = '<div class="stem">' + q.stem + '</div>' + choicesHTML(q, TS.ans[TS.idx]);
+  else if (q.kind === 'sa') body = '<div class="stem">' + q.stem + '</div><textarea class="saa" id="tsa" placeholder="Your answer (and justification if it asks)">' + esc(TS.txt[TS.idx] || '') + '</textarea>';
+  else body = '<div class="stem"><b>' + q.frq.title + '</b><br>' + q.frq.stem + '</div>' + q.frq.parts.map((p, j) => '<div class="frqp"><div class="frqq">' + p.q + '</div><textarea class="saa tfr" data-j="' + j + '" placeholder="Answer + justification">' + esc(TS.txt[TS.idx][j] || '') + '</textarea></div>').join('');
+  $('#tbody').innerHTML = '<div class="tbar"><b>' + TS.name + '</b><span id="clock" class="clock"></span><button class="ghost" id="tsub">Submit test</button></div><div class="tnav">' + TS.qs.map((x, i) => '<button class="tn' + (i === TS.idx ? ' cur' : '') + (answered(i) ? ' ans' : '') + (TS.flag[i] ? ' flag' : '') + '" data-n="' + i + '">' + (x.kind === 'frq' ? 'FRQ' : i + 1) + '</button>').join('') + '</div><div class="card"><div class="qtop"><span class="tag">' + (q.kind === 'frq' ? 'Free response' : 'Question ' + (TS.idx + 1) + ' of ' + TS.qs.length) + '</span><span class="muted">' + ((q.kind === 'frq' ? q.frq.calc : isCalcQ(q)) ? '🧮 Calculator allowed' : 'No calculator') + '</span></div>' + body + '<div class="prow2"><button class="ghost" id="tprev">← Prev</button><button class="ghost" id="tflag">' + (TS.flag[TS.idx] ? '🚩 Unflag' : '🏳 Flag for review') + '</button><button class="big" id="tnext">' + (TS.idx === TS.qs.length - 1 ? 'Review & submit' : 'Next →') + '</button></div></div>';
   document.querySelectorAll('#tbody .ch').forEach(b => b.onclick = () => { TS.ans[TS.idx] = +b.dataset.i; LS.set('c3_active', TS); document.querySelectorAll('#tbody .ch').forEach(x => x.classList.toggle('sel', x === b)); document.querySelector('.tn.cur').classList.add('ans'); });
+  if ($('#tsa')) $('#tsa').oninput = e => { TS.txt[TS.idx] = e.target.value; LS.set('c3_active', TS); };
+  document.querySelectorAll('.tfr').forEach(t => t.oninput = e => { TS.txt[TS.idx][+t.dataset.j] = e.target.value; LS.set('c3_active', TS); });
   document.querySelectorAll('.tn').forEach(b => b.onclick = () => { TS.idx = +b.dataset.n; renderTest(); });
   $('#tprev').onclick = () => { if (TS.idx > 0) { TS.idx--; renderTest(); } };
   $('#tnext').onclick = () => { if (TS.idx < TS.qs.length - 1) { TS.idx++; renderTest(); } else submitTest(false); };
@@ -1328,24 +1771,52 @@ function renderTest() {
   tex($('#tbody'));
 }
 function tick() { if (!TS.active || TS.submitted) { clearInterval(timer); return; } const left = TS.end - Date.now(); const el = $('#clock'); if (el) { el.textContent = '⏱ ' + fmtT(left); el.classList.toggle('low', left < 5 * 60000); } if (left <= 0) submitTest(true); }
+function tally() { let pts = 0, tot = 0, pend = 0; TS.qs.forEach((q, i) => { if (q.kind === 'mc') { tot++; if (TS.ans[i] === q.ans) pts++; } else if (q.kind === 'sa') { tot++; if (TS.grade[i] === true) pts++; if (TS.grade[i] === null) pend++; } else TS.grade[i].forEach(g => { tot++; if (g === true) pts++; if (g === null) pend++; }); }); return { pts, tot, pend }; }
 function submitTest(auto) {
-  if (!auto) { const un = TS.ans.filter(a => a === null).length; if (!confirm(un ? 'You have ' + un + ' unanswered question(s). Submit anyway?' : 'Submit the test?')) return; }
+  if (!auto) { const un = TS.qs.filter((_, i) => !answered(i)).length; if (!confirm(un ? 'You have ' + un + ' unanswered question(s). Submit anyway?' : 'Submit the test?')) return; }
   clearInterval(timer); TS.submitted = true; TS.used = Date.now() - TS.start;
-  let score = 0; TS.qs.forEach((q, i) => { const ok = TS.ans[i] === q.ans; if (ok) score++; record(q.topic, ok); if (!ok) addMissed(q, TS.ans[i] === null ? -1 : TS.ans[i], TS.name); });
-  TS.score = score; testHist.unshift({ when: Date.now(), name: TS.name, score, n: TS.qs.length }); LS.set('c3_tests', testHist.slice(0, 40)); LS.set('c3_active', TS);
+  TS.qs.forEach((q, i) => { if (q.kind === 'mc') { const ok = TS.ans[i] === q.ans; record(q.topic, ok); if (!ok) addMissed(q, TS.ans[i] === null ? -1 : TS.ans[i], TS.name); } });
+  const t = tally(); TS.histWhen = Date.now(); testHist.unshift({ when: TS.histWhen, name: TS.name, score: t.pts, n: t.tot }); LS.set('c3_tests', testHist.slice(0, 40)); LS.set('c3_active', TS);
   if (auto) alert("Time's up! Your test was submitted.");
   renderResults();
 }
+function gradeBtns(i, j, g) { return '<div class="prow2 gradebar"><b>Your call (compare with the key):</b><button class="big okb' + (g === true ? ' pickd' : '') + '" data-g="1" data-i="' + i + '" data-j="' + (j ?? '') + '">✔ Right</button><button class="big badb' + (g === false ? ' pickd' : '') + '" data-g="0" data-i="' + i + '" data-j="' + (j ?? '') + '">✘ Wrong</button></div>'; }
 function renderResults() {
-  const n = TS.qs.length, pct = Math.round(100 * TS.score / n);
-  const by = {}; TS.qs.forEach((q, i) => { const t = q.topic; by[t] = by[t] || [0, 0]; by[t][1]++; if (TS.ans[i] === q.ans) by[t][0]++; });
-  let h = '<div class="card res"><h2>' + TS.name + ': ' + TS.score + ' / ' + n + ' (' + pct + '%)</h2><p class="muted">Time used: ' + fmtT(TS.used || 0) + ' of ' + TS.min + ':00</p><div class="tags">' + Object.entries(by).map(([t, v]) => '<span class="tag ' + (v[0] === v[1] ? 'green' : 'red') + '">' + TN(t) + ': ' + v[0] + '/' + v[1] + '</span>').join('') + '</div><div class="prow2"><button class="big" id="again">Take another test</button><button class="ghost" id="tomist">Go to Mistakes →</button></div></div>';
-  TS.qs.forEach((q, i) => { const p = TS.ans[i], ok = p === q.ans; h += '<details class="card rq ' + (ok ? 'okq' : 'badq') + '"' + (ok ? '' : ' open') + '><summary><b>Q' + (i + 1) + '</b> ' + (ok ? '✔' : '✘') + ' <span class="tag gray">' + (q.src || TN(q.topic)) + '</span></summary><div class="stem">' + q.stem + '</div>' + choicesHTML(q) + (p === null || p < 0 ? '<div class="fb bad"><div class="fbh">You left this blank. The answer is (' + LET[q.ans] + ').</div><details open><summary>Key: full worked solution</summary><div class="sol">' + q.sol + '</div></details></div>' : feedbackHTML(q, p)) + '</details>'; });
+  const t = tally(), pct = Math.round(100 * t.pts / Math.max(1, t.tot));
+  let h = '<div class="card res"><h2>' + TS.name + ': ' + t.pts + ' / ' + t.tot + ' (' + pct + '%)</h2>' + (t.pend ? '<p class="warnp">⚠️ ' + t.pend + ' answer(s) still need you to check them against the key (✔ / ✘ buttons below).</p>' : '<p class="okt">All checked.</p>') + '<p class="muted">Time used: ' + fmtT(TS.used || 0) + ' of ' + TS.min + ':00. Multiple choice is graded automatically. For short answer and FRQ, be strict: it only counts if the answer AND the reason match the key.</p><div class="prow2"><button class="big" id="again">Take another test</button><button class="ghost" id="tomist">Go to Mistakes →</button></div></div>';
+  TS.qs.forEach((q, i) => {
+    if (q.kind === 'mc') { const p = TS.ans[i], ok = p === q.ans; h += '<details class="card rq ' + (ok ? 'okq' : 'badq') + '"' + (ok ? '' : ' open') + '><summary><b>Q' + (i + 1) + '</b> ' + (ok ? '✔' : '✘') + ' <span class="tag gray">' + TN(q.topic) + '</span></summary><div class="stem">' + q.stem + '</div>' + choicesHTML(q) + (p === null || p < 0 ? '<div class="fb bad"><div class="fbh">Left blank. Answer: (' + LET[q.ans] + ')</div><details open><summary>Key</summary><div class="sol">' + q.sol + '</div></details></div>' : feedbackHTML(q, p)) + '</details>'; }
+    else if (q.kind === 'sa') { const g = TS.grade[i]; h += '<div class="card rq ' + (g === true ? 'okq' : g === false ? 'badq' : 'pendq') + '"><div class="qtop"><b>Q' + (i + 1) + '</b><span class="tag gray">' + TN(q.topic) + '</span></div><div class="stem">' + q.stem + '</div>' + saRevealHTML(q, TS.txt[i] || '(blank)') + gradeBtns(i, null, g) + '</div>'; }
+    else { h += '<div class="card rq pendq"><div class="qtop"><b>FRQ</b><span class="tag gray">' + q.frq.title + '</span></div><div class="stem">' + q.frq.stem + '</div>' + q.frq.parts.map((p, j) => '<div class="frqp"><div class="frqq">' + p.q + '</div><div class="mine"><b>Your answer:</b> ' + esc(TS.txt[i][j] || '(blank)') + '</div><div class="sol">' + p.a + '</div>' + gradeBtns(i, j, TS.grade[i][j]) + '</div>').join('') + '</div>'; }
+  });
   $('#tbody').innerHTML = h;
-  document.querySelectorAll('.rq').forEach((d, i) => { const q = TS.qs[i]; markChoices(d, q, TS.ans[i]); });
+  document.querySelectorAll('.rq').forEach(d => { });
+  TS.qs.forEach((q, i) => { if (q.kind === 'mc') { const d = document.querySelectorAll('#tbody details.rq')[TS.qs.slice(0, i).filter(x => x.kind === 'mc').length]; if (d) markChoices(d, q, TS.ans[i]); } });
+  document.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
+    const i = +b.dataset.i, j = b.dataset.j === '' ? null : +b.dataset.j, ok = b.dataset.g === '1'; const q = TS.qs[i];
+    if (j === null) { const was = TS.grade[i]; TS.grade[i] = ok; if (was === null) record(q.topic, ok); if (!ok) addMissed(q, -2, TS.name); }
+    else TS.grade[i][j] = ok;
+    const tt = tally(); const e = testHist.find(x => x.when === TS.histWhen); if (e) { e.score = tt.pts; e.n = tt.tot; LS.set('c3_tests', testHist); }
+    LS.set('c3_active', TS); const y = window.scrollY; renderResults(); window.scrollTo(0, y);
+  });
   $('#again').onclick = () => { TS.active = false; LS.set('c3_active', { active: false }); renderTestSetup(); };
   $('#tomist').onclick = () => show('mistakes');
   tex($('#tbody'));
+}
+
+/* ---------- FRQ tab ---------- */
+let CUR_FRQ = null;
+function renderFRQ() {
+  if (!CUR_FRQ) CUR_FRQ = genFRQ();
+  let h = '<div class="card"><h2 style="margin:0 0 6px">Free Response (FRQ) practice</h2><p>Your tests usually have 1–2 FRQs. Every click makes a <b>brand-new</b> one. Do each part on paper with a full justification sentence, then show the answer and compare.</p><div class="chips"><b style="margin-right:6px">New FRQ:</b><button class="chip on" data-ft="">🎲 Random</button>' + Object.entries(FRQ_TYPES).map(([k, v]) => '<button class="chip" data-ft="' + k + '">' + v[0] + '</button>').join('') + '</div></div>';
+  const F = CUR_FRQ;
+  h += '<div class="card"><h3>' + F.title + '</h3><div class="stem">' + F.stem + '</div>' + F.parts.map((p, i) => '<div class="frqp"><div class="frqq">' + p.q + '</div><div class="prow2"><button class="ghost" data-show="g' + i + '">Show answer</button></div><div class="sol frqa" id="fa-g' + i + '" style="display:none">' + p.a + '</div></div>').join('') + '<div class="prow2"><button class="big" data-ft="' + F.type + '">Another one like this →</button></div></div>';
+  if (!FRQS) FRQS = FRQ_BUILD();
+  h += '<details class="card"><summary><b>More: class review FRQs (from Rubio\'s review sheets)</b></summary>' + FRQS.map(Fx => '<div class="frqblock"><h3>' + (Fx.calc ? '🧮 ' : '') + Fx.title + '</h3><div class="stem">' + Fx.stem + '</div>' + Fx.parts.map((p, i) => '<div class="frqp"><div class="frqq">' + p.q + '</div><div class="prow2"><button class="ghost" data-show="' + Fx.id + i + '">Show answer</button></div><div class="sol frqa" id="fa-' + Fx.id + i + '" style="display:none">' + p.a + '</div></div>').join('') + '</div>').join('') + '</details>';
+  $('#fbody').innerHTML = fixMath(h);
+  document.querySelectorAll('[data-ft]').forEach(b => b.onclick = () => { CUR_FRQ = genFRQ(b.dataset.ft || null); renderFRQ(); window.scrollTo(0, 0); });
+  document.querySelectorAll('[data-show]').forEach(b => b.onclick = () => { const el = $('#fa-' + b.dataset.show); const on = el.style.display === 'none'; el.style.display = on ? 'block' : 'none'; b.textContent = on ? 'Hide answer' : 'Show answer'; });
+  tex($('#fbody'));
 }
 
 /* ---------- mistakes ---------- */
@@ -1353,22 +1824,22 @@ let MF = { topic: 'all', fixed: false };
 function renderMistakes() {
   const list = missed.filter(m => (MF.fixed ? m.fixed : !m.fixed) && (MF.topic === 'all' || m.q.topic === MF.topic));
   const open = missed.filter(m => !m.fixed).length, fixedN = missed.filter(m => m.fixed).length;
-  let h = '<div class="card"><div class="mhead"><div><b>' + open + '</b> to fix · <b>' + fixedN + '</b> fixed ✔</div><div class="prow2"><button class="big" id="retryall"' + (open ? '' : ' disabled') + '>Retry all unfixed</button><button class="ghost" id="tgfix">' + (MF.fixed ? 'Show to-fix' : 'Show fixed') + '</button><button class="ghost" id="clr">Clear fixed</button></div></div><div class="chips">' + ['all', ...TOPICS.map(t => t.id)].map(t => '<button class="chip' + (MF.topic === t ? ' on' : '') + '" data-mt="' + t + '">' + (t === 'all' ? 'All topics' : TN(t)) + '</button>').join('') + '</div><p class="muted">Every question you miss in Practice or a Test lands here with what you picked, why it\'s wrong, and the full key. Get it right on a retry and it moves to "fixed".</p></div>';
+  let h = '<div class="card"><div class="mhead"><div><b>' + open + '</b> to fix · <b>' + fixedN + '</b> fixed ✔</div><div class="prow2"><button class="big" id="retryall"' + (open ? '' : ' disabled') + '>Retry all unfixed</button><button class="ghost" id="tgfix">' + (MF.fixed ? 'Show to-fix' : 'Show fixed') + '</button><button class="ghost" id="clr">Clear fixed</button></div></div><div class="chips">' + ['all', ...TOPICS.map(t => t.id)].map(t => '<button class="chip' + (MF.topic === t ? ' on' : '') + '" data-mt="' + t + '">' + (t === 'all' ? 'All topics' : TN(t)) + '</button>').join('') + '</div><p class="muted">Every question you miss (or mark ✘) lands here with the key and the common wrong answers. Get it right on a retry and it moves to "fixed".</p></div>';
   if (!list.length) h += '<div class="card done">' + (MF.fixed ? 'Nothing fixed yet.' : 'No mistakes here 🎉 Go practice or take a test.') + '</div>';
-  list.forEach(m => { const q = m.q, p = m.picked; h += '<div class="card mcard" data-id="' + m.id + '"><div class="qtop"><span class="tag">' + TN(q.topic) + '</span><span class="tag gray">' + m.src + '</span>' + (m.count > 1 ? '<span class="tag red">missed ' + m.count + '×</span>' : '') + '<span class="muted">' + new Date(m.when).toLocaleDateString([], { month: 'short', day: 'numeric' }) + '</span></div><div class="stem">' + q.stem + '</div>' + choicesHTML(q) + (p < 0 ? '<div class="fb bad"><div class="fbh">Left blank. Answer: (' + LET[q.ans] + ')</div><details open><summary>Key: full worked solution</summary><div class="sol">' + q.sol + '</div></details></div>' : feedbackHTML(q, p)) + '<div class="prow2"><button class="ghost" data-act="retry">Retry this one</button>' + (q.gen && G[q.gen] ? '<button class="ghost" data-act="similar">Practice similar (new numbers)</button>' : '') + '<button class="ghost" data-act="fix">' + (m.fixed ? 'Mark not fixed' : 'Mark as fixed ✔') + '</button></div></div>'; });
+  list.forEach(m => { const q = m.q, p = m.picked; h += '<div class="card mcard" data-id="' + m.id + '"><div class="qtop"><span class="tag">' + TN(q.topic) + '</span><span class="tag gray">' + m.src + '</span>' + (m.count > 1 ? '<span class="tag red">missed ' + m.count + '×</span>' : '') + '<span class="muted">' + new Date(m.when).toLocaleDateString([], { month: 'short', day: 'numeric' }) + '</span></div><div class="stem">' + q.stem + '</div>' + (p >= 0 ? choicesHTML(q) + feedbackHTML(q, p) : saRevealHTML(q)) + '<div class="prow2"><button class="ghost" data-act="retry">Retry this one</button>' + (q.gen && G[q.gen] ? '<button class="ghost" data-act="similar">Practice similar (new numbers)</button>' : '') + '<button class="ghost" data-act="fix">' + (m.fixed ? 'Mark not fixed' : 'Mark as fixed ✔') + '</button></div></div>'; });
   $('#mbody').innerHTML = h;
-  document.querySelectorAll('.mcard').forEach(c => { const m = missed.find(x => x.id === c.dataset.id); markChoices(c, m.q, m.picked); });
+  document.querySelectorAll('.mcard').forEach(c => { const m = missed.find(x => x.id === c.dataset.id); if (m.picked >= 0) markChoices(c, m.q, m.picked); });
   document.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { MF.topic = b.dataset.mt; renderMistakes(); });
   $('#tgfix').onclick = () => { MF.fixed = !MF.fixed; renderMistakes(); };
   $('#clr').onclick = () => { missed = missed.filter(m => !m.fixed); LS.set('c3_missed', missed); badge(); renderMistakes(); };
   $('#retryall').onclick = () => startPractice(['all'], shuffle(missed.filter(m => !m.fixed && (MF.topic === 'all' || m.q.topic === MF.topic)).map(m => m.id)));
-  document.querySelectorAll('[data-act]').forEach(b => b.onclick = () => { const id = b.closest('.mcard').dataset.id; const m = missed.find(x => x.id === id); const a = b.dataset.act; if (a === 'retry') startPractice(['all'], [id]); else if (a === 'similar') { startPractice([m.q.topic]); const nq = genQ(m.q.gen); if (nq) nextPracticeWith(nq); } else { m.fixed = !m.fixed; LS.set('c3_missed', missed); badge(); renderMistakes(); } });
+  document.querySelectorAll('[data-act]').forEach(b => b.onclick = () => { const id = b.closest('.mcard').dataset.id; const m = missed.find(x => x.id === id); const a = b.dataset.act; if (a === 'retry') startPractice(['all'], [id]); else if (a === 'similar') { startPractice([m.q.topic]); const nq = genQ(m.q.gen); if (nq) renderQ(nq); } else { m.fixed = !m.fixed; LS.set('c3_missed', missed); badge(); renderMistakes(); } });
   tex($('#mbody'));
 }
 
 /* ---------- boot ---------- */
 badge(); renderLearn(); renderHome();
-if (TS.active) { show('test'); renderTest(); } else show('home');
+if (TS.active && TS.qs && TS.qs[0] && TS.qs[0].kind) { show('test'); renderTest(); } else { TS.active = false; show('home'); }
 
 </script>
 </body>
