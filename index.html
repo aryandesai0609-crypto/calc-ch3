@@ -1108,7 +1108,7 @@ function bExtGraph() {
     const c = rmx.length + rmn.length; qtxt = T`How many relative extrema does \(f\) have?`; ans = String(c);
     ds = [{ t: String(c + (lc ? 1 : 0) + (rc ? 1 : 0)), why: 'Endpoints are never relative extrema.' }, { t: String(rmx.length), why: 'That only counts the maxes.' }, { t: String(c + 1), why: 'Count only the peaks and valleys strictly inside.' }];
   }
-  const sol = steps([ends, tableStep, abox(ans)]) + (ask !== 'count' ? '<div class="just">✍️ <b>Rubio\'s format:</b> "f has a relative max of 4 at x = 3." Value first, then location.</div>' : '');
+  const sol = steps([ends, tableStep, /^no absolute/.test(ans) ? 'The ' + (ans.includes('max') ? 'highest' : 'lowest') + ' y-value happens at an <b>open</b> endpoint. f gets closer and closer to it but never reaches it, and every point that IS on the graph is beaten by points near that endpoint. So there is no absolute ' + (ans.includes('max') ? 'max' : 'min') + '.' : '', abox(ans)]) + (ask !== 'count' ? '<div class="just">✍️ <b>Rubio\'s format:</b> "f has a relative max of 4 at x = 3." Value first, then location.</div>' : '');
   return mc({ stem: 'The graph of ' + M('f') + ' is shown on its whole domain.<div class="figure">' + svg + '</div>' + qtxt, ans, ds, fill: [{ t: 'none', why: 'Look again at the peaks, valleys, and closed endpoints.' }, { t: say('max', 1), why: 'Recheck the graph.' }, { t: '7', why: 'Recount.' }, { t: '0', why: 'Recount.' }], sol, hint: 'Relative = peaks/valleys inside. Absolute = highest/lowest point that is actually ON the graph (closed dots count, open dots don\'t).' });
 }
 reg('ext_graph', 'ext', bExtGraph, 1.3);
