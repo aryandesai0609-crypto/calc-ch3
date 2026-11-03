@@ -110,7 +110,8 @@ p.good{color:#15803d;margin:4px 0}p.bad{color:#b91c1c;margin:4px 0}
 .okb{background:#16a34a}.okb:hover{background:#15803d}.badb{background:#dc2626}.badb:hover{background:#b91c1c}
 .pickd{outline:3px solid #0f172a}.okt{color:#15803d}.badt{color:#b91c1c}.warnp{color:#b45309;font-weight:600}
 .pendq{border-left:5px solid #f59e0b}.modebar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
-.wrongs li{margin:6px 0}.sc td.tv{font-size:12px;color:#475569;background:#fafafa}.preset{background:#eef2ff;border-color:#c7d2fe}.frqblock{border-top:2px solid var(--line);margin-top:12px;padding-top:8px}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
+.wrongs li{margin:6px 0}.sc td.tv{font-size:12px;color:#475569;background:#fafafa}.preset{background:#eef2ff;border-color:#c7d2fe}.setbar{background:#fef9c3;border:1px solid #fde68a;border-radius:12px;padding:10px 12px;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.setbar select{padding:6px;border-radius:8px;border:1px solid var(--line);font:inherit}
+@media print{header,nav,#chips,#pstats,.setcard .prow2,#setkey,.saa{display:none!important}.card{box-shadow:none;border:1px solid #ccc;break-inside:avoid}body{background:#fff}}.frqblock{border-top:2px solid var(--line);margin-top:12px;padding-top:8px}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
 #pstats{font-size:14px;color:var(--mut);margin-bottom:8px}
 ul{margin:6px 0;padding-left:22px}
 @media(max-width:720px){.lwrap{grid-template-columns:1fr}#lnav{position:static;flex-direction:row;flex-wrap:wrap}.prow{grid-template-columns:1fr 1fr}.stem{font-size:16px}}
@@ -1854,7 +1855,7 @@ function markChoices(box, q, picked) { box.querySelectorAll('.ch').forEach((b, i
 function reshuffle(q) { if (q.fixed) return JSON.parse(JSON.stringify(q)); const ord = shuffle(q.choices.map((_, i) => i)); return Object.assign({}, q, { choices: ord.map(i => q.choices[i]), ans: ord.indexOf(q.ans) }); }
 
 /* ---------- tabs ---------- */
-function show(tab) { document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab)); document.querySelectorAll('section.page').forEach(s => s.style.display = s.id === 'p-' + tab ? 'block' : 'none'); if (tab === 'home') renderHome(); if (tab === 'mistakes') renderMistakes(); if (tab === 'frq') renderFRQ(); if (tab === 'test') { if (TS.active) renderTest(); else renderTestSetup(); } window.scrollTo(0, 0); }
+function show(tab) { document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab)); document.querySelectorAll('section.page').forEach(s => s.style.display = s.id === 'p-' + tab ? 'block' : 'none'); if (tab === 'home') renderHome(); if (tab === 'mistakes') renderMistakes(); if (tab === 'frq') renderFRQ(); if (tab === 'practice') { renderChips(); if (PSET) renderSet(); else if (!PS.q) nextPractice(); } if (tab === 'test') { if (TS.active) renderTest(); else renderTestSetup(); } window.scrollTo(0, 0); }
 document.querySelectorAll('.tab').forEach(b => b.onclick = () => show(b.dataset.tab));
 
 /* ---------- home ---------- */
@@ -1889,10 +1890,11 @@ function isMCq(q) { return !!q.graphChoices || MCONLY.test(plainStem(q)); }
 function isMC(q) { return MODE === 'mc' || isMCq(q); }
 const isCalcQ = q => /Calculator allowed|🧮/.test(q.stem);
 const PS = { topics: ['all'], q: null, done: false, streak: 0, best: 0, n: 0, c: 0, retry: null, last: null };
-function startPractice(topics, retry) { PS.topics = topics; PS.retry = retry || null; PS.streak = 0; PS.n = 0; PS.c = 0; show('practice'); renderChips(); nextPractice(); }
+function startPractice(topics, retry) { PS.topics = topics; PS.retry = retry || null; PS.streak = 0; PS.n = 0; PS.c = 0; PSET = null; LS.set('c3_set', null); show('practice'); renderChips(); nextPractice(); }
 function renderChips() {
   const all = PS.topics.includes('all');
-  $('#chips').innerHTML = '<div class="modebar"><b>Quick picks:</b> ' + [['3.1–3.3', ['ext', 'mvt', 'inc']], ['3.1–3.4', ['ext', 'mvt', 'inc', 'conc']], ['3.4 + graphs', ['conc', 'graph']], ['3.7 + calculator', ['opt', 'calc']], ['Derivatives only', ['deriv']], ['Ch 3 (no derivatives)', ['ext', 'mvt', 'inc', 'conc', 'graph', 'calc', 'opt']]].map(([n, t]) => '<button class="chip preset" data-pre="' + t.join(',') + '">' + n + '</button>').join('') + '</div><div class="modebar"><b>Answer style:</b> <button class="chip' + (MODE === 'sa' ? ' on' : '') + '" data-mode="sa">✍️ Short answer (like your test)</button><button class="chip' + (MODE === 'mc' ? ' on' : '') + '" data-mode="mc">🔘 Multiple choice (faster)</button></div><div class="muted" style="margin-top:4px">Sections: tap one or more to choose exactly what you get (tap again to turn one off).</div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
+  $('#chips').innerHTML = '<div class="setbar"><b>📄 Practice set:</b> do a batch of problems first, then see the key for all of them at the end. <select id="setn"><option>5</option><option selected>10</option><option>15</option><option>20</option></select> problems from the sections picked below <button class="big" id="mkset">Make my set</button></div><div class="modebar"><b>Quick picks:</b> ' + [['3.1–3.3', ['ext', 'mvt', 'inc']], ['3.1–3.4', ['ext', 'mvt', 'inc', 'conc']], ['3.4 + graphs', ['conc', 'graph']], ['3.7 + calculator', ['opt', 'calc']], ['Derivatives only', ['deriv']], ['Ch 3 (no derivatives)', ['ext', 'mvt', 'inc', 'conc', 'graph', 'calc', 'opt']]].map(([n, t]) => '<button class="chip preset" data-pre="' + t.join(',') + '">' + n + '</button>').join('') + '</div><div class="modebar"><b>Answer style:</b> <button class="chip' + (MODE === 'sa' ? ' on' : '') + '" data-mode="sa">✍️ Short answer (like your test)</button><button class="chip' + (MODE === 'mc' ? ' on' : '') + '" data-mode="mc">🔘 Multiple choice (faster)</button></div><div class="muted" style="margin-top:4px">Sections: tap one or more to choose exactly what you get (tap again to turn one off).</div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
+  $('#mkset').onclick = () => startSet(+$('#setn').value);
   document.querySelectorAll('[data-pre]').forEach(b => b.onclick = () => { PS.retry = null; PS.topics = b.dataset.pre.split(','); renderChips(); nextPractice(); });
   document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { MODE = b.dataset.mode; LS.set('c3_mode', MODE); renderChips(); if (PS.q && !PS.done) renderQ(PS.q); });
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { const c = b.dataset.c; PS.retry = null; if (c === 'all') PS.topics = ['all']; else { let t = PS.topics.filter(x => x !== 'all'); t = t.includes(c) ? t.filter(x => x !== c) : [...t, c]; PS.topics = t.length ? t : ['all']; } renderChips(); nextPractice(); });
@@ -1934,6 +1936,38 @@ function finishPractice(ok, picked) {
   $('#pnext').innerHTML = '<div class="prow2"><button class="big" id="nextb">Next question →</button>' + (q.gen && !q.retryId ? '<button class="ghost" id="sameb">Same type, new numbers</button>' : '') + '</div>';
   $('#nextb').onclick = nextPractice; if ($('#sameb')) $('#sameb').onclick = () => { const nq = genQ(q.gen); if (nq) { PS.last = q.gen; renderQ(nq); } };
   pstats();
+}
+
+/* ---------- practice set (untimed, key at the end) ---------- */
+let PSET = LS.get('c3_set', null);
+function startSet(n) {
+  const qs = []; let last = null; for (let i = 0; i < n; i++) { const g = pickGen(PS.topics, last); last = g; const q = genQ(g); if (q) qs.push(q); }
+  PSET = { qs, txt: qs.map(() => ''), pick: qs.map(() => null), grade: qs.map(() => null), shown: false, topics: PS.topics.slice(), when: Date.now() };
+  LS.set('c3_set', PSET); renderSet();
+}
+function setScore() { let ok = 0, done = 0; PSET.qs.forEach((q, i) => { const g = isMCq(q) ? (PSET.pick[i] === null ? null : PSET.pick[i] === q.ans) : PSET.grade[i]; if (g !== null) { done++; if (g) ok++; } }); return { ok, done, n: PSET.qs.length }; }
+function renderSet() {
+  const sc = setScore(); const names = PSET.topics.includes('all') ? 'Mix of everything' : PSET.topics.map(TN).join(', ');
+  let h = '<div class="card setcard"><h2 style="margin:0 0 4px">📄 Practice set: ' + PSET.qs.length + ' problems</h2><p class="muted">' + names + '. Work them on paper (type answers if you want). ' + (PSET.shown ? 'Key is open: check each one and mark ✔ / ✘.' : 'When you\'re done with ALL of them, hit <b>Show the key</b> at the bottom.') + '</p>' + (PSET.shown ? '<p><b>Score: ' + sc.ok + ' / ' + sc.n + '</b>' + (sc.done < sc.n ? ' <span class="warnp">(' + (sc.n - sc.done) + ' still to check)</span>' : '') + '</p>' : '') + '<div class="prow2"><button class="ghost" id="setprint">🖨 Print this set</button><button class="ghost" id="setnew">New set</button><button class="ghost" id="setexit">Back to one-at-a-time practice</button></div></div>';
+  PSET.qs.forEach((q, i) => {
+    const mcq = isMCq(q); const g = mcq ? (PSET.pick[i] === null ? null : PSET.pick[i] === q.ans) : PSET.grade[i];
+    h += '<div class="card setq ' + (PSET.shown ? (g === true ? 'okq' : g === false ? 'badq' : 'pendq') : '') + '" data-i="' + i + '"><div class="qtop"><b>' + (i + 1) + '.</b><span class="tag">' + TN(q.topic) + '</span><span class="muted">' + (isCalcQ(q) ? '🧮 Calculator allowed' : 'No calculator') + '</span></div><div class="stem">' + q.stem + '</div>';
+    if (mcq) h += choicesHTML(q, PSET.pick[i]) + (PSET.shown ? (PSET.pick[i] === null ? '<div class="fb bad"><div class="fbh">Left blank. Answer: (' + LET[q.ans] + ')</div><details open><summary>Key: full worked solution</summary><div class="sol">' + q.sol + '</div></details></div>' : feedbackHTML(q, PSET.pick[i])) : '');
+    else h += PSET.shown ? saRevealHTML(q, PSET.txt[i] || '(blank)') + '<div class="prow2 gradebar"><b>Did you get it (answer AND reasoning)?</b><button class="big okb' + (g === true ? ' pickd' : '') + '" data-sg="1" data-i="' + i + '">✔ I got it</button><button class="big badb' + (g === false ? ' pickd' : '') + '" data-sg="0" data-i="' + i + '">✘ I missed it</button></div>' : '<textarea class="saa setta" data-i="' + i + '" placeholder="Your answer (optional)">' + esc(PSET.txt[i] || '') + '</textarea>';
+    h += '</div>';
+  });
+  if (!PSET.shown) h += '<div class="card" style="text-align:center"><button class="big" id="setkey" style="font-size:18px;padding:14px 26px">✅ I\'m done. Show the key for all ' + PSET.qs.length + '</button></div>';
+  else h += '<div class="card" style="text-align:center"><button class="big" id="setnew2">Make another set</button> <button class="ghost" id="tomist2">Go to Mistakes →</button></div>';
+  $('#pcard').innerHTML = h; $('#pstats').innerHTML = '';
+  document.querySelectorAll('.setta').forEach(t => t.oninput = () => { PSET.txt[+t.dataset.i] = t.value; LS.set('c3_set', PSET); });
+  document.querySelectorAll('.setq').forEach(card => { const i = +card.dataset.i, q = PSET.qs[i]; if (!isMCq(q)) return; if (PSET.shown) { markChoices(card, q, PSET.pick[i]); return; } card.querySelectorAll('.ch').forEach(b => b.onclick = () => { PSET.pick[i] = +b.dataset.i; LS.set('c3_set', PSET); card.querySelectorAll('.ch').forEach(x => x.classList.toggle('sel', x === b)); }); });
+  if ($('#setkey')) $('#setkey').onclick = () => { if (PSET.qs.some((q, i) => isMCq(q) ? PSET.pick[i] === null : !(PSET.txt[i] || '').trim()) && !confirm('Some problems have no typed answer. That\'s fine if you did them on paper. Show the key?')) return; PSET.shown = true; PSET.qs.forEach((q, i) => { if (isMCq(q)) { const ok = PSET.pick[i] === q.ans; record(q.topic, ok); if (!ok) addMissed(q, PSET.pick[i] === null ? -1 : PSET.pick[i], 'Practice set'); } }); LS.set('c3_set', PSET); renderSet(); window.scrollTo(0, 0); };
+  document.querySelectorAll('[data-sg]').forEach(b => b.onclick = () => { const i = +b.dataset.i, ok = b.dataset.sg === '1', q = PSET.qs[i]; const was = PSET.grade[i]; PSET.grade[i] = ok; if (was === null) record(q.topic, ok); if (!ok && was !== false) addMissed(q, -2, 'Practice set'); LS.set('c3_set', PSET); const y = window.scrollY; renderSet(); window.scrollTo(0, y); });
+  $('#setprint').onclick = () => { document.body.classList.add('printing'); window.print(); setTimeout(() => document.body.classList.remove('printing'), 500); };
+  const again = () => startSet(PSET.qs.length); $('#setnew').onclick = again; if ($('#setnew2')) $('#setnew2').onclick = again;
+  $('#setexit').onclick = () => { PSET = null; LS.set('c3_set', null); nextPractice(); };
+  if ($('#tomist2')) $('#tomist2').onclick = () => show('mistakes');
+  tex($('#pcard'));
 }
 
 /* ---------- test ---------- */
