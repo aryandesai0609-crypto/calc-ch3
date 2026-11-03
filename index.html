@@ -105,7 +105,7 @@ p.good{color:#15803d;margin:4px 0}p.bad{color:#b91c1c;margin:4px 0}
 .frqp{border-top:1px solid var(--line);padding:10px 0}
 .saa{width:100%;min-height:70px;border:2px solid var(--line);border-radius:10px;padding:10px;font:inherit;font-size:15px;margin-top:6px}
 .saa:focus{outline:none;border-color:var(--acc)}
-.reveal{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:12px 14px;margin-top:12px}
+.reveal{background:#fff;border:2px solid #cbd5e1;border-radius:14px;padding:6px 16px 10px;margin-top:12px}.rsec{padding:10px 0;border-bottom:1px solid #e2e8f0}.rsec:last-child{border-bottom:0}.rhead{font-weight:800;font-size:16px;margin-bottom:6px;color:#0f172a}.worksol{border:0;padding:0;background:transparent}.worksol .steps li{padding:6px 10px;background:#f8fafc;border-radius:8px;margin:8px 0;line-height:2}.worksol .steps li:last-child:has(> .ansbox:only-child){display:none}.wrongd summary{color:#b45309}.wrongs{background:#fffbeb;border-radius:8px;padding:8px 8px 8px 28px}
 .mine{background:#fff;border:1px dashed #94a3b8;border-radius:8px;padding:6px 10px;margin:6px 0;white-space:pre-wrap}
 .okb{background:#16a34a}.okb:hover{background:#15803d}.badb{background:#dc2626}.badb:hover{background:#b91c1c}
 .pickd{outline:3px solid #0f172a}.okt{color:#15803d}.badt{color:#b91c1c}.warnp{color:#b45309;font-weight:600}
@@ -1834,10 +1834,24 @@ function addMissed(q, picked, src) {
   LS.set('c3_missed', missed); badge();
 }
 function badge() { const n = missed.filter(m => !m.fixed).length; $('#mbadge').textContent = n; $('#mbadge').style.display = n ? 'inline-block' : 'none'; }
-function genQ(name) { for (let t = 0; t < 8; t++) { try { const q = G[name].fn(); if (q && q.choices.length === 5 && q.ans >= 0) { q.gen = name; q.topic = G[name].topic; return fixQ(q); } } catch (e) { console.error(name, e); } } return null; }
+const SA_EXCLUDE = new Set(['graph_pick', 'graph_cond', 'mvt_rolle']);
+const SA_REWRITE = [
+  [/Which of the following <b>must<\/b> be true\?/i, 'What must be true? Write the conclusion as a statement and name the theorem.'],
+  [/which of the following must be true\?/i, 'what must be true? Write it as a statement.'],
+  [/Which is the best justification sentence\?/, 'Write the justification sentence the way Rubio wants it.'],
+  [/then \\\(f\\\) has\s*$/, 'what relative extrema does \\(f\\) have? Justify.'],
+  [/which statement is true at \\\(x=0\\\)\?/, 'is \\((0,0)\\) a point of inflection? Explain.'],
+  [/Which is true on that interval\?/, 'What are the signs of \\(f\'\\) and \\(f\'\'\\) on that interval?'],
+  [/ Which is true\?$/, ' What are the signs of the first and second derivatives? Explain.'],
+  [/Which statement about extrema on a closed interval \[a, b\] is true\?/, 'On a closed interval [a, b], can a relative extremum happen at an endpoint? Can an absolute extremum? Explain.'],
+  [/then the value of \\\(k\\\) is$/, 'what is the value of \\(k\\)?'],
+  [/^(The graph of \\\(y=.*?\\\)) is$/, '$1: where is it increasing and where is it decreasing? Describe it.']
+];
+function saStem(q) { for (const [re, to] of SA_REWRITE) q.stem = q.stem.replace(re, to); return q; }
+function genQ(name) { for (let t = 0; t < 8; t++) { try { const q = G[name].fn(); if (q && q.choices.length === 5 && q.ans >= 0) { q.gen = name; q.topic = G[name].topic; return saStem(fixQ(q)); } } catch (e) { console.error(name, e); } } return null; }
 function pickGen(topics, avoid) {
   const tp = topics.includes('all') ? TOPICS.map(t => t.id) : topics; const topic = pick(tp);
-  const pool = Object.entries(G).filter(([k, g]) => g.topic === topic && k !== avoid); const tot = pool.reduce((s, [, g]) => s + g.w, 0); let r = Math.random() * tot;
+  const pool = Object.entries(G).filter(([k, g]) => g.topic === topic && k !== avoid && !SA_EXCLUDE.has(k)); const tot = pool.reduce((s, [, g]) => s + g.w, 0); let r = Math.random() * tot;
   for (const [k, g] of pool) { r -= g.w; if (r <= 0) return k; } return pool[0][0];
 }
 const LET = 'abcde';
@@ -1883,17 +1897,17 @@ function renderLearn(id) {
 }
 
 /* ---------- practice ---------- */
-let MODE = LS.get('c3_mode', 'sa');
+let MODE = 'sa';
 const MCONLY = /which of the following|which function|which statement|which could be|which graph|at which labeled point|which is true|best justification|then f has|what can you conclude|what happens at|must be true/i;
 const plainStem = q => q.stem.replace(/<[^>]+>/g, ' ').replace(/\\\(|\\\)/g, '');
-function isMCq(q) { return !!q.graphChoices || MCONLY.test(plainStem(q)); }
+function isMCq(q) { return false; }
 function isMC(q) { return MODE === 'mc' || isMCq(q); }
 const isCalcQ = q => /Calculator allowed|🧮/.test(q.stem);
 const PS = { topics: ['all'], q: null, done: false, streak: 0, best: 0, n: 0, c: 0, retry: null, last: null };
 function startPractice(topics, retry) { PS.topics = topics; PS.retry = retry || null; PS.streak = 0; PS.n = 0; PS.c = 0; PSET = null; LS.set('c3_set', null); show('practice'); renderChips(); nextPractice(); }
 function renderChips() {
   const all = PS.topics.includes('all');
-  $('#chips').innerHTML = '<div class="setbar"><b>📄 Practice set:</b> do a batch of problems first, then see the key for all of them at the end. <select id="setn"><option>5</option><option selected>10</option><option>15</option><option>20</option></select> problems from the sections picked below <button class="big" id="mkset">Make my set</button></div><div class="modebar"><b>Quick picks:</b> ' + [['3.1–3.3', ['ext', 'mvt', 'inc']], ['3.1–3.4', ['ext', 'mvt', 'inc', 'conc']], ['3.4 + graphs', ['conc', 'graph']], ['3.7 + calculator', ['opt', 'calc']], ['Derivatives only', ['deriv']], ['Ch 3 (no derivatives)', ['ext', 'mvt', 'inc', 'conc', 'graph', 'calc', 'opt']]].map(([n, t]) => '<button class="chip preset" data-pre="' + t.join(',') + '">' + n + '</button>').join('') + '</div><div class="modebar"><b>Answer style:</b> <button class="chip' + (MODE === 'sa' ? ' on' : '') + '" data-mode="sa">✍️ Short answer (like your test)</button><button class="chip' + (MODE === 'mc' ? ' on' : '') + '" data-mode="mc">🔘 Multiple choice (faster)</button></div><div class="muted" style="margin-top:4px">Sections: tap one or more to choose exactly what you get (tap again to turn one off).</div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
+  $('#chips').innerHTML = '<div class="setbar"><b>📄 Practice set:</b> do a batch of problems first, then see the key for all of them at the end. <select id="setn"><option>5</option><option selected>10</option><option>15</option><option>20</option></select> problems from the sections picked below <button class="big" id="mkset">Make my set</button></div><div class="modebar"><b>Quick picks:</b> ' + [['3.1–3.3', ['ext', 'mvt', 'inc']], ['3.1–3.4', ['ext', 'mvt', 'inc', 'conc']], ['3.4 + graphs', ['conc', 'graph']], ['3.7 + calculator', ['opt', 'calc']], ['Derivatives only', ['deriv']], ['Ch 3 (no derivatives)', ['ext', 'mvt', 'inc', 'conc', 'graph', 'calc', 'opt']]].map(([n, t]) => '<button class="chip preset" data-pre="' + t.join(',') + '">' + n + '</button>').join('') + '</div><div class="muted" style="margin-top:4px">Sections: tap one or more to choose exactly what you get (tap again to turn one off).</div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
   $('#mkset').onclick = () => startSet(+$('#setn').value);
   document.querySelectorAll('[data-pre]').forEach(b => b.onclick = () => { PS.retry = null; PS.topics = b.dataset.pre.split(','); renderChips(); nextPractice(); });
   document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { MODE = b.dataset.mode; LS.set('c3_mode', MODE); renderChips(); if (PS.q && !PS.done) renderQ(PS.q); });
@@ -1908,12 +1922,12 @@ function nextPractice() {
 }
 function nextPracticeWith(q) { renderQ(q); }
 function saRevealHTML(q, mine) {
-  const wrong = q.choices.map((c, i) => (i === q.ans || !c.why) ? '' : '<li><b>If you got</b> ' + c.t + ': ' + c.why + '</li>').join('');
-  return '<div class="reveal">' + (mine ? '<div class="mine"><b>Your answer:</b> ' + esc(mine) + '</div>' : '') + '<div class="fbh">Answer:</div>' + abox(q.choices[q.ans].t) + '<details open><summary>Key: full worked solution</summary><div class="sol">' + q.sol + '</div></details>' + (wrong ? '<details><summary>Common wrong answers and why they\'re wrong</summary><ul class="wrongs">' + wrong + '</ul></details>' : '') + '</div>';
+  const wrong = q.choices.map((c, i) => (i === q.ans || !c.why) ? '' : '<li><b>If you got</b> ' + c.t + ':<br>' + c.why + '</li>').join('');
+  return '<div class="reveal">' + (mine ? '<div class="rsec"><div class="rhead">✍️ Your answer</div><div class="mine">' + esc(mine) + '</div></div>' : '') + '<div class="rsec"><div class="rhead">✅ Answer</div>' + abox(q.choices[q.ans].t) + '</div><div class="rsec"><div class="rhead">📝 Full work, step by step</div><div class="sol worksol">' + q.sol + '</div></div>' + (wrong ? '<details class="rsec wrongd"><summary>⚠️ Common mistakes on this problem (tap to open)</summary><ul class="wrongs">' + wrong + '</ul></details>' : '') + '</div>';
 }
 function renderQ(q) {
   PS.q = q; PS.done = false; pstats(); const c = $('#pcard'); const mcq = isMC(q);
-  c.innerHTML = '<div class="qtop"><span class="tag">' + TN(q.topic) + '</span>' + (q.retryId ? '<span class="tag red">from your mistakes</span>' : '') + '<span class="muted">' + (isCalcQ(q) ? '🧮 Calculator allowed' : 'No calculator') + '</span></div><div class="stem">' + q.stem + '</div>' + (mcq ? choicesHTML(q) : '<textarea id="saa" class="saa" placeholder="Work it out on paper. Type your final answer here (optional), then hit Check."></textarea><div class="prow2"><button class="big" id="revb">Check answer</button></div>') + '<div class="hintbox" id="hintbox"></div><div class="prow2"><button class="ghost" id="hintb">💡 Hint</button><button class="ghost" id="skipb">Skip →</button></div><div id="pfb"></div>';
+  c.innerHTML = '<div class="qtop"><span class="tag">' + TN(q.topic) + '</span>' + (q.retryId ? '<span class="tag red">from your mistakes</span>' : '') + '<span class="muted">' + (isCalcQ(q) ? '🧮 Calculator allowed' : 'No calculator') + '</span></div><div class="stem">' + q.stem + '</div>' + (mcq ? choicesHTML(q) : '<textarea id="saa" class="saa" placeholder="Work it out on paper. Type your final answer here (optional)."></textarea><div class="prow2"><button class="big" id="revb">Show answer + full work</button></div>') + '<div class="hintbox" id="hintbox"></div><div class="prow2"><button class="ghost" id="hintb">💡 Hint</button><button class="ghost" id="skipb">Skip →</button></div><div id="pfb"></div>';
   if (mcq) c.querySelectorAll('.ch').forEach(b => b.onclick = () => answerPractice(+b.dataset.i)); else $('#revb').onclick = revealSA;
   $('#hintb').onclick = () => { $('#hintbox').innerHTML = '💡 ' + (q.hint || 'Start with the derivative.'); $('#hintbox').style.display = 'block'; tex($('#hintbox')); };
   $('#skipb').onclick = () => { if (PS.retry) PS.retry.push(PS.retry.shift()); nextPractice(); };
@@ -1948,18 +1962,20 @@ function startSet(n) {
 function setScore() { let ok = 0, done = 0; PSET.qs.forEach((q, i) => { const g = isMCq(q) ? (PSET.pick[i] === null ? null : PSET.pick[i] === q.ans) : PSET.grade[i]; if (g !== null) { done++; if (g) ok++; } }); return { ok, done, n: PSET.qs.length }; }
 function renderSet() {
   const sc = setScore(); const names = PSET.topics.includes('all') ? 'Mix of everything' : PSET.topics.map(TN).join(', ');
-  let h = '<div class="card setcard"><h2 style="margin:0 0 4px">📄 Practice set: ' + PSET.qs.length + ' problems</h2><p class="muted">' + names + '. Work them on paper (type answers if you want). ' + (PSET.shown ? 'Key is open: check each one and mark ✔ / ✘.' : 'When you\'re done with ALL of them, hit <b>Show the key</b> at the bottom.') + '</p>' + (PSET.shown ? '<p><b>Score: ' + sc.ok + ' / ' + sc.n + '</b>' + (sc.done < sc.n ? ' <span class="warnp">(' + (sc.n - sc.done) + ' still to check)</span>' : '') + '</p>' : '') + '<div class="prow2"><button class="ghost" id="setprint">🖨 Print this set</button><button class="ghost" id="setnew">New set</button><button class="ghost" id="setexit">Back to one-at-a-time practice</button></div></div>';
+  let h = '<div class="card setcard"><h2 style="margin:0 0 4px">📄 Practice set: ' + PSET.qs.length + ' problems</h2><p class="muted">' + names + '. Work them on paper (type answers if you want). ' + (PSET.shown ? 'Key is open: check each one and mark ✔ / ✘.' : 'Each problem has a <b>Show answer + full work</b> button. Or do them all first and hit <b>Show the key for all</b> at the bottom.') + '</p>' + ((PSET.shown || sc.done) ? '<p><b>Score: ' + sc.ok + ' / ' + sc.n + '</b>' + (sc.done < sc.n ? ' <span class="warnp">(' + (sc.n - sc.done) + ' still to check)</span>' : '') + '</p>' : '') + '<div class="prow2"><button class="ghost" id="setprint">🖨 Print this set</button><button class="ghost" id="setnew">New set</button><button class="ghost" id="setexit">Back to one-at-a-time practice</button></div></div>';
   PSET.qs.forEach((q, i) => {
     const mcq = isMCq(q); const g = mcq ? (PSET.pick[i] === null ? null : PSET.pick[i] === q.ans) : PSET.grade[i];
     h += '<div class="card setq ' + (PSET.shown ? (g === true ? 'okq' : g === false ? 'badq' : 'pendq') : '') + '" data-i="' + i + '"><div class="qtop"><b>' + (i + 1) + '.</b><span class="tag">' + TN(q.topic) + '</span><span class="muted">' + (isCalcQ(q) ? '🧮 Calculator allowed' : 'No calculator') + '</span></div><div class="stem">' + q.stem + '</div>';
     if (mcq) h += choicesHTML(q, PSET.pick[i]) + (PSET.shown ? (PSET.pick[i] === null ? '<div class="fb bad"><div class="fbh">Left blank. Answer: (' + LET[q.ans] + ')</div><details open><summary>Key: full worked solution</summary><div class="sol">' + q.sol + '</div></details></div>' : feedbackHTML(q, PSET.pick[i])) : '');
-    else h += PSET.shown ? saRevealHTML(q, PSET.txt[i] || '(blank)') + '<div class="prow2 gradebar"><b>Did you get it (answer AND reasoning)?</b><button class="big okb' + (g === true ? ' pickd' : '') + '" data-sg="1" data-i="' + i + '">✔ I got it</button><button class="big badb' + (g === false ? ' pickd' : '') + '" data-sg="0" data-i="' + i + '">✘ I missed it</button></div>' : '<textarea class="saa setta" data-i="' + i + '" placeholder="Your answer (optional)">' + esc(PSET.txt[i] || '') + '</textarea>';
+    else h += (PSET.shown || (PSET.open && PSET.open[i])) ? saRevealHTML(q, PSET.txt[i] || '(blank)') + (PSET.shown ? '' : '<div class="prow2"><button class="ghost" data-hide="' + i + '">Hide answer</button></div>') + '<div class="prow2 gradebar"><b>Did you get it (answer AND reasoning)?</b><button class="big okb' + (g === true ? ' pickd' : '') + '" data-sg="1" data-i="' + i + '">✔ I got it</button><button class="big badb' + (g === false ? ' pickd' : '') + '" data-sg="0" data-i="' + i + '">✘ I missed it</button></div>' : '<textarea class="saa setta" data-i="' + i + '" placeholder="Your answer (optional)">' + esc(PSET.txt[i] || '') + '</textarea><div class="prow2"><button class="ghost" data-open="' + i + '">Show answer + full work for #' + (i + 1) + '</button></div>';
     h += '</div>';
   });
   if (!PSET.shown) h += '<div class="card" style="text-align:center"><button class="big" id="setkey" style="font-size:18px;padding:14px 26px">✅ I\'m done. Show the key for all ' + PSET.qs.length + '</button></div>';
   else h += '<div class="card" style="text-align:center"><button class="big" id="setnew2">Make another set</button> <button class="ghost" id="tomist2">Go to Mistakes →</button></div>';
   $('#pcard').innerHTML = h; $('#pstats').innerHTML = '';
   document.querySelectorAll('.setta').forEach(t => t.oninput = () => { PSET.txt[+t.dataset.i] = t.value; LS.set('c3_set', PSET); });
+  document.querySelectorAll('[data-open]').forEach(b => b.onclick = () => { PSET.open = PSET.open || PSET.qs.map(() => false); PSET.open[+b.dataset.open] = true; LS.set('c3_set', PSET); const y = window.scrollY; renderSet(); window.scrollTo(0, y); });
+  document.querySelectorAll('[data-hide]').forEach(b => b.onclick = () => { PSET.open[+b.dataset.hide] = false; LS.set('c3_set', PSET); const y = window.scrollY; renderSet(); window.scrollTo(0, y); });
   document.querySelectorAll('.setq').forEach(card => { const i = +card.dataset.i, q = PSET.qs[i]; if (!isMCq(q)) return; if (PSET.shown) { markChoices(card, q, PSET.pick[i]); return; } card.querySelectorAll('.ch').forEach(b => b.onclick = () => { PSET.pick[i] = +b.dataset.i; LS.set('c3_set', PSET); card.querySelectorAll('.ch').forEach(x => x.classList.toggle('sel', x === b)); }); });
   if ($('#setkey')) $('#setkey').onclick = () => { if (PSET.qs.some((q, i) => isMCq(q) ? PSET.pick[i] === null : !(PSET.txt[i] || '').trim()) && !confirm('Some problems have no typed answer. That\'s fine if you did them on paper. Show the key?')) return; PSET.shown = true; PSET.qs.forEach((q, i) => { if (isMCq(q)) { const ok = PSET.pick[i] === q.ans; record(q.topic, ok); if (!ok) addMissed(q, PSET.pick[i] === null ? -1 : PSET.pick[i], 'Practice set'); } }); LS.set('c3_set', PSET); renderSet(); window.scrollTo(0, 0); };
   document.querySelectorAll('[data-sg]').forEach(b => b.onclick = () => { const i = +b.dataset.i, ok = b.dataset.sg === '1', q = PSET.qs[i]; const was = PSET.grade[i]; PSET.grade[i] = ok; if (was === null) record(q.topic, ok); if (!ok && was !== false) addMissed(q, -2, 'Practice set'); LS.set('c3_set', PSET); const y = window.scrollY; renderSet(); window.scrollTo(0, y); });
@@ -1977,15 +1993,15 @@ const QUICK_MIX = ['ext', 'ext', 'mvt', 'inc', 'inc', 'conc', 'conc', 'graph', '
 function renderTestSetup() {
   $('#tbody').innerHTML = '<div class="tgrid">' +
     '<div class="tcard star"><h3>📝 Ch 3 Test Sim (like the real test)</h3><p>10 short-answer questions (one calculator) + 1 FRQ. All new questions, in Rubio\'s style. Write answers like you would on paper. After you submit, you check each one against the key.</p><p class="muted">50 min</p><button class="big" data-start="sim">Start</button></div>' +
-    '<div class="tcard"><h3>⚡ Quick multiple-choice check</h3><p>12 auto-graded MC questions across every topic. Good for a fast "where am I weak?" check.</p><p class="muted">25 min</p><button class="big" data-start="quick">Start</button></div>' +
-    '<div class="tcard"><h3>⚙️ Custom test</h3><label>Questions <input id="cn" type="number" min="3" max="40" value="10"></label> <label>Minutes <input id="cm" type="number" min="2" max="120" value="35"></label><div class="cks">' + TOPICS.map(t => '<label><input type="checkbox" class="ck" value="' + t.id + '" checked> ' + t.short + '</label>').join('') + '</div><div class="cks"><label><input type="radio" name="cfmt" value="sa" checked> Short answer</label><label><input type="radio" name="cfmt" value="mc"> Multiple choice</label><label><input type="checkbox" id="cfrq" checked> + 1 FRQ</label></div><button class="big" data-start="custom">Start</button></div></div>';
+    
+    '<div class="tcard"><h3>⚙️ Custom test</h3><label>Questions <input id="cn" type="number" min="3" max="40" value="10"></label> <label>Minutes <input id="cm" type="number" min="2" max="120" value="35"></label><div class="cks">' + TOPICS.map(t => '<label><input type="checkbox" class="ck" value="' + t.id + '" checked> ' + t.short + '</label>').join('') + '</div><div class="cks"><label><input type="checkbox" id="cfrq" checked> + 1 FRQ</label></div><button class="big" data-start="custom">Start</button></div></div>';
   document.querySelectorAll('[data-start]').forEach(b => b.onclick = () => startTest(b.dataset.start));
 }
 function startTest(mode) {
   let qs = [], name, min, fmt = 'sa', frq = false;
   if (mode === 'sim') { name = 'Ch 3 Test Sim'; min = 50; qs = shuffle(SIM_MIX).map(t => genQ(pickGen([t]))); frq = true; }
   else if (mode === 'quick') { name = 'Quick MC check'; min = 25; fmt = 'mc'; qs = shuffle(QUICK_MIX).map(t => genQ(pickGen([t]))); }
-  else { const n = Math.max(3, Math.min(40, +$('#cn').value || 10)); min = Math.max(2, +$('#cm').value || 30); const tps = [...document.querySelectorAll('.ck:checked')].map(c => c.value); fmt = (document.querySelector('[name=cfmt]:checked') || {}).value || 'sa'; frq = $('#cfrq').checked; name = 'Custom (' + n + (frq ? ' + FRQ' : '') + ')'; qs = [...Array(n)].map(() => genQ(pickGen(tps.length ? tps : ['all']))); }
+  else { const n = Math.max(3, Math.min(40, +$('#cn').value || 10)); min = Math.max(2, +$('#cm').value || 30); const tps = [...document.querySelectorAll('.ck:checked')].map(c => c.value); fmt = 'sa'; frq = $('#cfrq').checked; name = 'Custom (' + n + (frq ? ' + FRQ' : '') + ')'; qs = [...Array(n)].map(() => genQ(pickGen(tps.length ? tps : ['all']))); }
   qs = qs.filter(Boolean).map(fixQ).map(q => Object.assign(q, { kind: (fmt === 'mc' || isMCq(q)) ? 'mc' : 'sa' }));
   if (frq) { const F = genFRQ(); qs.push({ kind: 'frq', topic: 'frq', frq: F, stem: F.stem }); }
   Object.assign(TS, { active: true, submitted: false, name, qs, ans: qs.map(() => null), txt: qs.map(q => q.kind === 'frq' ? q.frq.parts.map(() => '') : ''), grade: qs.map(q => q.kind === 'frq' ? q.frq.parts.map(() => null) : null), flag: qs.map(() => false), idx: 0, end: Date.now() + min * 60000, start: Date.now(), min });
