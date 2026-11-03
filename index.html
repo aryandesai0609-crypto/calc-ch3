@@ -56,7 +56,7 @@ button{font:inherit;cursor:pointer}
 .why{background:#fff;border-left:4px solid var(--bad);padding:8px 12px;border-radius:6px;margin:8px 0}
 details summary{cursor:pointer;font-weight:600;color:var(--acc2);margin:6px 0}
 .sol{background:#fff;border-radius:10px;padding:8px 12px;border:1px solid var(--line)}
-.steps{margin:6px 0;padding-left:22px}.steps li{margin:8px 0}
+.steps{margin:6px 0;padding-left:22px}.steps li{margin:10px 0;line-height:2.1}
 .ansbox{display:inline-block;border:2px solid var(--ok);background:#f0fdf4;border-radius:10px;padding:6px 12px;font-weight:600;margin-top:4px}
 .scwrap{overflow-x:auto;margin:8px 0}
 table.sc,table.ct{border-collapse:collapse;font-size:15px}
@@ -110,7 +110,7 @@ p.good{color:#15803d;margin:4px 0}p.bad{color:#b91c1c;margin:4px 0}
 .okb{background:#16a34a}.okb:hover{background:#15803d}.badb{background:#dc2626}.badb:hover{background:#b91c1c}
 .pickd{outline:3px solid #0f172a}.okt{color:#15803d}.badt{color:#b91c1c}.warnp{color:#b45309;font-weight:600}
 .pendq{border-left:5px solid #f59e0b}.modebar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
-.wrongs li{margin:6px 0}.frqblock{border-top:2px solid var(--line);margin-top:12px;padding-top:8px}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
+.wrongs li{margin:6px 0}.sc td.tv{font-size:12px;color:#475569;background:#fafafa}.preset{background:#eef2ff;border-color:#c7d2fe}.frqblock{border-top:2px solid var(--line);margin-top:12px;padding-top:8px}.frqq{font-weight:600}.just{background:#eff6ff;border-left:4px solid var(--acc);padding:8px 12px;border-radius:6px;margin-top:8px}.gotit{font-size:14px;margin-left:6px}
 #pstats{font-size:14px;color:var(--mut);margin-bottom:8px}
 ul{margin:6px 0;padding-left:22px}
 @media(max-width:720px){.lwrap{grid-template-columns:1fr}#lnav{position:static;flex-direction:row;flex-wrap:wrap}.prow{grid-template-columns:1fr 1fr}.stem{font-size:16px}}
@@ -136,7 +136,7 @@ ul{margin:6px 0;padding-left:22px}
     <p><b>Test Ch3</b> (55 pts) on <b>Wed 11/4</b>. Format: <b>short answer</b> (you write the answer, no choices) + <b>1–2 FRQs</b>. Rubio writes new, harder questions than the packets, so this site makes <b>new questions every time</b> from everything in the Ch 3 roadmap, your notes, and the worksheets:</p>
     <ul><li><b>3.1</b> Extrema: critical numbers (polynomial, rational, x<sup>4/3</sup>, trig, eˣ, ln), Candidates Test on closed intervals, reading extrema off a graph, EVT</li><li><b>3.2</b> Rolle's Theorem and the MVT: "does it apply? find ALL c", IVT + Rolle "exactly one zero", tables</li><li><b>3.3</b> Increasing/decreasing and the First Derivative Test (with justification sentences)</li><li><b>3.4</b> Concavity, inflection points (as ordered pairs), Second Derivative Test, real-world rates</li><li><b>Graphs</b> of f, f′, f″ (the most common FRQ)</li><li><b>3.7</b> Optimization (fence/pens, boxes, semicircle, cans, swimmer, numbers)</li><li><b>🧮 Calculator skills</b>: "f′ is given" questions, 3 decimals, radian mode</li><li>Limits at ∞ (review from Ch 1, smaller part)</li></ul>
     <p class="muted">Not on it: PVA (the roadmap says "will do with Ch 4"). Bring your graphing calculator.</p></div>
-  <div class="card"><h3>How to use this</h3><ol class="steps"><li><b>Learn</b>: watch the short video for a topic, then read the steps and worked example.</li><li><b>Practice</b>: endless new questions. <b>Short answer mode</b> (default) works like your test: do it on paper, check the key, then say if you got it. Each one shows the common wrong answers and why.</li><li><b>Test</b>: a timed <b>Ch 3 Test Sim</b> (10 short answer + 1 FRQ, 50 min), just like the real format.</li><li><b>FRQ</b>: a new FRQ every click (f′ graph, function analysis, trig, optimization, table, calculator), with justification sentences.</li><li><b>Mistakes</b>: every miss is saved with why your answer was wrong. Retry until it's fixed.</li></ol>
+  <div class="card"><h3>How to use this</h3><ol class="steps"><li><b>Learn</b>: watch the short video for a topic, then read the steps and worked example.</li><li><b>Practice</b>: pick exactly which sections you want (e.g. only 3.1–3.3, or only Derivatives) with the section buttons or Quick picks. Endless new questions. <b>Short answer mode</b> (default) works like your test: do it on paper, check the key, then say if you got it. Each one shows the common wrong answers and why.</li><li><b>Test</b>: a timed <b>Ch 3 Test Sim</b> (10 short answer + 1 FRQ, 50 min), just like the real format.</li><li><b>FRQ</b>: a new FRQ every click (f′ graph, function analysis, trig, optimization, table, calculator), with justification sentences.</li><li><b>Mistakes</b>: every miss is saved with why your answer was wrong. Retry until it's fixed.</li></ol>
     <h3 style="margin-top:14px">The plan: Monday + Tuesday (+ 15 min Wednesday)</h3>
     <p>For each topic, do the same loop: <b>① watch the video → ② read the cards (copy the ✍️ sentences) → ③ Practice that topic until you get 5 in a row.</b> If you miss the same kind twice, rewatch that part and read the "common wrong answers".</p>
     <table class="ct" style="width:100%"><tr><th>Day</th><th>What to do (in order)</th><th>Time</th></tr>
@@ -322,6 +322,42 @@ const TOPICS = [
 const G = {};
 function reg(name, topic, fn, w) { G[name] = { topic, fn, w: w || 1 }; }
 
+/* ---- g0_help.js ---- */
+/* ===== "show all the work" helpers ===== */
+/* power rule, term by term */
+function pdW(c, name, v) {
+  name = name || "f'(x)"; v = v || 'x'; const n = c.length - 1; const lines = [];
+  c.forEach((a, i) => { const p = n - i; if (!a) return; const term = poly([a, ...Array(p).fill(0)], v);
+    if (p === 0) lines.push(T`\frac{d}{dx}\left[${term}\right]=0`);
+    else if (p === 1) lines.push(T`\frac{d}{dx}\left[${term}\right]=${a}`);
+    else lines.push(T`\frac{d}{dx}\left[${term}\right]=${p}\cdot ${par(a)}${v}${p - 1 === 1 ? '' : '^{' + (p - 1) + '}'}=${poly([a * p, ...Array(p - 1).fill(0)], v)}`); });
+  const d = c.slice(0, -1).map((a, i) => a * (n - i));
+  return 'Power rule on each term (bring the power down, then subtract 1 from the power; constants become 0):<br>' + lines.map(M).join('<br>') + '<br>So ' + M(T`${name}=${poly(d, v)}`);
+}
+const derivC = c => { const n = c.length - 1; return c.slice(0, -1).map((a, i) => a * (n - i)); };
+/* plug a number into a polynomial, showing every step */
+function pev(c, x, name) {
+  name = name || 'f'; const n = c.length - 1; const sub = [], val = [];
+  c.forEach((a, i) => { const p = n - i; if (!a) return; const xs = '(' + fmtNum(x) + ')'; sub.push({ neg: a < 0, s: p === 0 ? String(Math.abs(a)) : (Math.abs(a) === 1 ? '' : Math.abs(a)) + xs + (p > 1 ? '^{' + p + '}' : '') }); val.push(a * x ** p); });
+  const join = arr => arr.map((t, i) => (i === 0 ? (t.neg ? '-' : '') : (t.neg ? ' - ' : ' + ')) + t.s).join('');
+  const tot = val.reduce((s, v) => s + v, 0);
+  return T`${name}(${fmtNum(x)})=${join(sub)}=${join(val.map(v => ({ neg: v < 0, s: fmtNum(Math.abs(v)) })))}=${fmtNum(tot)}`;
+}
+/* factor 6s x^2 - 6s(p+q)x + 6s pq */
+function facW(k, p, q) {
+  if (p === 0 || q === 0) { const r = p === 0 ? q : p; return T`Factor out \(${k === 1 ? '' : k === -1 ? '-' : k}x\): \(${poly([k, -k * (p + q), k * p * q])}=${k === 1 ? '' : k === -1 ? '-' : k}x${fac(r)}\).`; }
+  return T`Factor: \(${poly([k, -k * (p + q), k * p * q])}=${k}\left(${poly([1, -(p + q), p * q])}\right)\). Two numbers that multiply to \(${p * q}\) and add to \(${-(p + q)}\) are \(${-p}\) and \(${-q}\), so \(=${k === 1 ? '' : k === -1 ? '-' : k}${fac(p)}${fac(q)}\).`;
+}
+/* sign chart: add a "test value" row so the plug-in work is shown */
+const _signChart = signChart;
+signChart = function (pts, rows) {
+  const html = _signChart(pts, rows); const r0 = rows[0]; if (!r0 || !r0.fn) return html;
+  const b = [-Infinity, ...pts, Infinity]; let tr = '<tr><th class="muted">test</th>';
+  for (let i = 0; i < b.length - 1; i++) { const t = testPt(b[i], b[i + 1]); const v = r0.fn(t); const lab = r0.label.includes('(x)') ? r0.label.replace('(x)', '(' + fmtNum(t) + ')') : r0.label + '(' + fmtNum(t) + ')'; tr += '<td class="tv">' + M(lab + (Math.abs(v) < 1000 ? '=' + fmtNum(Math.round(v * 1000) / 1000) : '')) + '<br>' + (v > 0 ? '<span class="pos">+</span>' : '<span class="neg">−</span>') + '</td>'; if (i < pts.length) tr += '<td class="pt"></td>'; }
+  tr += '</tr>';
+  return html.replace(/(<\/tr>)/, '$1' + tr);
+};
+
 /* ---- g2_ext_mvt.js ---- */
 /* ===== 3.1 EXTREMA ===== */
 function bExtCount(P) {
@@ -364,9 +400,9 @@ function bExtAbs(P) {
   ds.push({ t: M(best.x), why: T`That's <i>where</i> the absolute ${ask} happens (\(x=${best.x}\)). The question asks for the ${ask}imum <b>value</b>, the y-value \(f(${best.x})\).` });
   if (q > U) ds.push({ t: M(f(q)), why: T`\(x=${q}\) is a critical number, but it's <b>outside</b> \([${L}, ${U}]\), so it isn't a candidate.` });
   const sol = steps([
-    T`\(f'(x)=${poly([6, -6 * (p + q), 6 * p * q])} = 6${fac(p)}${fac(q)}\)`,
+    pdW([2, -3 * (p + q), 6 * p * q, d]), facW(6, p, q), T`Set \(f'(x)=0\): \(x=${p}\) or \(x=${q}\).`,
     T`Critical numbers: \(x=${p}\) and \(x=${q}\). ` + (q > U ? T`Only \(x=${p}\) is inside \((${L}, ${U})\).` : q === U ? T`\(x=${q}\) is an endpoint (already a candidate).` : 'Both are inside the interval.'),
-    'Candidates Test: plug every candidate (critical numbers and endpoints) into ' + M('f') + ':' + tbl([M('x'), M('f(x)')], vals.map(v => [M(v.x) + ((v.x === L || v.x === U) ? ' <span class="muted">(endpoint)</span>' : ' <span class="muted">(critical #)</span>'), M(v.y)])),
+    'Candidates Test: plug every candidate (critical numbers and endpoints) into ' + M('f') + ':' + tbl([M('x'), 'plug into f (show the arithmetic)', M('f(x)')], vals.map(v => [M(v.x) + ((v.x === L || v.x === U) ? ' <span class="muted">(endpoint)</span>' : ' <span class="muted">(critical #)</span>'), M(pev([2, -3 * (p + q), 6 * p * q, d], v.x)), M(v.y)])),
     abox(T`Absolute ${ask}imum value: \(${best.y}\) at \(x=${best.x}\).`)
   ]);
   return mc({ stem: T`What is the absolute ${ask}imum value of \(f(x)=${poly([2, -3 * (p + q), 6 * p * q, d])}\) on the closed interval \([${L}, ${U}]\)?`, ans: M(best.y), ds, fill: [{ t: M(best.y + 4), why: 'Check your arithmetic when you plug in.' }, { t: M(best.y - 3), why: 'Check your arithmetic when you plug in.' }, { t: M(best.y + 7), why: 'Check your arithmetic when you plug in.' }], sol, hint: 'Candidates Test: find the critical numbers inside the interval, then plug in the critical numbers AND both endpoints.', meta: { f, L, U, ask, val: best.y } });
@@ -429,8 +465,9 @@ function bMvtQuad(P) {
   const f = x => a * x * x + b * x + c0, m = a * (p + q) + b, c = (p + q) / 2;
   const sol = steps([
     T`\(f\) is a polynomial, so it's continuous on \([${p}, ${q}]\) and differentiable on \((${p}, ${q})\). The MVT applies.`,
+    T`\(${pev([a, b, c0], q)}\)<br>\(${pev([a, b, c0], p)}\)`,
     'Slope of the secant line:' + D(T`\dfrac{f(${q})-f(${p})}{${minus(q, p)}} = \dfrac{${f(q)} - ${par(f(p))}}{${q - p}} = ${fmtNum(m)}`),
-    T`Set \(f'(c)\) equal to it. \(f'(x)=${poly([2 * a, b])}\), so` + D(T`${poly([2 * a, b], 'c')} = ${fmtNum(m)} \;\Rightarrow\; c = ${fmtNum(c)}`),
+    pdW([a, b, c0]) + '<br>' + T`Set \(f'(c)\) equal to the slope:` + D(T`${poly([2 * a, b], 'c')} = ${fmtNum(m)} \;\Rightarrow\; c = ${fmtNum(c)}`),
     abox(T`\(c=${fmtNum(c)}\), which is inside \((${p}, ${q})\).`)
   ]);
   const ds = [{ t: M(fmtNum(m)), why: T`That's the <b>slope</b> \(\frac{f(b)-f(a)}{b-a}\). The answer is the x-value \(c\) where \(f'(c)\) equals that slope.` },
@@ -539,7 +576,7 @@ function bIncCubic(P) {
   const incS = s > 0 ? [[-Infinity, p], [q, Infinity]] : [[p, q]], decS = s > 0 ? [[p, q]] : [[-Infinity, p], [q, Infinity]];
   const mx = s > 0 ? p : q, mn = s > 0 ? q : p;
   const chart = signChart([p, q], [{ label: "f'(x)", fn: fp, at: () => M('0') }, incRow(fp)]);
-  const solBase = [T`\(f'(x)=${poly([6 * s, -6 * s * (p + q), 6 * s * p * q])} = ${s < 0 ? '-' : ''}6${fac(p)}${fac(q)}\)`, T`Critical numbers: \(x=${p}\) and \(x=${q}\).`, 'Labeled sign chart:' + chart];
+  const solBase = [pdW(co), facW(6 * s, p, q), T`Critical numbers: \(x=${p}\) and \(x=${q}\).`, 'Labeled sign chart:' + chart];
   const stemF = T`\(f(x)=${poly(co)}\)`;
   if (type === 'inc' || type === 'dec') {
     const S = type === 'inc' ? incS : decS, O = type === 'inc' ? decS : incS;
@@ -694,7 +731,7 @@ function bConcSextic(P) {
   const pts = [...new Set(V <= 1 ? [0, p] : [0, p, q])].sort((u, v) => u - v);
   const ints = signIntervals(fpp, pts); let count = 0; pts.forEach((x, i) => { if (ints[i].s !== ints[i + 1].s) count++; });
   const list = WORDS.map((w, i) => ({ t: w, why: i === count ? '' : (i === pts.length ? T`You counted every zero of \(y''\). A factor with an even power (like \(x^2\)) doesn't change sign, so it isn't an inflection point.` : T`Make a sign chart for \(y''\). Only sign <b>changes</b> are inflection points. There ${count === 1 ? 'is' : 'are'} ${count}.`) }));
-  const sol = steps([T`\(y'=${poly(d1)}\)`, T`\(y''=${ypp}\)`, 'Sign chart for ' + M("y''") + ':' + signChart(pts, [{ label: "y''", fn: fpp, at: () => M('0') }, ccRow(fpp)]), abox(T`${WORDS[count]} point${count === 1 ? '' : 's'} of inflection.`)]);
+  const sol = steps([pdW(co, "y'"), pdW(d1, "y''"), T`Factor out the GCF: \(y''=${ypp}\)`, T`Set \(y''=0\): \(${setX(pts)}\)`, 'Sign chart for ' + M("y''") + ':' + signChart(pts, [{ label: "y''", fn: fpp, at: () => M('0') }, ccRow(fpp)]), abox(T`${WORDS[count]} point${count === 1 ? '' : 's'} of inflection.`)]);
   return mcFixed({ stem: T`How many points of inflection does the graph of \(y=${poly(co)}\) have?`, list, ans: count, sol, hint: T`Find \(y''\), factor out the GCF, and make a sign chart. Even powers don't change sign.` });
 }
 reg('conc_sextic', 'conc', () => bConcSextic());
@@ -702,7 +739,7 @@ reg('conc_sextic', 'conc', () => bConcSextic());
 function bConcQuartic(P) {
   P = P || {}; const p = P.p ?? R(-3, 2), q = P.q ?? (p + R(1, 3)), d = P.d ?? R(-5, 5), ask = P.ask ?? pick(['ip', 'cd', 'cu']);
   const co = [1, -2 * (p + q), 6 * p * q, 0, d]; const fpp = x => 12 * (x - p) * (x - q);
-  const base = [T`\(f'(x)=${poly([4, -6 * (p + q), 12 * p * q, 0])}\)`, T`\(f''(x)=${poly([12, -12 * (p + q), 12 * p * q])} = 12${fac(p)}${fac(q)}\)`, 'Sign chart for ' + M("f''") + ':' + signChart([p, q], [{ label: "f''(x)", fn: fpp, at: () => M('0') }, ccRow(fpp)])];
+  const base = [pdW(co), pdW([4, -6 * (p + q), 12 * p * q, 0], "f''(x)"), facW(12, p, q), T`Set \(f''=0\): \(x=${p}\) or \(x=${q}\).`, 'Sign chart for ' + M("f''") + ':' + signChart([p, q], [{ label: "f''(x)", fn: fpp, at: () => M('0') }, ccRow(fpp)])];
   const stemF = T`\(f(x)=${poly(co)}\)`;
   if (ask === 'ip') {
     return mc({ stem: T`At what x-values does ${stemF} have points of inflection?`, ans: M(setX([p, q])), ds: [
@@ -748,7 +785,7 @@ reg('conc_findk', 'conc', () => bConcFindK());
 function bConc2DT(P) {
   P = P || {}; const p = P.p ?? R(-3, 1), q = P.q ?? (p + R(1, 3)), d = P.d ?? R(-5, 5); const x = (P.at ?? pick(['p', 'q'])) === 'p' ? p : q; const v = 12 * x - 6 * (p + q);
   const isMax = v < 0;
-  const sol = steps([T`\(f'(x)=6${fac(p)}${fac(q)}\), so \(f'(${x})=0\).`, T`\(f''(x)=${poly([12, -6 * (p + q)])}\Rightarrow f''(${x})=${v}\)`, T`\(f''(${x})${isMax ? '<' : '>'}0\) → concave ${isMax ? 'down (∩)' : 'up (∪)'} at a flat spot → relative <b>${isMax ? 'max' : 'min'}</b>.`, abox(T`Relative ${isMax ? 'maximum' : 'minimum'} at \(x=${x}\).`)]);
+  const sol = steps([pdW([2, -3 * (p + q), 6 * p * q, d]), facW(6, p, q) + T` So \(f'(${x})=0\) ✓.`, pdW([6, -6 * (p + q), 6 * p * q], "f''(x)"), T`\(${pev([12, -6 * (p + q)], x, "f''")}\)`, T`\(f''(${x})${isMax ? '<' : '>'}0\) → concave ${isMax ? 'down (∩)' : 'up (∪)'} at a flat spot → relative <b>${isMax ? 'max' : 'min'}</b>.`, abox(T`Relative ${isMax ? 'maximum' : 'minimum'} at \(x=${x}\).`)]);
   return mc({ stem: T`For \(f(x)=${poly([2, -3 * (p + q), 6 * p * q, d])}\), \(f'(${x})=0\). Use the Second Derivative Test. What happens at \(x=${x}\)?`, ans: T`\(f''(${x})=${v}${isMax ? '<' : '>'}0\), so \(f\) has a relative ${isMax ? 'maximum' : 'minimum'}`, ds: [
     { t: T`\(f''(${x})=${v}${isMax ? '<' : '>'}0\), so \(f\) has a relative ${isMax ? 'minimum' : 'maximum'}`, why: T`Backwards. \(f''<0\) means concave down (∩), which is a MAX. \(f''>0\) (∪) is a MIN.` },
     { t: T`\(f\) has a point of inflection at \(x=${x}\)`, why: T`An inflection point needs \(f''\) to change sign. Here \(f''(${x})\ne 0\).` },
@@ -1146,7 +1183,7 @@ function bTrigAbs() {
   const ties = cand.filter(c => Math.abs(c.y - best.y) < 1e-9);
   const ansT = T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=${best.ys}\) at ` + ties.map(c => M('x=' + c.xs)).join(' and ');
   const ds = cand.filter(c => Math.abs(c.y - best.y) > 1e-9).map(c => ({ t: T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=${c.ys}\) at \(x=${c.xs}\)`, why: T`\(f(${c.xs})=${c.ys}\approx${r3s(c.y)}\), but another candidate is ${ask === 'max' ? 'bigger' : 'smaller'} (\(${best.ys}\approx${r3s(best.y)}\)).` }));
-  const sol = steps([T`\(f'(x)=${F.fd}\). Set it to 0 on the interval → critical numbers ` + F.crit.map(c => M('x=' + c[1])).join(', ') + '.', 'Candidates Test (decimals so you can compare):' + tbl([M('x'), M('f(x)'), '≈'], cand.map(c => [M(c.xs) + (c.end ? ' <span class="muted">(endpoint)</span>' : ''), M(c.ys), r3s(c.y)])), abox(ansT)]);
+  const sol = steps([T`\(f'(x)=${F.fd}\).`, (F.sv || 'Set it to 0 on the interval.') + ' Critical numbers: ' + F.crit.map(c => M('x=' + c[1])).join(', ') + '.', 'Candidates Test: plug every candidate into the ORIGINAL f (decimals so you can compare):' + tbl([M('x'), 'plug in', M('f(x)'), '≈'], cand.map((c, i) => [M(c.xs) + (c.end ? ' <span class="muted">(endpoint)</span>' : ''), F.ev && F.ev[i] ? M(F.ev[i]) : '', M(c.ys), r3s(c.y)])), abox(ansT)]);
   return mc({ stem: T`Find the absolute ${ask === 'max' ? 'maximum' : 'minimum'} of \(${F.f}\) on \([${F.I[0]}, ${F.I[1]}]\). Give the value and the x-value(s).`, ans: ansT, ds, fill: [{ t: T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=${ask === 'max' ? '1' : '-1'}\) at \(x=\frac\pi2\)`, why: 'Use the Candidates Test with the actual critical numbers.' }, { t: 'There is none', why: 'A continuous function on a closed interval always has one (Extreme Value Theorem).' }, { t: T`${ask === 'max' ? 'Absolute max' : 'Absolute min'} \(=0\) at \(x=0\)`, why: 'Compare every candidate.' }], sol, hint: 'Critical numbers on the interval + both endpoints → plug all into f → compare.' });
 }
 reg('ext_trig', 'ext', bTrigAbs);
@@ -1181,10 +1218,10 @@ const FAM = [
 const nameX = x => { if (!isFinite(x)) return x > 0 ? '\\infty' : '-\\infty'; for (const d of [1, 2, 3, 4, 6]) { const n = x * d / PI; if (Math.abs(n - Math.round(n)) < 1e-9 && Math.abs(x) > 0.3) return piF(Math.round(n), d); } return fmtNum(x); };
 function famInts(F, fn, pts) { const b = [F.I[0], ...pts, F.I[1]]; const out = []; for (let i = 0; i < b.length - 1; i++) { const lo = b[i], hi = b[i + 1]; const t = isFinite(lo) && isFinite(hi) ? (lo + hi) / 2 : isFinite(lo) ? lo + 0.7 : hi - 0.7; out.push({ a: lo, b: hi, s: Math.sign(fn(t)) }); } return out; }
 const famStr = (ints, s) => { const m = []; for (const it of ints) { if (it.s !== s) continue; if (m.length && m[m.length - 1][1] === it.a && !it.brk) m[m.length - 1][1] = it.b; else m.push([it.a, it.b]); } return m.length ? m.map(([a, b]) => '(' + nameX(a) + ', ' + nameX(b) + ')').join(' \\cup ') : '\\text{none}'; };
-function famChart(F, fn, pts, lab, row) { const b = [F.I[0], ...pts, F.I[1]]; let h = '<div class="scwrap"><table class="sc"><tr><th>' + M('x') + '</th>'; for (let i = 0; i < b.length; i++) { h += '<th class="pt">' + M(nameX(b[i])) + '</th>'; if (i < b.length - 1) h += '<th class="iv"></th>'; } h += '</tr><tr><th>' + M(lab) + '</th>'; const ints = famInts(F, fn, pts); for (let i = 0; i < b.length; i++) { h += '<td class="pt">' + (i === 0 || i === b.length - 1 ? '' : (F.va === b[i] ? '<span class="und">und</span>' : M('0'))) + '</td>'; if (i < b.length - 1) h += '<td class="' + (ints[i].s > 0 ? 'pos' : 'neg') + '">' + row(ints[i].s) + '</td>'; } return h + '</tr></table></div>'; }
-function bFam() {
+function famChart(F, fn, pts, lab, row) { const b = [F.I[0], ...pts, F.I[1]]; let h = '<div class="scwrap"><table class="sc"><tr><th>' + M('x') + '</th>'; for (let i = 0; i < b.length; i++) { h += '<th class="pt">' + M(nameX(b[i])) + '</th>'; if (i < b.length - 1) h += '<th class="iv"></th>'; } h += '</tr>'; { const bb = b; h += '<tr><th class="muted">test</th>'; for (let i = 0; i < bb.length - 1; i++) { const lo = bb[i], hi = bb[i + 1]; const t = isFinite(lo) && isFinite(hi) ? (lo + hi) / 2 : isFinite(lo) ? lo + 0.7 : hi - 0.7; const v = fn(t); h += '<td class="pt"></td><td class="tv">' + M('x=' + nameX(t)) + '<br>' + M(lab.replace('(x)', '') + '\\approx' + r3s(v)) + '</td>'; } h += '<td class="pt"></td></tr>'; } h += '<tr><th>' + M(lab) + '</th>'; const ints = famInts(F, fn, pts); for (let i = 0; i < b.length; i++) { h += '<td class="pt">' + (i === 0 || i === b.length - 1 ? '' : (F.va === b[i] ? '<span class="und">und</span>' : M('0'))) + '</td>'; if (i < b.length - 1) h += '<td class="' + (ints[i].s > 0 ? 'pos' : 'neg') + '">' + row(ints[i].s) + '</td>'; } return h + '</tr></table></div>'; }
+function bFam(kind) {
   let F, ask;
-  for (let t = 0; t < 20; t++) { F = pick(FAM); ask = pick(['inc', 'dec', 'max', 'min', 'cu', 'cd', 'ip']); if ((['cu', 'cd', 'ip'].includes(ask)) && !F.fpp) continue; break; }
+  for (let t = 0; t < 40; t++) { F = pick(FAM); ask = pick(kind === 'conc' ? ['cu', 'cd', 'ip'] : ['inc', 'dec', 'max', 'min']); if ((['cu', 'cd', 'ip'].includes(ask)) && !F.fpp) continue; break; }
   const isConc = ['cu', 'cd', 'ip'].includes(ask);
   const pts = (isConc ? F.ip.concat(F.va !== undefined ? [F.va] : []) : F.cp.concat(F.va !== undefined ? [F.va] : [])).sort((a, b) => a - b);
   const fn = isConc ? F.fpp : F.fp; const ints = famInts(F, fn, pts);
@@ -1197,11 +1234,11 @@ function bFam() {
   else if (ask === 'ip') { ans = ext('ip'); opp = F.cp.map(x => 'x = ' + nameX(x)).join(',\\;\\; '); just = T`"\(f\) has an inflection point at \(${ans}\) because \(f''\) changes sign there."`; }
   else { ans = ext(ask); opp = ext(ask === 'max' ? 'min' : 'max'); just = T`"\(f\) has a relative ${ask} at \(${ans}\) because \(f'\) changes from ${ask === 'max' ? 'positive to negative' : 'negative to positive'} there."`; }
   const stemQ = ask === 'inc' || ask === 'dec' || ask === 'cu' || ask === 'cd' ? T`On what interval(s) is \(f(x)=${F.f}\) ${qt} on ${M(F.Is)}?` : ask === 'ip' ? T`Find the x-coordinate(s) of every inflection point of \(f(x)=${F.f}\) on ${M(F.Is)}.` : T`Find the x-value(s) where \(f(x)=${F.f}\) has a relative ${ask === 'max' ? 'maximum' : 'minimum'} on ${M(F.Is)}.`;
-  const sol = steps([isConc ? T`\(f'(x)=${F.fd}\), \(f''(x)=${F.fdd}\)` : T`\(f'(x)=${F.fd}\)`, (isConc ? T`\(f''=0\)` : T`\(f'=0\)`) + ' at ' + M(pts.filter(x => x !== F.va).map(x => 'x=' + nameX(x)).join(',\\;') || '\\text{nowhere}') + (F.va !== undefined ? T`. Also \(x=${F.va}\) is a vertical asymptote: include it on the chart, but it can't be an extremum or inflection point.` : '.') + (F.I[0] === 0 && F.I[1] === 2 * PI ? ' (Only keep solutions inside the interval.)' : ''), 'Sign chart:' + chart, abox(M(ans))]) + '<div class="just">✍️ <b>Write it like this:</b> ' + just + '</div>';
+  const sol = steps([F.fw || T`\(f'(x)=${F.fd}\)`, isConc ? (F.fddw || T`\(f''(x)=${F.fdd}\)`) : '', (isConc ? F.svc : F.sv) || '', (isConc ? T`\(f''=0\)` : T`\(f'=0\)`) + ' at ' + M(pts.filter(x => x !== F.va).map(x => 'x=' + nameX(x)).join(',\\;') || '\\text{nowhere}') + (F.va !== undefined ? T`. Also \(x=${F.va}\) is a vertical asymptote: include it on the chart, but it can't be an extremum or inflection point.` : '.') + (F.I[0] === 0 && F.I[1] === 2 * PI ? ' (Only keep solutions inside the interval.)' : ''), 'Sign chart:' + chart, abox(M(ans))]) + '<div class="just">✍️ <b>Write it like this:</b> ' + just + '</div>';
   return mc({ stem: stemQ, ans: M(ans), ds: [{ t: M(opp), why: "That's the opposite (check which sign you need)." }], fill: [{ t: M('(-\\infty,\\infty)'), why: 'The sign changes, so not everywhere.' }, { t: M('\\text{none}'), why: 'Look at the sign chart again.' }, { t: M('x=\\pi'), why: 'Recheck where the derivative is 0.' }, { t: M('x=0'), why: 'Recheck where the derivative is 0.' }], sol, hint: isConc ? "Find f″, set it = 0, sign chart, look for sign changes." : "Find f′, set it = 0, sign chart." });
 }
-reg('fam', 'inc', bFam, 1.4);
-reg('fam_c', 'conc', () => { for (let i = 0; i < 30; i++) { const q = bFam(); if (/concave|inflection/.test(q.stem)) return q; } return bFam(); }, 1.1);
+reg('fam', 'inc', () => bFam('inc'), 1.4);
+reg('fam_c', 'conc', () => bFam('conc'), 1.1);
 
 /* --- sketch-from-conditions: graph pick from f/f'/f'' sign info --- */
 reg('graph_cond', 'graph', () => {
@@ -1352,6 +1389,177 @@ TRIG_ABS.push(
   { f: T`f(x)=\cos2x-2\sin x`, I: ['0', '2\\pi'], fn: x => Math.cos(2 * x) - 2 * Math.sin(x), b: 2 * PI, fd: T`-2\sin2x-2\cos x=-2\cos x(2\sin x+1)`, crit: [[PI / 2, '\\frac\\pi2', '-3'], [7 * PI / 6, '\\frac{7\\pi}6', '\\frac32'], [3 * PI / 2, '\\frac{3\\pi}2', '1'], [11 * PI / 6, '\\frac{11\\pi}6', '\\frac32']], ends: [[0, '0', '1'], [2 * PI, '2\\pi', '1']] },
   { f: T`f(x)=2x^3-15x^2+36x`, I: ['1', '5'], fn: x => 2 * x ** 3 - 15 * x * x + 36 * x, b: 5, fd: T`6x^2-30x+36=6(x-2)(x-3)`, crit: [[2, '2', '28'], [3, '3', '27']], ends: [[1, '1', '23'], [5, '5', '55']] }
 );
+
+/* ---- g7b_work.js ---- */
+/* ===== full work for FAM (3.3/3.4 families) and TRIG_ABS (3.1 closed interval) ===== */
+const FAMW = [
+  { fw: T`\(\frac{d}{dx}[x]=1\), \(\frac{d}{dx}[2\cos x]=-2\sin x\), so \(f'(x)=1-2\sin x\).`, fddw: T`\(f''(x)=\frac{d}{dx}[1-2\sin x]=-2\cos x\).`, sv: T`\(1-2\sin x=0\Rightarrow\sin x=\frac12\). On the unit circle, \(\sin x=\frac12\) at \(x=\frac\pi6\) and \(x=\frac{5\pi}6\).`, svc: T`\(-2\cos x=0\Rightarrow\cos x=0\) at \(x=\frac\pi2\) and \(x=\frac{3\pi}2\).` },
+  { fw: T`\(\frac{d}{dx}[x]=1\), \(\frac{d}{dx}[2\sin x]=2\cos x\), so \(f'(x)=1-2\cos x\).`, fddw: T`\(f''(x)=\frac{d}{dx}[1-2\cos x]=2\sin x\).`, sv: T`\(1-2\cos x=0\Rightarrow\cos x=\frac12\) at \(x=\frac\pi3\) and \(x=\frac{5\pi}3\).`, svc: T`\(2\sin x=0\Rightarrow\sin x=0\) at \(x=\pi\) (0 and \(2\pi\) are not inside the open interval).` },
+  { fw: T`\(\frac{d}{dx}[\sin x]=\cos x\), \(\frac{d}{dx}[\cos x]=-\sin x\), so \(f'(x)=\cos x-\sin x\).`, fddw: T`\(f''(x)=-\sin x-\cos x\).`, sv: T`\(\cos x-\sin x=0\Rightarrow\sin x=\cos x\Rightarrow\tan x=1\) at \(x=\frac\pi4\) and \(x=\frac{5\pi}4\).`, svc: T`\(-\sin x-\cos x=0\Rightarrow\tan x=-1\) at \(x=\frac{3\pi}4\) and \(x=\frac{7\pi}4\).` },
+  { fw: T`\(\frac{d}{dx}[2\sin x]=2\cos x\). Chain rule: \(\frac{d}{dx}[\sin2x]=\cos2x\cdot2\). So \(f'(x)=2\cos x+2\cos2x\). Use \(\cos2x=2\cos^2x-1\): \(f'(x)=4\cos^2x+2\cos x-2=2(2\cos x-1)(\cos x+1)\).`, sv: T`\(2\cos x-1=0\Rightarrow\cos x=\frac12\Rightarrow x=\frac\pi3,\frac{5\pi}3\). \(\cos x+1=0\Rightarrow\cos x=-1\Rightarrow x=\pi\). (At \(x=\pi\), \(\cos x+1\ge0\) on both sides, so \(f'\) doesn't change sign there.)` },
+  { fw: T`Product rule with \(u=x,\ v=e^x\): \(f'=u'v+uv'=(1)e^x+x\cdot e^x=e^x(x+1)\).`, fddw: T`Product rule again on \(e^x(x+1)\): \(f''=e^x(x+1)+e^x(1)=e^x(x+2)\).`, sv: T`\(e^x(x+1)=0\). \(e^x\) is never 0, so \(x+1=0\Rightarrow x=-1\).`, svc: T`\(e^x(x+2)=0\Rightarrow x=-2\).` },
+  { fw: T`Product rule with \(u=x^2,\ v=e^x\): \(f'=2x\cdot e^x+x^2\cdot e^x=xe^x(2+x)\).`, sv: T`\(xe^x(x+2)=0\). \(e^x\ne0\), so \(x=0\) or \(x=-2\).` },
+  { fw: T`Product rule with \(u=x,\ v=e^{-x}\) (chain rule: \(\frac{d}{dx}e^{-x}=-e^{-x}\)): \(f'=(1)e^{-x}+x(-e^{-x})=e^{-x}(1-x)\).`, fddw: T`Product rule again: \(f''=-e^{-x}(1-x)+e^{-x}(-1)=e^{-x}(x-2)\).`, sv: T`\(e^{-x}\ne0\), so \(1-x=0\Rightarrow x=1\).`, svc: T`\(x-2=0\Rightarrow x=2\).` },
+  { fw: T`\(\frac{d}{dx}[x]=1\), \(\frac{d}{dx}[\ln x]=\frac1x\), so \(f'(x)=1-\frac1x=\frac{x-1}{x}\).`, sv: T`\(\frac{x-1}{x}=0\Rightarrow x=1\). (\(x=0\) is not in the domain, since \(\ln x\) needs \(x>0\).)` },
+  { fw: T`Quotient rule (low · d-high − high · d-low, over low²): \(f'=\dfrac{2x(x-1)-x^2(1)}{(x-1)^2}=\dfrac{x^2-2x}{(x-1)^2}=\dfrac{x(x-2)}{(x-1)^2}\).`, fddw: T`Quotient rule again: \(f''=\dfrac{(2x-2)(x-1)^2-(x^2-2x)\cdot2(x-1)}{(x-1)^4}=\dfrac{(x-1)\left[(2x-2)(x-1)-2(x^2-2x)\right]}{(x-1)^4}=\dfrac{2x^2-4x+2-2x^2+4x}{(x-1)^3}=\dfrac{2}{(x-1)^3}\).`, sv: T`Numerator \(x(x-2)=0\Rightarrow x=0,\ 2\). Denominator is 0 at \(x=1\), but \(x=1\) is not in the domain (vertical asymptote).`, svc: T`\(\frac{2}{(x-1)^3}\) is never 0. It changes sign only at the asymptote \(x=1\), which is not in the domain, so there is no inflection point.` }
+];
+FAM.forEach((F, i) => Object.assign(F, FAMW[i] || {}));
+const TAW = [
+  { sv: T`\(\cos x-\sin x=0\Rightarrow\tan x=1\Rightarrow x=\frac\pi4,\frac{5\pi}4\).`, ev: [T`\sin0+\cos0=0+1=1`, T`\sin\frac\pi4+\cos\frac\pi4=\frac{\sqrt2}2+\frac{\sqrt2}2=\sqrt2`, T`\sin\frac{5\pi}4+\cos\frac{5\pi}4=-\frac{\sqrt2}2-\frac{\sqrt2}2=-\sqrt2`, T`\sin2\pi+\cos2\pi=0+1=1`] },
+  { sv: T`\(1-2\sin x=0\Rightarrow\sin x=\frac12\Rightarrow x=\frac\pi6,\frac{5\pi}6\).`, ev: [T`0+2\cos0=2`, T`\frac\pi6+2\cdot\frac{\sqrt3}2=\frac\pi6+\sqrt3`, T`\frac{5\pi}6+2\cdot\left(-\frac{\sqrt3}2\right)=\frac{5\pi}6-\sqrt3`, T`2\pi+2\cos2\pi=2\pi+2`] },
+  { sv: T`\(1-2\cos x=0\Rightarrow\cos x=\frac12\Rightarrow x=\frac\pi3,\frac{5\pi}3\).`, ev: [T`0-2\sin0=0`, T`\frac\pi3-2\cdot\frac{\sqrt3}2=\frac\pi3-\sqrt3`, T`\frac{5\pi}3-2\cdot\left(-\frac{\sqrt3}2\right)=\frac{5\pi}3+\sqrt3`, T`2\pi-2\sin2\pi=2\pi`] },
+  { sv: T`\(2\cos x-1=0\Rightarrow\cos x=\frac12\Rightarrow x=\frac\pi3\) (\(\frac{5\pi}3\) is not in \([0,\pi]\)).`, ev: [T`2\sin0-0=0`, T`2\cdot\frac{\sqrt3}2-\frac\pi3=\sqrt3-\frac\pi3`, T`2\sin\pi-\pi=-\pi`] },
+  { sv: T`\(-2\sin x\cos x=0\Rightarrow\sin x=0\) (\(x=0,\pi\): the endpoints) or \(\cos x=0\Rightarrow x=\frac\pi2\).`, ev: [T`\cos^20=1`, T`\cos^2\frac\pi2=0^2=0`, T`\cos^2\pi=(-1)^2=1`] },
+  { sv: T`\(f'=\dfrac{4(x-1)}{3x^{2/3}}\): numerator 0 at \(x=1\); denominator 0 at \(x=0\) (\(f'\) undefined, but \(f(0)\) exists, so \(x=0\) counts).`, ev: [T`(-1)^{4/3}-4(-1)^{1/3}=1-4(-1)=5`, T`0-0=0`, T`1-4=-3`, T`8^{4/3}-4\cdot8^{1/3}=16-8=8`] },
+  { sv: T`\(3(x-2)(x+2)=0\Rightarrow x=\pm2\). Only \(x=2\) is in \([0,4]\).`, ev: [T`0-0=0`, T`8-24=-16`, T`64-48=16`] },
+  { sv: T`\(1-\ln x=0\Rightarrow\ln x=1\Rightarrow x=e\).`, ev: [T`\frac{\ln1}{1}=\frac01=0`, T`\frac{\ln e}{e}=\frac1e\approx0.368`, T`\frac{\ln5}{5}\approx0.322`] },
+  { sv: T`Chain rule: \(\frac{d}{dx}\cos2x=-2\sin2x=-4\sin x\cos x\). So \(f'=-4\sin x\cos x-2\cos x=-2\cos x(2\sin x+1)=0\Rightarrow\cos x=0\ (x=\frac\pi2,\frac{3\pi}2)\) or \(\sin x=-\frac12\ (x=\frac{7\pi}6,\frac{11\pi}6)\).`, ev: [T`\cos0-2\sin0=1`, T`\cos\pi-2\sin\frac\pi2=-1-2=-3`, T`\cos\frac{7\pi}3-2\sin\frac{7\pi}6=\frac12+1=\frac32`, T`\cos3\pi-2\sin\frac{3\pi}2=-1+2=1`, T`\cos\frac{11\pi}3-2\sin\frac{11\pi}6=\frac12+1=\frac32`, T`\cos4\pi-2\sin2\pi=1`] },
+  { sv: T`\(6(x-2)(x-3)=0\Rightarrow x=2,\ 3\). Both are in \([1,5]\).`, ev: [T`2-15+36=23`, T`16-60+72=28`, T`54-135+108=27`, T`250-375+180=55`] }
+];
+TRIG_ABS.forEach((F, i) => Object.assign(F, TAW[i] || {}));
+
+/* ---- g9_deriv.js ---- */
+/* ===== DERIVATIVE PRACTICE (full work) ===== */
+TOPICS.unshift({ id: 'deriv', name: '🔧 Derivatives: practice deriving', short: '🔧 Derivatives' });
+const Qr = (n, d) => { d = d || 1; if (d < 0) { n = -n; d = -d; } const g = gcd(n, d) || 1; return { n: n / g, d: d / g }; };
+const qmul = (a, b) => Qr(a.n * b.n, a.d * b.d), qsub1 = a => Qr(a.n - a.d, a.d), qv = a => a.n / a.d;
+const qs = a => a.d === 1 ? String(a.n) : (a.n < 0 ? '-' : '') + Math.abs(a.n) + '/' + a.d;          // inline, for exponents
+const qf = a => a.d === 1 ? String(Math.abs(a.n)) : '\\frac{' + Math.abs(a.n) + '}{' + a.d + '}';     // |a| as fraction
+const sgnJoin = (terms) => terms.map((t, i) => (i === 0 ? (t.neg ? '-' : '') : (t.neg ? ' - ' : ' + ')) + t.s).join('');
+const xp = e => qv(e) === 0 ? '' : qv(e) === 1 ? 'x' : 'x^{' + qs(e) + '}';
+function expTerm(c, e) { const one = Math.abs(qv(c)) === 1 && qv(e) !== 0; return { neg: qv(c) < 0, s: (one ? '' : qf(c)) + xp(e) || '1' }; }
+function niceTerm(c, e) {
+  const ev = qv(e); const neg = qv(c) < 0;
+  if (ev >= 0) { let xs = ev === 0 ? '' : ev === 1 ? 'x' : e.d === 2 && e.n === 1 ? '\\sqrt{x}' : 'x^{' + qs(e) + '}'; const one = Math.abs(qv(c)) === 1 && ev !== 0; if (c.d !== 1 && xs) return { neg, s: '\\dfrac{' + Math.abs(c.n) + (xs ? xs : '') + '}{' + c.d + '}' }; return { neg, s: (one ? '' : qf(c)) + xs || '1' }; }
+  const ae = Qr(-e.n, e.d); const den = ae.d === 2 && ae.n === 1 ? '\\sqrt{x}' : qv(ae) === 1 ? 'x' : 'x^{' + qs(ae) + '}';
+  return { neg, s: '\\dfrac{' + Math.abs(c.n) + '}{' + (c.d === 1 ? '' : c.d) + den + '}' };
+}
+/* D1: power rule with rewriting */
+const PT = [
+  () => { const a = R(1, 6) * pick([1, -1]), n = R(2, 6); return { orig: poly([a, ...Array(n).fill(0)]), c: Qr(a), e: Qr(n) }; },
+  () => { const b = R(1, 8) * pick([1, -1]), m = R(1, 3); return { orig: '\\dfrac{' + Math.abs(b) + '}{x' + (m > 1 ? '^{' + m + '}' : '') + '}', neg: b < 0, c: Qr(b), e: Qr(-m), note: T`\(\dfrac{${Math.abs(b)}}{x${m > 1 ? '^{' + m + '}' : ''}}=${b < 0 ? '' : ''}${Math.abs(b)}x^{-${m}}\)` }; },
+  () => { const c = R(1, 6) * pick([1, -1]); return { orig: (Math.abs(c) === 1 ? '' : Math.abs(c)) + '\\sqrt{x}', neg: c < 0, c: Qr(c), e: Qr(1, 2), note: T`\(\sqrt{x}=x^{1/2}\)` }; },
+  () => { const c = R(1, 3) * 3 * pick([1, -1]); return { orig: (Math.abs(c) === 1 ? '' : Math.abs(c)) + '\\sqrt[3]{x^2}', neg: c < 0, c: Qr(c), e: Qr(2, 3), note: T`\(\sqrt[3]{x^2}=x^{2/3}\)` }; },
+  () => { const c = R(1, 4) * 2 * pick([1, -1]); return { orig: '\\dfrac{' + Math.abs(c) + '}{\\sqrt{x}}', neg: c < 0, c: Qr(c), e: Qr(-1, 2), note: T`\(\dfrac{1}{\sqrt x}=x^{-1/2}\)` }; },
+  () => { const k = R(2, 9) * pick([1, -1]); return { orig: poly([k, 0]), c: Qr(k), e: Qr(1) }; },
+  () => { const k = R(1, 9) * pick([1, -1]); return { orig: String(Math.abs(k)), neg: k < 0, c: Qr(k), e: Qr(0) }; }
+];
+function dPower() {
+  const types = shuffle([0, 1, 2, 3, 4, 5, 6]); let ids = [types[0], types[1], types[2]]; if (!ids.some(i => [1, 2, 3, 4].includes(i))) ids[0] = pick([1, 2, 3, 4]);
+  ids = [...new Set(ids)]; const T3 = ids.map(i => PT[i]()); T3.sort((a, b) => qv(b.e) - qv(a.e));
+  const fS = sgnJoin(T3.map(t => ({ neg: t.neg ?? qv(t.c) < 0, s: t.orig.replace(/^-/, '') })));
+  const rew = sgnJoin(T3.map(t => expTerm(t.c, t.e)));
+  const dts = T3.map(t => ({ c: qmul(t.c, t.e), e: qsub1(t.e) })).filter(t => qv(t.c) !== 0);
+  const dExp = sgnJoin(dts.map(t => expTerm(t.c, t.e))) || '0', dNice = sgnJoin(dts.map(t => niceTerm(t.c, t.e))) || '0';
+  const each = T3.map(t => { if (qv(t.e) === 0) return T`\(\frac{d}{dx}[${t.orig}]=0\) (constant)`; const nc = qmul(t.c, t.e), ne = qsub1(t.e); return T`\(\frac{d}{dx}\left[${sgnJoin([expTerm(t.c, t.e)])}\right]=${qs(t.e).includes('/') ? '\\left(' + qs(t.e) + '\\right)' : qs(t.e)}\cdot ${qv(t.c) < 0 ? '(' + qs(t.c) + ')' : qs(t.c)}\,x^{${qs(t.e)}-1}=${sgnJoin([expTerm(nc, ne)]) || '0'}\)`; });
+  const f = x => T3.reduce((s, t) => s + qv(t.c) * Math.pow(x, qv(t.e)), 0), fp = x => dts.reduce((s, t) => s + qv(t.c) * Math.pow(x, qv(t.e)), 0);
+  const wrong1 = sgnJoin(T3.filter(t => qv(t.e) !== 0).map(t => niceTerm(qmul(t.c, t.e), t.e)));
+  const wrong2 = sgnJoin(T3.filter(t => qv(t.e) !== 0).map(t => niceTerm(qmul(t.c, t.e), Qr(t.e.n + t.e.d, t.e.d))));
+  const wrong3 = sgnJoin(dts.map(t => niceTerm(Qr(Math.abs(t.c.n), t.c.d), t.e)));
+  const sol = steps(['<b>Step 1. Rewrite every term as a power of x</b> (roots → fraction powers, 1/x → negative powers):' + (T3.filter(t => t.note).map(t => '<br>' + t.note).join('')) + D(T`f(x)=${rew}`), '<b>Step 2. Power rule on each term:</b> ' + M('\\frac{d}{dx}[cx^n]=n\\cdot c\\,x^{n-1}') + '<br>' + each.join('<br>'), '<b>Step 3. Put it together:</b>' + D(T`f'(x)=${dExp}`), '<b>Step 4. Rewrite with no negative exponents</b> (that\'s how you write a final answer):' + D(T`f'(x)=${dNice}`), abox(T`\(f'(x)=${dNice}\)`)]);
+  return Object.assign(mc({ stem: T`Find \(f'(x)\) if \(f(x)=${fS}\).`, ans: M(T`f'(x)=${dNice}`), ds: [{ t: M(T`f'(x)=${wrong1}`), why: 'You brought the power down but forgot to subtract 1 from the exponent.' }, { t: M(T`f'(x)=${wrong2}`), why: 'You ADDED 1 to the exponent. That\'s integration, not differentiation. Subtract 1.' }, { t: M(T`f'(x)=${wrong3}`), why: 'Sign error. A negative exponent brought down makes the term negative.' }], fill: [{ t: M('f\'(x)=0'), why: 'Only constants have derivative 0.' }, { t: M(T`f'(x)=${dExp.replace(/\d+/, m => +m + 1)}`), why: 'Arithmetic slip. Recheck each coefficient.' }], sol, hint: 'Rewrite roots and fractions as powers of x first. Then the power rule: bring the power down, subtract 1.' }), { meta: { f, fp, lo: 0.4, hi: 4 } });
+}
+reg('d_power', 'deriv', dPower, 1.2);
+
+/* D2: product rule */
+function dProduct() {
+  const c = pick([1, 2, 3, -1, -2]), n = pick([1, 2, 3]); const v = pick(['sin', 'cos', 'exp', 'ln']);
+  const uL = poly([c, ...Array(n).fill(0)]), upC = c * n, upL = n === 1 ? String(c) : poly([upC, ...Array(n - 1).fill(0)]);
+  const V = { sin: ['\\sin x', '\\cos x', Math.sin, Math.cos], cos: ['\\cos x', '-\\sin x', Math.cos, x => -Math.sin(x)], exp: ['e^x', 'e^x', Math.exp, Math.exp], ln: ['\\ln x', '\\frac1x', Math.log, x => 1 / x] }[v];
+  const u = x => c * x ** n, up = x => upC * x ** (n - 1);
+  const f = x => u(x) * V[2](x), fp = x => up(x) * V[2](x) + u(x) * V[3](x);
+  const pw = e => e === 0 ? '' : e === 1 ? 'x' : 'x^{' + e + '}';
+  const cs = k => k === 1 ? '' : k === -1 ? '-' : String(k);
+  let ans, raw;
+  const upv = (n === 1 ? cs(c) : cs(upC) + pw(n - 1)); const upvN = n === 1 ? String(c) : cs(upC) + pw(n - 1);
+  if (v === 'sin') { raw = T`(${upL})\sin x+(${uL})\cos x`; ans = T`${upv}\sin x ${c > 0 ? '+' : '-'} ${cs(Math.abs(c))}${pw(n)}\cos x`; }
+  else if (v === 'cos') { raw = T`(${upL})\cos x+(${uL})(-\sin x)`; ans = T`${upv}\cos x ${c > 0 ? '-' : '+'} ${cs(Math.abs(c))}${pw(n)}\sin x`; }
+  else if (v === 'exp') { raw = T`(${upL})e^x+(${uL})e^x`; ans = T`${cs(c)}${pw(n - 1)}e^x(x+${n})`.replace('^{0}', ''); if (n === 1) ans = T`${cs(c) || ''}e^x(x+1)`.replace(/^-?$/, ''); }
+  else { raw = T`(${upL})\ln x+(${uL})\cdot\dfrac1x`; ans = T`${upv}\ln x ${c > 0 ? '+' : '-'} ${n === 1 ? Math.abs(c) : cs(Math.abs(c)) + pw(n - 1)}`; }
+  if (v === 'exp' && n === 1) ans = (c === 1 ? '' : c === -1 ? '-' : c) + 'e^x(x+1)';
+  const fS = (v === 'exp' ? uL + 'e^x' : uL + V[0]);
+  const sol = steps([T`<b>Product rule:</b> \((uv)'=u'v+uv'\).`, T`\(u=${uL}\Rightarrow u'=${upL}\)<br>\(v=${V[0]}\Rightarrow v'=${V[1]}\)`, '<b>Plug in:</b>' + D(T`f'(x)=${raw}`), v === 'exp' ? T`<b>Factor out</b> the common \(${cs(c)}${pw(n - 1)}e^x\):` : v === 'ln' ? T`<b>Simplify:</b> \(${uL}\cdot\frac1x=${n === 1 ? c : cs(c) + pw(n - 1)}\)` : '<b>Clean up the signs:</b>', abox(T`\(f'(x)=${ans}\)`)]);
+  const w1 = v === 'sin' ? T`${upv}\cos x` : v === 'cos' ? T`-${upv}\sin x`.replace('--', '') : v === 'exp' ? T`${upv}e^x` : T`\dfrac{${upvN}}{x}`;
+  const w2 = v === 'sin' ? T`${upv}\sin x` : v === 'cos' ? T`${upv}\cos x` : v === 'exp' ? T`${cs(c)}${pw(n)}e^x` : T`${upv}\ln x`;
+  const w3 = v === 'cos' ? T`${upv}\cos x ${c > 0 ? '+' : '-'} ${cs(Math.abs(c))}${pw(n)}\sin x` : v === 'sin' ? T`${upv}\sin x ${c > 0 ? '-' : '+'} ${cs(Math.abs(c))}${pw(n)}\cos x` : v === 'exp' ? T`${cs(c)}${pw(n - 1)}e^x(x+${n + 1})` : T`${upv}\ln x ${c > 0 ? '-' : '+'} ${n === 1 ? Math.abs(c) : cs(Math.abs(c)) + pw(n - 1)}`;
+  return Object.assign(mc({ stem: T`Find \(f'(x)\) if \(f(x)=${fS}\).`, ans: M(T`f'(x)=${ans}`), ds: [{ t: M(T`f'(x)=${w1}`), why: T`That's \(u'\cdot v'\). The derivative of a product is NOT the product of the derivatives. Use \(u'v+uv'\).` }, { t: M(T`f'(x)=${w2}`), why: "You only did one half of the product rule. You need both u′v AND uv′." }, { t: M(T`f'(x)=${w3}`), why: 'Sign or arithmetic error in one of the two terms. Recheck v′.' }], fill: [{ t: M("f'(x)=0"), why: 'Use the product rule.' }, { t: M("f'(x)=" + upvN + (v === 'exp' ? 'e^x' : V[1])), why: "That's u′·v′." }, { t: M("f'(x)=" + uL + V[1]), why: 'Only uv′. Add u′v.' }], sol, hint: "Product rule: (first)′·(second) + (first)·(second)′." }), { meta: { f, fp, lo: 0.5, hi: 3 } });
+}
+reg('d_product', 'deriv', dProduct, 1.1);
+
+/* D3: quotient rule */
+const QBANK = [
+  () => { let a = R(1, 5), b = R(-6, 6), c = R(1, 4), d = R(-6, 6); if (a * d - b * c === 0) d += 1; const N = a * d - b * c; const num = poly([a, b]), den = poly([c, d]);
+    return { fS: T`\dfrac{${num}}{${den}}`, f: x => (a * x + b) / (c * x + d), fp: x => N / (c * x + d) ** 2, work: T`\dfrac{${a}(${den})-(${num})(${c})}{(${den})^2}=\dfrac{${poly([a * c, a * d])}-(${poly([a * c, b * c])})}{(${den})^2}`, ans: T`\dfrac{${N}}{(${den})^2}`, w: [{ t: T`\dfrac{${-N}}{(${den})^2}`, why: 'You did high·d(low) − low·d(high). It\'s LOW·d(HIGH) − HIGH·d(LOW).' }, { t: T`\dfrac{${a}}{${c}}`, why: 'That\'s (top)′/(bottom)′. That is NOT the quotient rule.' }, { t: T`\dfrac{${N}}{${den}}`, why: 'You forgot to square the denominator.' }], ok: x => Math.abs(c * x + d) > 0.3, uL: num, upL: String(a), vL: den, vpL: String(c) }; },
+  () => { const a = R(1, 9) * pick([1, -1]), b = R(1, 5) * pick([1, -1]); const num = poly([1, 0, a]), den = poly([1, b]);
+    return { fS: T`\dfrac{${num}}{${den}}`, f: x => (x * x + a) / (x + b), fp: x => (x * x + 2 * b * x - a) / (x + b) ** 2, work: T`\dfrac{2x(${den})-(${num})(1)}{(${den})^2}=\dfrac{${poly([2, 2 * b, 0])}-${num.startsWith('-') ? '(' + num + ')' : '(' + num + ')'}}{(${den})^2}`, ans: T`\dfrac{${poly([1, 2 * b, -a])}}{(${den})^2}`, w: [{ t: T`\dfrac{${poly([-1, -2 * b, a])}}{(${den})^2}`, why: 'Order is LOW·d(HIGH) − HIGH·d(LOW). You flipped it.' }, { t: T`2x`, why: "That's (top)′/(bottom)′, which is not the quotient rule." }, { t: T`\dfrac{${poly([1, 2 * b, a])}}{(${den})^2}`, why: T`Sign slip: you need to subtract all of \((${num})\), including the \(${a}\).` }], ok: x => Math.abs(x + b) > 0.3, uL: num, upL: '2x', vL: den, vpL: '1' }; },
+  () => ({ fS: T`\dfrac{\sin x}{x}`, f: x => Math.sin(x) / x, fp: x => (x * Math.cos(x) - Math.sin(x)) / (x * x), work: T`\dfrac{x\cos x-\sin x\cdot1}{x^2}`, ans: T`\dfrac{x\cos x-\sin x}{x^2}`, w: [{ t: T`\dfrac{\sin x-x\cos x}{x^2}`, why: 'Order flipped. LOW·d(HIGH) − HIGH·d(LOW).' }, { t: T`\cos x`, why: "That's (top)′/(bottom)′." }, { t: T`\dfrac{x\cos x-\sin x}{x}`, why: 'Forgot to square the denominator.' }], ok: x => x > 0.3, uL: '\\sin x', upL: '\\cos x', vL: 'x', vpL: '1' }),
+  () => ({ fS: T`\dfrac{e^x}{x^2}`, f: x => Math.exp(x) / (x * x), fp: x => Math.exp(x) * (x - 2) / x ** 3, work: T`\dfrac{x^2e^x-e^x\cdot2x}{(x^2)^2}=\dfrac{xe^x(x-2)}{x^4}`, ans: T`\dfrac{e^x(x-2)}{x^3}`, w: [{ t: T`\dfrac{e^x(2-x)}{x^3}`, why: 'Order flipped.' }, { t: T`\dfrac{e^x}{2x}`, why: "That's (top)′/(bottom)′." }, { t: T`\dfrac{e^x(x-2)}{x^2}`, why: T`\((x^2)^2=x^4\), then cancel one \(x\): \(x^3\).` }], ok: x => x > 0.3, uL: 'e^x', upL: 'e^x', vL: 'x^2', vpL: '2x' }),
+  () => { const k = R(1, 9); return { fS: T`\dfrac{x}{x^2+${k}}`, f: x => x / (x * x + k), fp: x => (k - x * x) / (x * x + k) ** 2, work: T`\dfrac{1\cdot(x^2+${k})-x\cdot2x}{(x^2+${k})^2}`, ans: T`\dfrac{${k}-x^2}{(x^2+${k})^2}`, w: [{ t: T`\dfrac{x^2-${k}}{(x^2+${k})^2}`, why: 'Order flipped.' }, { t: T`\dfrac{1}{2x}`, why: "That's (top)′/(bottom)′." }, { t: T`\dfrac{3x^2+${k}}{(x^2+${k})^2}`, why: T`You added \(x\cdot2x\) instead of subtracting it.` }], ok: () => true, uL: 'x', upL: '1', vL: T`x^2+${k}`, vpL: '2x' }; }
+];
+function dQuot() {
+  const Q = pick(QBANK)();
+  const sol = steps(['<b>Quotient rule:</b> ' + M('\\left(\\dfrac{u}{v}\\right)\'=\\dfrac{v\\,u\'-u\\,v\'}{v^2}') + ' ("low d-high minus high d-low, over low squared").', T`\(u=${Q.uL}\Rightarrow u'=${Q.upL}\)<br>\(v=${Q.vL}\Rightarrow v'=${Q.vpL}\)`, '<b>Plug in and expand the numerator:</b>' + D(T`f'(x)=${Q.work}`), '<b>Simplify</b> (combine like terms in the numerator; leave the bottom squared):', abox(T`\(f'(x)=${Q.ans}\)`)]);
+  return Object.assign(mc({ stem: T`Find \(f'(x)\) if \(f(x)=${Q.fS}\).`, ans: M(T`f'(x)=${Q.ans}`), ds: Q.w.map(w => ({ t: M("f'(x)=" + w.t), why: w.why })), fill: [{ t: M("f'(x)=0"), why: 'Use the quotient rule.' }, { t: M("f'(x)=1"), why: 'Use the quotient rule.' }], sol, hint: 'Low · d(high) − high · d(low), all over low².' }), { meta: { f: Q.f, fp: Q.fp, lo: 0.6, hi: 3, ok: Q.ok } });
+}
+reg('d_quot', 'deriv', dQuot, 1.1);
+
+/* D4: chain rule */
+const CBANK = [
+  () => { const a = R(2, 5) * pick([1, -1]), b = R(-7, 7) || 1, n = R(3, 7); const inn = poly([a, b]); return { fS: T`(${inn})^{${n}}`, outer: T`u^{${n}}`, outerD: T`${n}u^{${n - 1}}`, inner: inn, innerD: String(a), raw: T`${n}(${inn})^{${n - 1}}\cdot ${par(a)}`, ans: T`${n * a}(${inn})^{${n - 1}}`, f: x => (a * x + b) ** n, fp: x => n * a * (a * x + b) ** (n - 1), w: [{ t: T`${n}(${inn})^{${n - 1}}`, why: T`You forgot to multiply by the derivative of the inside, \(${a}\).` }, { t: T`${n * a}(${inn})^{${n}}`, why: 'You forgot to lower the power by 1.' }] }; },
+  () => { const k = R(1, 9) * pick([1, -1]), n = R(2, 5); const inn = poly([1, 0, k]); return { fS: T`(${inn})^{${n}}`, outer: T`u^{${n}}`, outerD: T`${n}u^{${n - 1}}`, inner: inn, innerD: '2x', raw: T`${n}(${inn})^{${n - 1}}\cdot 2x`, ans: T`${2 * n}x(${inn})^{${n - 1}}`, f: x => (x * x + k) ** n, fp: x => 2 * n * x * (x * x + k) ** (n - 1), w: [{ t: T`${n}(${inn})^{${n - 1}}`, why: 'Forgot to multiply by the inside derivative 2x.' }, { t: T`${n}(2x)^{${n - 1}}`, why: 'You took the derivative of the inside and put it inside. Keep the inside the same; multiply by its derivative.' }] }; },
+  () => { const a = R(1, 5), b = R(1, 9); const inn = poly([a, 0, b]); return { fS: T`\sqrt{${inn}}`, outer: T`\sqrt u=u^{1/2}`, outerD: T`\tfrac12u^{-1/2}=\dfrac{1}{2\sqrt u}`, inner: inn, innerD: poly([2 * a, 0]), raw: T`\dfrac{1}{2\sqrt{${inn}}}\cdot ${poly([2 * a, 0])}`, ans: T`\dfrac{${a === 1 ? '' : a}x}{\sqrt{${inn}}}`, f: x => Math.sqrt(a * x * x + b), fp: x => a * x / Math.sqrt(a * x * x + b), w: [{ t: T`\dfrac{1}{2\sqrt{${inn}}}`, why: T`Forgot the inside derivative \(${poly([2 * a, 0])}\).` }, { t: T`\dfrac{${2 * a}x}{\sqrt{${inn}}}`, why: T`Don't forget the \(\frac12\) from the power rule.` }] }; },
+  () => { const k = R(2, 5); return { fS: T`\sin(${k}x^2)`, outer: '\\sin u', outerD: '\\cos u', inner: T`${k}x^2`, innerD: T`${2 * k}x`, raw: T`\cos(${k}x^2)\cdot ${2 * k}x`, ans: T`${2 * k}x\cos(${k}x^2)`, f: x => Math.sin(k * x * x), fp: x => 2 * k * x * Math.cos(k * x * x), w: [{ t: T`\cos(${k}x^2)`, why: T`Forgot to multiply by the inside derivative \(${2 * k}x\).` }, { t: T`\cos(${2 * k}x)`, why: 'Keep the inside the same inside the cosine. Multiply by its derivative OUTSIDE.' }] }; },
+  () => { const k = R(2, 6) * pick([1, -1]); return { fS: T`e^{${k}x^2}`, outer: 'e^u', outerD: 'e^u', inner: T`${k}x^2`, innerD: T`${2 * k}x`, raw: T`e^{${k}x^2}\cdot ${par(2 * k)}x`, ans: T`${2 * k}xe^{${k}x^2}`, f: x => Math.exp(k * x * x), fp: x => 2 * k * x * Math.exp(k * x * x), w: [{ t: T`e^{${k}x^2}`, why: T`\(e^u\) stays \(e^u\), but you still multiply by \(u'=${2 * k}x\).` }, { t: T`${k}x^2e^{${k}x^2-1}`, why: "e^u is not a power function. Don't use the power rule on it." }] }; },
+  () => { const k = R(1, 9); return { fS: T`\ln(x^2+${k})`, outer: '\\ln u', outerD: '\\dfrac1u', inner: T`x^2+${k}`, innerD: '2x', raw: T`\dfrac{1}{x^2+${k}}\cdot2x`, ans: T`\dfrac{2x}{x^2+${k}}`, f: x => Math.log(x * x + k), fp: x => 2 * x / (x * x + k), w: [{ t: T`\dfrac{1}{x^2+${k}}`, why: 'Forgot the inside derivative 2x.' }, { t: T`\dfrac{1}{2x}`, why: T`\(\frac{d}{dx}\ln u=\frac{u'}{u}\), not \(\frac1{u'}\).` }] }; },
+  () => { const n = R(2, 5); return { fS: T`\cos^{${n}}x`, outer: T`u^{${n}}\ (u=\cos x)`, outerD: T`${n}u^{${n - 1}}`, inner: '\\cos x', innerD: '-\\sin x', raw: T`${n}\cos^{${n - 1}}x\cdot(-\sin x)`, ans: T`-${n}\cos^{${n - 1}}x\sin x`.replace('^{1}', ''), f: x => Math.cos(x) ** n, fp: x => -n * Math.cos(x) ** (n - 1) * Math.sin(x), w: [{ t: T`${n}\cos^{${n - 1}}x`.replace('^{1}', ''), why: T`Forgot to multiply by \(\frac{d}{dx}\cos x=-\sin x\).` }, { t: T`-${n}\sin^{${n - 1}}x`.replace('^{1}', ''), why: 'Keep cos inside the power. Multiply by the derivative of cos x outside.' }] }; },
+  () => { const k = R(2, 6); return { fS: T`\tan(${k}x)`, outer: '\\tan u', outerD: '\\sec^2u', inner: T`${k}x`, innerD: String(k), raw: T`\sec^2(${k}x)\cdot${k}`, ans: T`${k}\sec^2(${k}x)`, f: x => Math.tan(k * x), fp: x => k / Math.cos(k * x) ** 2, w: [{ t: T`\sec^2(${k}x)`, why: T`Forgot to multiply by \(${k}\).` }, { t: T`${k}\sec(${k}x)\tan(${k}x)`, why: T`That's the derivative of \(\sec\). \(\frac{d}{dx}\tan u=\sec^2u\cdot u'\).` }], small: true }; }
+];
+function dChain() {
+  const C = pick(CBANK)();
+  const sol = steps(['<b>Chain rule:</b> ' + M("\\frac{d}{dx}f(g(x))=f'(g(x))\\cdot g'(x)") + ' (derivative of the outside, keep the inside, times the derivative of the inside).', T`Outside: \(${C.outer}\Rightarrow\) derivative \(${C.outerD}\)<br>Inside: \(u=${C.inner}\Rightarrow u'=${C.innerD}\)`, '<b>Plug in:</b>' + D(T`f'(x)=${C.raw}`), '<b>Clean up</b> (put the number/x factor in front):', abox(T`\(f'(x)=${C.ans}\)`)]);
+  return Object.assign(mc({ stem: T`Find \(f'(x)\) if \(f(x)=${C.fS}\).`, ans: M(T`f'(x)=${C.ans}`), ds: C.w.map(w => ({ t: M("f'(x)=" + w.t), why: w.why })), fill: [{ t: M("f'(x)=0"), why: 'Use the chain rule.' }, { t: M("f'(x)=" + C.innerD), why: 'That is only the inside derivative.' }], sol, hint: 'Outside derivative (inside stays the same) × inside derivative.' }), { meta: { f: C.f, fp: C.fp, lo: 0.2, hi: C.small ? 0.25 : 1.5 } });
+}
+reg('d_chain', 'deriv', dChain, 1.3);
+
+/* D5: product + chain combos */
+const XBANK = [
+  () => { const k = R(2, 5); return { fS: T`x^2\sin(${k}x)`, steps: [T`Product rule: \(u=x^2,\ u'=2x\); \(v=\sin(${k}x),\ v'=${k}\cos(${k}x)\) (chain rule).`, T`\(f'=2x\sin(${k}x)+x^2\cdot${k}\cos(${k}x)\)`], ans: T`2x\sin(${k}x)+${k}x^2\cos(${k}x)`, f: x => x * x * Math.sin(k * x), fp: x => 2 * x * Math.sin(k * x) + k * x * x * Math.cos(k * x), w: [{ t: T`2x\sin(${k}x)+x^2\cos(${k}x)`, why: T`Forgot the chain-rule factor \(${k}\) on \(\sin(${k}x)\).` }, { t: T`${2 * k}x\cos(${k}x)`, why: "That's u′·v′. Use the product rule." }] }; },
+  () => { const k = R(2, 4); return { fS: T`e^{${k}x}\cos x`, steps: [T`Product rule: \(u=e^{${k}x},\ u'=${k}e^{${k}x}\) (chain rule); \(v=\cos x,\ v'=-\sin x\).`, T`\(f'=${k}e^{${k}x}\cos x+e^{${k}x}(-\sin x)\)`, T`Factor out \(e^{${k}x}\).`], ans: T`e^{${k}x}(${k}\cos x-\sin x)`, f: x => Math.exp(k * x) * Math.cos(x), fp: x => Math.exp(k * x) * (k * Math.cos(x) - Math.sin(x)), w: [{ t: T`e^{${k}x}(\cos x-\sin x)`, why: T`Forgot the chain-rule factor \(${k}\) from \(e^{${k}x}\).` }, { t: T`e^{${k}x}(${k}\cos x+\sin x)`, why: T`\(\frac{d}{dx}\cos x=-\sin x\). Sign error.` }] }; },
+  () => { const k = R(1, 9); return { fS: T`x\sqrt{x^2+${k}}`, steps: [T`Product rule: \(u=x,\ u'=1\); \(v=\sqrt{x^2+${k}},\ v'=\dfrac{2x}{2\sqrt{x^2+${k}}}=\dfrac{x}{\sqrt{x^2+${k}}}\) (chain rule).`, T`\(f'=\sqrt{x^2+${k}}+\dfrac{x^2}{\sqrt{x^2+${k}}}\)`, T`Common denominator: \(\dfrac{(x^2+${k})+x^2}{\sqrt{x^2+${k}}}\)`], ans: T`\dfrac{2x^2+${k}}{\sqrt{x^2+${k}}}`, f: x => x * Math.sqrt(x * x + k), fp: x => (2 * x * x + k) / Math.sqrt(x * x + k), w: [{ t: T`\dfrac{x}{\sqrt{x^2+${k}}}`, why: "That's just v′. You need u′v + uv′." }, { t: T`\dfrac{x^2+${k}}{\sqrt{x^2+${k}}}`, why: 'You dropped the x² from uv′ when combining.' }] }; },
+  () => { const k = R(1, 3); return { fS: T`xe^{-${k === 1 ? '' : k}x^2}`, steps: [T`Product rule: \(u=x,\ u'=1\); \(v=e^{-${k === 1 ? '' : k}x^2},\ v'=-${2 * k}xe^{-${k === 1 ? '' : k}x^2}\) (chain rule).`, T`\(f'=e^{-${k === 1 ? '' : k}x^2}-${2 * k}x^2e^{-${k === 1 ? '' : k}x^2}\)`, 'Factor out the exponential.'], ans: T`e^{-${k === 1 ? '' : k}x^2}(1-${2 * k}x^2)`, f: x => x * Math.exp(-k * x * x), fp: x => Math.exp(-k * x * x) * (1 - 2 * k * x * x), w: [{ t: T`-${2 * k}x^2e^{-${k === 1 ? '' : k}x^2}`, why: "You only did uv′. Don't forget u′v." }, { t: T`e^{-${k === 1 ? '' : k}x^2}(1+${2 * k}x^2)`, why: 'Sign error from the chain rule (the inside derivative is negative).' }] }; }
+];
+reg('d_combo', 'deriv', () => {
+  const X = pick(XBANK)();
+  return Object.assign(mc({ stem: T`Find \(f'(x)\) if \(f(x)=${X.fS}\). (Product rule AND chain rule.)`, ans: M(T`f'(x)=${X.ans}`), ds: X.w.map(w => ({ t: M("f'(x)=" + w.t), why: w.why })), fill: [{ t: M("f'(x)=0"), why: 'Use product + chain rule.' }, { t: M("f'(x)=1"), why: 'Use product + chain rule.' }], sol: steps([...X.steps, abox(T`\(f'(x)=${X.ans}\)`)]), hint: 'It\'s a product, so start with u′v + uv′. One of the pieces needs the chain rule.' }), { meta: { f: X.f, fp: X.fp, lo: 0.2, hi: 1.8 } });
+}, 1.0);
+
+/* D6: tangent line */
+reg('d_tangent', 'deriv', () => {
+  const c = [R(1, 2) * pick([1, -1]), R(-4, 4), R(-6, 6), R(-5, 5)]; const a = R(-2, 2); const fv = c[0] * a ** 3 + c[1] * a * a + c[2] * a + c[3]; const dc = derivC(c); const m = dc[0] * a * a + dc[1] * a + dc[2]; const bI = fv - m * a;
+  const ans = T`y=${poly([m, bI]) || '0'}`;
+  return mc({ stem: T`Find the equation of the line tangent to \(f(x)=${poly(c)}\) at \(x=${a}\).`, ans: M(ans), ds: [{ t: M(T`y=${poly([fv, bI - (fv - m) * a]) || '0'}`.replace(/.*/, T`y=${poly([fv, m - fv * a]) || '0'}`)), why: 'You swapped the point and the slope. The slope is f′(a), the point is (a, f(a)).' }, { t: M(T`y=${poly([m, fv]) || '0'}`), why: T`Point-slope: \(y-f(a)=m(x-a)\). You used \(y=mx+f(a)\), forgetting the \(-a\).` }, { t: M(T`y=${poly([m + 1, bI - a]) || '0'}`), why: 'Arithmetic slip in f′(a).' }], fill: [{ t: M(T`y=${fv}`), why: 'That would be a horizontal line. Use the slope f′(a).' }, { t: M(T`y=${poly([-m, fv + m * a]) || '0'}`), why: 'Sign error on the slope.' }], sol: steps([T`<b>Point:</b> \(${pev(c, a)}\), so the point is \((${a}, ${fv})\).`, pdW(c), T`<b>Slope:</b> \(${pev(dc, a, "f'")}\)`, T`<b>Point-slope form:</b> \(y-${par(fv)}=${m}(x-${par(a)})\)`, T`Solve for y: \(y=${m}x${-m * a >= 0 ? '+' : ''}${-m * a}${fv >= 0 ? '+' : ''}${fv}\)`, abox(M(ans))]), hint: 'Point: (a, f(a)). Slope: f′(a). Then y − y₁ = m(x − x₁).' });
+}, 0.8);
+
+/* D7: second derivative */
+const SBANK = [
+  () => { const c = [R(1, 3), R(-5, 5), R(-6, 6), R(-6, 6), R(-5, 5)]; const d1 = derivC(c), d2 = derivC(d1); return { fS: poly(c), w1: pdW(c), w2: pdW(d1, "f''(x)"), ans: poly(d2), f: x => c.reduce((s, a, i) => s + a * x ** (4 - i), 0), fpp: x => d2[0] * x * x + d2[1] * x + d2[2], bad: [{ t: poly(d1), why: "That's f′(x). Take the derivative one more time." }, { t: poly(derivC(d2)), why: "That's f‴(x), one derivative too many." }] }; },
+  () => { const k = R(2, 5); return { fS: T`\sin(${k}x)`, w1: T`Chain rule: \(f'(x)=${k}\cos(${k}x)\)`, w2: T`Chain rule again: \(f''(x)=${k}\cdot(-\sin(${k}x))\cdot${k}\)`, ans: T`-${k * k}\sin(${k}x)`, f: x => Math.sin(k * x), fpp: x => -k * k * Math.sin(k * x), bad: [{ t: T`-${k}\sin(${k}x)`, why: T`You used the chain rule only once. Each derivative brings out a factor of \(${k}\): \(${k}\cdot${k}=${k * k}\).` }, { t: T`${k * k}\sin(${k}x)`, why: T`\(\frac{d}{dx}\cos u=-\sin u\). Sign error.` }] }; },
+  () => ({ fS: T`xe^x`, w1: T`Product rule: \(f'=e^x+xe^x=e^x(x+1)\)`, w2: T`Product rule again: \(f''=e^x(x+1)+e^x\cdot1\)`, ans: T`e^x(x+2)`, f: x => x * Math.exp(x), fpp: x => Math.exp(x) * (x + 2), bad: [{ t: T`e^x(x+1)`, why: "That's f′. Differentiate again." }, { t: T`e^x`, why: 'Product rule each time: you need both terms.' }] }),
+  () => ({ fS: T`\ln x`, w1: T`\(f'(x)=\dfrac1x=x^{-1}\)`, w2: T`Power rule: \(f''(x)=-1\cdot x^{-2}\)`, ans: T`-\dfrac{1}{x^2}`, f: x => Math.log(x), fpp: x => -1 / (x * x), bad: [{ t: T`\dfrac{1}{x^2}`, why: 'Bringing down −1 makes it negative.' }, { t: T`\dfrac1x`, why: "That's f′." }] }),
+  () => ({ fS: T`\sqrt{x}`, w1: T`\(f=x^{1/2}\Rightarrow f'=\tfrac12x^{-1/2}\)`, w2: T`\(f''=\tfrac12\cdot\left(-\tfrac12\right)x^{-3/2}\)`, ans: T`-\dfrac{1}{4x^{3/2}}`, f: x => Math.sqrt(x), fpp: x => -0.25 * x ** -1.5, bad: [{ t: T`\dfrac{1}{2\sqrt x}`, why: "That's f′." }, { t: T`\dfrac{1}{4x^{3/2}}`, why: T`\(-\tfrac12\) brought down makes it negative.` }] })
+];
+reg('d_second', 'deriv', () => {
+  const S = pick(SBANK)();
+  return Object.assign(mc({ stem: T`Find \(f''(x)\) if \(f(x)=${S.fS}\).`, ans: M(T`f''(x)=${S.ans}`), ds: S.bad.map(b => ({ t: M("f''(x)=" + b.t), why: b.why })), fill: [{ t: M("f''(x)=0"), why: 'Differentiate twice.' }, { t: M("f''(x)=1"), why: 'Differentiate twice.' }], sol: steps(['<b>First derivative:</b><br>' + S.w1, '<b>Second derivative</b> (differentiate f′):<br>' + S.w2, abox(T`\(f''(x)=${S.ans}\)`)]), hint: 'Find f′ first, then take the derivative of f′.' }), { meta: { f: S.f, fp2: S.fpp, lo: 0.5, hi: 2 } });
+}, 0.8);
+
+/* D8: implicit differentiation */
+reg('d_implicit', 'deriv', () => {
+  const t = R(0, 2);
+  if (t === 0) { const a = pick([3, 4, 5, 6, 8]), b = pick([4, 3, 12, 8, 6]); const r2 = a * a + b * b; return mc({ stem: T`Find \(\dfrac{dy}{dx}\) for \(x^2+y^2=${r2}\), then find the slope at \((${a}, ${b})\).`, ans: T`\(\dfrac{dy}{dx}=-\dfrac{x}{y}\); slope \(=${fr(-a, b)}\)`, ds: [{ t: T`\(\dfrac{dy}{dx}=-\dfrac{y}{x}\); slope \(=${fr(-b, a)}\)`, why: 'Flipped. Solve 2x + 2y·y′ = 0 for y′.' }, { t: T`\(\dfrac{dy}{dx}=\dfrac{x}{y}\); slope \(=${fr(a, b)}\)`, why: 'Sign error: moving 2x to the other side makes it negative.' }, { t: T`\(\dfrac{dy}{dx}=-2x\); slope \(=${-2 * a}\)`, why: T`\(y^2\) differentiates to \(2y\,\frac{dy}{dx}\) (chain rule), not 0.` }], sol: steps([T`Differentiate both sides with respect to \(x\). Every time you differentiate a \(y\), multiply by \(\frac{dy}{dx}\):`, D(T`2x+2y\dfrac{dy}{dx}=0`), T`Solve for \(\frac{dy}{dx}\): \(2y\dfrac{dy}{dx}=-2x\Rightarrow\dfrac{dy}{dx}=-\dfrac{x}{y}\)`, T`At \((${a}, ${b})\): \(-\dfrac{${a}}{${b}}=${fr(-a, b)}\)`, abox(T`\(\dfrac{dy}{dx}=-\dfrac{x}{y}\), slope \(${fr(-a, b)}\)`)]), fill: [{ t: T`\(\dfrac{dy}{dx}=0\)`, why: 'Differentiate both sides; y depends on x.' }, { t: T`\(\dfrac{dy}{dx}=-1\)`, why: 'Solve for dy/dx carefully.' }], hint: 'Differentiate y² as 2y·dy/dx.' }); }
+  if (t === 1) { const a = R(-3, 3) || 1, b = R(-3, 3) || 2; const k = a * a + a * b + b * b; const num = -(2 * a + b), den = a + 2 * b; if (den === 0) return G.d_chain.fn(); return mc({ stem: T`Find \(\dfrac{dy}{dx}\) for \(x^2+xy+y^2=${k}\), then the slope at \((${a}, ${b})\).`, ans: T`\(\dfrac{dy}{dx}=-\dfrac{2x+y}{x+2y}\); slope \(=${fr(num, den)}\)`, ds: [{ t: T`\(\dfrac{dy}{dx}=-\dfrac{2x}{2y}\); slope \(=${fr(-a, b)}\)`, why: T`\(xy\) needs the product rule: \(\frac{d}{dx}[xy]=y+x\frac{dy}{dx}\).` }, { t: T`\(\dfrac{dy}{dx}=\dfrac{2x+y}{x+2y}\); slope \(=${fr(-num, den)}\)`, why: 'Sign error when moving terms across.' }, { t: T`\(\dfrac{dy}{dx}=-\dfrac{x+2y}{2x+y}\); slope \(=${fr(-den, -num || 1)}\)`, why: 'Flipped top and bottom.' }], sol: steps([T`Differentiate each term (product rule on \(xy\); chain rule on \(y^2\)):`, D(T`2x+\left(1\cdot y+x\dfrac{dy}{dx}\right)+2y\dfrac{dy}{dx}=0`), T`Get the \(\frac{dy}{dx}\) terms together: \(\dfrac{dy}{dx}(x+2y)=-(2x+y)\)`, T`\(\dfrac{dy}{dx}=-\dfrac{2x+y}{x+2y}\)`, T`At \((${a}, ${b})\): \(-\dfrac{2(${a})+${par(b)}}{${a}+2(${b})}=-\dfrac{${2 * a + b}}{${den}}=${fr(num, den)}\)`, abox(T`slope \(=${fr(num, den)}\)`)]), fill: [{ t: T`\(\dfrac{dy}{dx}=0\)`, why: 'Differentiate both sides; y depends on x.' }, { t: T`\(\dfrac{dy}{dx}=-1\)`, why: 'Solve for dy/dx carefully.' }], hint: 'Product rule on xy. Collect the dy/dx terms on one side, then factor.' }); }
+  return mc({ stem: T`Find \(\dfrac{dy}{dx}\) for \(x^3+y^3=6xy\).`, ans: T`\(\dfrac{dy}{dx}=\dfrac{2y-x^2}{y^2-2x}\)`, ds: [{ t: T`\(\dfrac{dy}{dx}=\dfrac{x^2}{y^2}\)`, why: T`The right side \(6xy\) needs the product rule too: \(6y+6x\frac{dy}{dx}\).` }, { t: T`\(\dfrac{dy}{dx}=\dfrac{x^2-2y}{y^2-2x}\)`, why: 'Sign error when moving terms.' }, { t: T`\(\dfrac{dy}{dx}=\dfrac{2y-x^2}{2x-y^2}\)`, why: 'Sign error in the denominator.' }], sol: steps([D(T`3x^2+3y^2\dfrac{dy}{dx}=6y+6x\dfrac{dy}{dx}`), T`Move \(\frac{dy}{dx}\) terms left, others right: \(3y^2\dfrac{dy}{dx}-6x\dfrac{dy}{dx}=6y-3x^2\)`, T`Factor: \(\dfrac{dy}{dx}(3y^2-6x)=6y-3x^2\)`, T`Divide and cancel the 3: \(\dfrac{dy}{dx}=\dfrac{6y-3x^2}{3y^2-6x}=\dfrac{2y-x^2}{y^2-2x}\)`, abox(T`\(\dfrac{dy}{dx}=\dfrac{2y-x^2}{y^2-2x}\)`)]), fill: [{ t: T`\(\dfrac{dy}{dx}=\dfrac{2y}{y^2}\)`, why: 'Use the product rule on 6xy and collect terms.' }, { t: T`\(\dfrac{dy}{dx}=-\dfrac{x^2}{y^2}\)`, why: 'You forgot the right side 6xy changes too.' }], hint: 'Product rule on 6xy. Collect dy/dx terms, factor, divide.' });
+}, 0.7);
 
 /* ---- learn.js ---- */
 /* ===== LEARN CONTENT (video + explanation, no practice problems here) ===== */
@@ -1542,11 +1750,11 @@ function frqPoly() {
   return { title: 'FRQ: analyzing a function (no calculator)', calc: false,
     stem: T`Let \(f(x)=${poly([2, -3 * (p + q), 6 * p * q, d])}\).`,
     parts: [
-      { q: T`a. Find \(f'(x)\) and all critical numbers of \(f\).`, a: steps([T`\(f'(x)=${poly([6, -6 * (p + q), 6 * p * q])}=6${fac(p)}${fac(q)}\)`, abox(T`Critical numbers: \(x=${p}\) and \(x=${q}\)`)]) },
-      { q: T`b. Find the coordinates of each relative extremum of \(f\). Justify your answer.`, a: steps(['Sign chart (for you, not the justification):' + signChart([p, q], [{ label: "f'(x)", fn: fp, at: () => M('0') }, incRow(fp)]), abox(T`Relative max at \((${p}, ${f(p)})\). Relative min at \((${q}, ${f(q)})\).`)]) + JW(T`"\(f\) has a relative maximum at \(x=${p}\) because \(f'\) changes from positive to negative there, and a relative minimum at \(x=${q}\) because \(f'\) changes from negative to positive there."`) },
+      { q: T`a. Find \(f'(x)\) and all critical numbers of \(f\).`, a: steps([pdW([2, -3 * (p + q), 6 * p * q, d]), facW(6, p, q), T`Set \(f'(x)=0\).`, abox(T`Critical numbers: \(x=${p}\) and \(x=${q}\)`)]) },
+      { q: T`b. Find the coordinates of each relative extremum of \(f\). Justify your answer.`, a: steps(['Sign chart (for you, not the justification):' + signChart([p, q], [{ label: "f'(x)", fn: fp, at: () => M('0') }, incRow(fp)]), T`y-values: \(${pev([2, -3 * (p + q), 6 * p * q, d], p)}\), \(${pev([2, -3 * (p + q), 6 * p * q, d], q)}\)`, abox(T`Relative max at \((${p}, ${f(p)})\). Relative min at \((${q}, ${f(q)})\).`)]) + JW(T`"\(f\) has a relative maximum at \(x=${p}\) because \(f'\) changes from positive to negative there, and a relative minimum at \(x=${q}\) because \(f'\) changes from negative to positive there."`) },
       { q: T`c. On what interval(s) is the graph of \(f\) concave down? Justify.`, a: steps([T`\(f''(x)=${poly([12, -6 * (p + q)])}` + (m === 0 ? '' : T`=12\left(x ${m < 0 ? '+' : '-'} ${fmtNum(Math.abs(m))}\right)`) + '\\)', T`\(f''<0\) when \(x<${fmtNum(m)}\).`, abox(T`\((-\infty, ${fmtNum(m)})\)`)]) + JW(T`"\(f\) is concave down on \((-\infty, ${fmtNum(m)})\) because \(f''<0\) there."`) },
-      { q: T`d. Find the point of inflection of \(f\) (as an ordered pair). Justify.`, a: abox(T`\(\left(${fmtNum(m)}, ${fmtNum(f(m))}\right)\)`) + JW(T`"\(f\) has an inflection point at \(x=${fmtNum(m)}\) because \(f''\) changes sign there."`) },
-      { q: T`e. Find the absolute maximum and absolute minimum values of \(f\) on \([${L}, ${U}]\). Justify.`, a: steps(['Candidates Test:' + tbl([M('x'), M('f(x)')], cand.map(c => [M(c.x) + ((c.x === L || c.x === U) ? ' <span class="muted">(endpoint)</span>' : ''), M(c.y)])), abox(T`Absolute max \(=${mx.y}\) at \(x=${mx.x}\). Absolute min \(=${mn.y}\) at \(x=${mn.x}\).`)]) + JW('"Comparing f at the critical numbers and the endpoints, the absolute max is ' + mx.y + ' at x = ' + mx.x + ' and the absolute min is ' + mn.y + ' at x = ' + mn.x + '."') }
+      { q: T`d. Find the point of inflection of \(f\) (as an ordered pair). Justify.`, a: M(pev([2, -3 * (p + q), 6 * p * q, d], m)) + abox(T`\(\left(${fmtNum(m)}, ${fmtNum(f(m))}\right)\)`) + JW(T`"\(f\) has an inflection point at \(x=${fmtNum(m)}\) because \(f''\) changes sign there."`) },
+      { q: T`e. Find the absolute maximum and absolute minimum values of \(f\) on \([${L}, ${U}]\). Justify.`, a: steps(['Candidates Test:' + tbl([M('x'), 'plug into f', M('f(x)')], cand.map(c => [M(c.x) + ((c.x === L || c.x === U) ? ' <span class="muted">(endpoint)</span>' : ''), M(pev([2, -3 * (p + q), 6 * p * q, d], c.x)), M(c.y)])), abox(T`Absolute max \(=${mx.y}\) at \(x=${mx.x}\). Absolute min \(=${mn.y}\) at \(x=${mn.x}\).`)]) + JW('"Comparing f at the critical numbers and the endpoints, the absolute max is ' + mx.y + ' at x = ' + mx.x + ' and the absolute min is ' + mn.y + ' at x = ' + mn.x + '."') }
     ] };
 }
 function frqTrig() {
@@ -1684,7 +1892,8 @@ const PS = { topics: ['all'], q: null, done: false, streak: 0, best: 0, n: 0, c:
 function startPractice(topics, retry) { PS.topics = topics; PS.retry = retry || null; PS.streak = 0; PS.n = 0; PS.c = 0; show('practice'); renderChips(); nextPractice(); }
 function renderChips() {
   const all = PS.topics.includes('all');
-  $('#chips').innerHTML = '<div class="modebar"><b>Answer style:</b> <button class="chip' + (MODE === 'sa' ? ' on' : '') + '" data-mode="sa">✍️ Short answer (like your test)</button><button class="chip' + (MODE === 'mc' ? ' on' : '') + '" data-mode="mc">🔘 Multiple choice (faster)</button></div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
+  $('#chips').innerHTML = '<div class="modebar"><b>Quick picks:</b> ' + [['3.1–3.3', ['ext', 'mvt', 'inc']], ['3.1–3.4', ['ext', 'mvt', 'inc', 'conc']], ['3.4 + graphs', ['conc', 'graph']], ['3.7 + calculator', ['opt', 'calc']], ['Derivatives only', ['deriv']], ['Ch 3 (no derivatives)', ['ext', 'mvt', 'inc', 'conc', 'graph', 'calc', 'opt']]].map(([n, t]) => '<button class="chip preset" data-pre="' + t.join(',') + '">' + n + '</button>').join('') + '</div><div class="modebar"><b>Answer style:</b> <button class="chip' + (MODE === 'sa' ? ' on' : '') + '" data-mode="sa">✍️ Short answer (like your test)</button><button class="chip' + (MODE === 'mc' ? ' on' : '') + '" data-mode="mc">🔘 Multiple choice (faster)</button></div><div class="muted" style="margin-top:4px">Sections: tap one or more to choose exactly what you get (tap again to turn one off).</div><div class="chips"><button class="chip' + (all && !PS.retry ? ' on' : '') + '" data-c="all">Mix everything</button>' + TOPICS.map(t => '<button class="chip' + (!all && !PS.retry && PS.topics.includes(t.id) ? ' on' : '') + '" data-c="' + t.id + '">' + t.short + '</button>').join('') + (PS.retry ? '<button class="chip on">Retrying my mistakes (' + PS.retry.length + ' left)</button>' : '') + '</div>';
+  document.querySelectorAll('[data-pre]').forEach(b => b.onclick = () => { PS.retry = null; PS.topics = b.dataset.pre.split(','); renderChips(); nextPractice(); });
   document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { MODE = b.dataset.mode; LS.set('c3_mode', MODE); renderChips(); if (PS.q && !PS.done) renderQ(PS.q); });
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { const c = b.dataset.c; PS.retry = null; if (c === 'all') PS.topics = ['all']; else { let t = PS.topics.filter(x => x !== 'all'); t = t.includes(c) ? t.filter(x => x !== c) : [...t, c]; PS.topics = t.length ? t : ['all']; } renderChips(); nextPractice(); });
 }
